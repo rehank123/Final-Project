@@ -9,8 +9,7 @@ st.write("""
 3. About Hospital for Doctor
 """)
 
-st.write("Please Enter a Number for detail you want to know about:")
-information = st.text_input("Enter a number")
+information = st.text_input("Please Enter a Number for detail you want to know about:")
 
 if information == "1":
     st.write("List of disease")
@@ -26,11 +25,10 @@ if information == "1":
     9. Urinary Tract Infection (UTI)
     10. Conjunctivitis (Pink Eye)
     """)
-    
-    st.write("Enter the number of your disease:")
-    disease = st.text_input("Enter a number")
 
-    if disease == "1":  
+    disease = st.text_input("Enter the number of your disease:")
+
+    if disease == "1":
         st.write("Take Paracetamol")
     elif disease == "2":
         st.write("Take Tylenol")
@@ -54,21 +52,20 @@ if information == "1":
         st.write("Your disease is not in the list")
 
 elif information == "2":
-    st.write("List of Disease")
+    st.write("List of Doctors")
     st.write("""
-    1. Cardiologist
-    2. Dermatologist
-    3. Gastroenterologist
-    4. Neurologist
-    5. Ophthalmologist
-    6. Pediatrician
-    7. Psychiatrist
-    8. Urologist
-    9. Psychologist
-    10. Otorhinolaryngologist
+    1. Dr. Saleem
+    2. Dr. Abdullah
+    3. Dr. Salman
+    4. Dr. Kaleem
+    5. Dr. Naimat
+    6. Dr. Imran
+    7. Dr. Kamran
+    8. Dr. Moin
+    9. Dr. Sultan
+    10. Dr. Faizan
     """)
-    st.write("Enter the number of your Diseases:")
-    doctor = st.text_input("Enter a number")
+    doctor = st.text_input("Enter the number of your Doctor:")
 
     if doctor == "1":
         st.write("Dr. Saleem")
@@ -94,21 +91,20 @@ elif information == "2":
         st.write("Invalid Input")
 
 elif information == "3":
-    st.write("List of Doctors")
+    st.write("List of Hospitals")
     st.write("""
-    1. Dr. Saleem
-    2. Dr. Abdullah
-    3. Dr. Salman
-    4. Dr. Kaleem
-    5. Dr. Naimat
-    6. Dr. Imran
-    7. Dr. Kamran
-    8. Dr. Moin
-    9. Dr. Sultan
-    10. Dr. Faizan
+    1. Muslim Care Hospital
+    2. Islamic Health Center
+    3. Al-Muslim Medical Center
+    4. Nur Muslim Hospital
+    5. Muslim Community Hospital
+    6. Iman Muslim Hospital
+    7. Muslim Welfare Hospital
+    8. Safa Muslim Medical Center
+    9. Muslim Relief Hospital
+    10. Ummu Hospital
     """)
-    st.write("Enter the number of your Doctor:")
-    hospital = st.text_input("Enter a number")
+    hospital = st.text_input("Enter the number of your Hospital:")
 
     if hospital == "1":
         st.write("Muslim Care Hospital")
