@@ -7,29 +7,16 @@ import streamlit as st
 
 
 import streamlit as st
-import time
 
 # Add a title
-st.title('Animated Streamlit Example')
+st.title('Animated Loading Example')
 
 # Write some text
-st.write("Here's a simple animation using a sequence of images:")
+st.write("Please wait while we load...")
 
-# Define a list of image URLs (replace these with your own images)
-image_urls = [
-    "https://example.com/frame1.png",
-    "https://example.com/frame2.png",
-    "https://example.com/frame3.png",
-    # Add more image URLs for additional frames
-]
-
-# Display images as frames of animation
-for image_url in image_urls:
-    st.image(image_url, use_column_width=True)
-    # Adjust the delay time between frames (in seconds) as needed
-    time.sleep(0.5)
-
-
+# Display animated loading GIF
+loading_gif_path = "loading.gif"  # Change this to the path of your GIF file
+st.image(loading_gif_path, use_column_width=True)
 
 
 
