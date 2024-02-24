@@ -7,7 +7,7 @@
 import streamlit as st
 import time
 st.balloons()
-st.snow()
+st.monkey()
 progress_text = "Operation in progress. Please wait."
 my_bar = st.progress(0, text=progress_text)
 
