@@ -54,41 +54,37 @@ if information == "1":
 elif information == "2":
   st.write("List of Doctors")
   st.write("""
-  1. Cardiologist
-  2. Dermatologist
-  3. Gastroenterologist
-  4. Neurologist
-  5. Ophthalmologist
-  6. Pediatrician
-  7. Psychiatrist
-  8. Urologist
-  9. Psychologist
-  10. Otorhinolaryngologist
+  1. Dr. Saleem
+  2. Dr. Abdullah
+  3. Dr. Salman
+  4. Dr. Kaleem
+  5. Dr. Naimat
+  6. Dr. Imran
+  7. Dr. Kamran
+  8. Dr. Moin
+  9. Dr. Sultan
+  10. Dr. Faizan
   """)
-  doctor = st.text_input("Enter the number of your Doctor:")
+  doctor_name = st.text_input("Enter the name of your Doctor:")
 
-  if doctor == "1":
-    st.write("Dr. Saleem")
-  elif doctor == "2":
-    st.write("Dr. Abdullah")
-  elif doctor == "3":
-    st.write("Dr. Salman")
-  elif doctor == "4":
-    st.write("Dr. Kaleem")
-  elif doctor == "5":
-    st.write("Dr. Naimat")
-  elif doctor == "6":
-    st.write("Dr. Imran")
-  elif doctor == "7":
-    st.write("Dr. Kamran")
-  elif doctor == "8":
-    st.write("Dr. Moin")
-  elif doctor == "9":
-    st.write("Dr. Sultan")
-  elif doctor == "10":
-    st.write("Dr. Faizan")
+  doctors_to_hospitals = {
+      "Dr. Saleem": "Muslim Care Hospital",
+      "Dr. Abdullah": "Islamic Health Center",
+      "Dr. Salman": "Al-Muslim Medical Center",
+      "Dr. Kaleem": "Nur Muslim Hospital",
+      "Dr. Naimat": "Muslim Community Hospital",
+      "Dr. Imran": "Iman Muslim Hospital",
+      "Dr. Kamran": "Muslim Welfare Hospital",
+      "Dr. Moin": "Safa Muslim Medical Center",
+      "Dr. Sultan": "Muslim Relief Hospital",
+      "Dr. Faizan": "Ummu Hospital"
+  }
+
+  if doctor_name in doctors_to_hospitals:
+    hospital = doctors_to_hospitals[doctor_name]
+    st.write(f"The hospital for {doctor_name} is {hospital}")
   else:
-    st.write("Invalid Input")
+    st.write("Invalid Doctor Name")
 
 elif information == "3":
   st.write("List of Hospitals")
