@@ -11,8 +11,7 @@ import streamlit as st
 # Add a title
 st.title('Animated Loading Example')
 
-# Write some text
-st.write("Please wait while we load...")
+
 
 # Display loading spinner animation
 st.write("""
