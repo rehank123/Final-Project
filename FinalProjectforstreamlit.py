@@ -5,13 +5,13 @@ import streamlit as st
 
 
 
-
 import streamlit as st
 
 # Add a title
 st.title('Animated Loading Example')
 
-
+# Write some text
+st.write("Operation in progress. Please wait.")
 
 # Display loading spinner animation
 st.write("""
@@ -33,6 +33,7 @@ st.write("""
 }
 </style>
 """)
+
 
 
 
