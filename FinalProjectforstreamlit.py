@@ -6,25 +6,34 @@ import streamlit as st
 
 
 
-import time
+import streamlit as st
 
 # Add a title
 st.title('Animated Loading Example')
 
 # Write some text
-loading_text = st.empty()
-loading_text.text("Please wait while we load...")
+st.write("Please wait while we load...")
 
-# Define the animation
-animation = "|/-\\"
-idx = 0
+# Display loading spinner animation
+st.write("""
+<div class="loading-spinner"></div>
 
-# Simulate the loading animation
-for _ in range(20):  # Adjust the number of iterations as needed
-    loading_text.text(f"Loading... {animation[idx % len(animation)]}")
-    idx += 1
-    time.sleep(0.1)  # Adjust the delay time between frames as needed
+<style>
+.loading-spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+""")
 
 
 
