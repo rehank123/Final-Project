@@ -1,18 +1,18 @@
 import streamlit as st
 
-st.title("Welcome to Healthcare Chat Bot ")
+st.write("Welcome to Healthcare Chat Bot")
 
 st.write("Information List")
 st.write("""
-1. Find Medicines for Diseases
-2. Find Doctors for Specific Diseases
-3. Locate Hospitals with Specialized Doctors
+1. About Medicine for Disease
+2. About Doctor for Disease
+3. About Hospital for Doctor
 """)
 
-information = st.text_input("Please Enter a Number for detail you want to know about:")
+information = st.number_input("Please Enter a Number for the detail you want to know about:", min_value=1, max_value=3, step=1)
 
-if information == "1":
-    st.write("List of disease")
+if information == 1:
+    st.write("List of diseases")
     st.write("""
     1. Common Cold
     2. Influenza (Flu)
@@ -25,34 +25,19 @@ if information == "1":
     9. Urinary Tract Infection (UTI)
     10. Conjunctivitis (Pink Eye)
     """)
-
-    disease = st.text_input("Enter the number of your disease you want medicine for it:")
-
-    if disease == "1":
-        st.write("Recommended Medicine: Paracetamol")
-    elif disease == "2":
-        st.write("Recommended Medicine: Tylenol")
-    elif disease == "3":
-        st.write("Recommended Medicine: Ibuprofen")
-    elif disease == "4":
-        st.write("Recommended Medicine: Acetaminophen")
-    elif disease == "5":
-        st.write("Recommended Medicine: Aspirin")
-    elif disease == "6":
-        st.write("Recommended Medicine: Amoxicillin")
-    elif disease == "7":
-        st.write("Recommended Medicine: Fexofenadine")
-    elif disease == "8":
-        st.write("Recommended Medicine: Ciprofloxacin")
-    elif disease == "9":
-        st.write("Recommended Medicine: Zinc")
-    elif disease == "10":
-        st.write("Recommended Medicine: Diclofenac")
+    disease = st.number_input("Enter the number of your disease:", min_value=1, max_value=10, step=1)
+    if disease == 1:
+        st.write("Take Paracetamol")
+    elif disease == 2:
+        st.write("Take Tylenol")
+    elif disease == 3:
+        st.write("Take Ibuprofen")
+    # Add more conditions for other diseases
     else:
-        st.write("Your disease is not in the list")
+        st.write("Your disease is not in the list.")
 
-elif information == "2":
-    st.write("List of Doctors")
+elif information == 2:
+    st.write("List of doctors")
     st.write("""
     1. Dr. Saleem
     2. Dr. Abdullah
@@ -65,32 +50,16 @@ elif information == "2":
     9. Dr. Sultan
     10. Dr. Faizan
     """)
-    doctor = st.text_input("Enter the number of your Doctor you want to know about it:")
-
-    if doctor == "1":
-        st.write("Recommended Doctor: Dr. Saleem")
-    elif doctor == "2":
-        st.write("Recommended Doctor: Dr. Abdullah")
-    elif doctor == "3":
-        st.write("Recommended Doctor: Dr. Salman")
-    elif doctor == "4":
-        st.write("Recommended Doctor: Dr. Kaleem")
-    elif doctor == "5":
-        st.write("Recommended Doctor: Dr. Naimat")
-    elif doctor == "6":
-        st.write("Recommended Doctor: Dr. Imran")
-    elif doctor == "7":
-        st.write("Recommended Doctor: Dr. Kamran")
-    elif doctor == "8":
-        st.write("Recommended Doctor: Dr. Moin")
-    elif doctor == "9":
-        st.write("Recommended Doctor: Dr. Sultan")
-    elif doctor == "10":
-        st.write("Recommended Doctor: Dr. Faizan")
+    doctor = st.number_input("Enter the number of your doctor:", min_value=1, max_value=10, step=1)
+    if doctor == 1:
+        st.write("Your doctor is Dr. Saleem.")
+    elif doctor == 2:
+        st.write("Your doctor is Dr. Abdullah.")
+    # Add more conditions for other doctors
     else:
-        st.write("Invalid Input")
+        st.write("Invalid Input.")
 
-elif information == "3":
+elif information == 3:
     st.write("List of Hospitals")
     st.write("""
     1. Muslim Care Hospital
@@ -104,28 +73,14 @@ elif information == "3":
     9. Muslim Relief Hospital
     10. Ummu Hospital
     """)
-    hospital = st.text_input("Enter the number of your Hospital:")
-
-    if hospital == "1":
-        st.write("Muslim Care Hospital")
-    elif hospital == "2":
-        st.write("Islamic Health Center")
-    elif hospital == "3":
-        st.write("Al-Muslim Medical Center")
-    elif hospital == "4":
-        st.write("Nur Muslim Hospital")
-    elif hospital == "5":
-        st.write("Muslim Community Hospital")
-    elif hospital == "6":
-        st.write("Iman Muslim Hospital")
-    elif hospital == "7":
-        st.write("Muslim Welfare Hospital")
-    elif hospital == "8":
-        st.write("Safa Muslim Medical Center")
-    elif hospital == "9":
-        st.write("Muslim Relief Hospital")
-    elif hospital == "10":
-        st.write("Ummu Hospital")
+    hospital = st.number_input("Enter the number of your hospital:", min_value=1, max_value=10, step=1)
+    if hospital == 1:
+        st.write("Your hospital is Muslim Care Hospital.")
+    elif hospital == 2:
+        st.write("Your hospital is Islamic Health Center.")
+    # Add more conditions for other hospitals
+    else:
+        st.write("Invalid Input.")
 
 else:
-    st.write("Invalid Input")
+    st.write("Invalid Input. Please try again.")
