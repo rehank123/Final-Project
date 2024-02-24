@@ -6,19 +6,24 @@ import streamlit as st
 
 
 
-import streamlit as st
+import time
 
 # Add a title
 st.title('Animated Loading Example')
 
 # Write some text
-st.write("Please wait while we load...")
+loading_text = st.empty()
+loading_text.text("Please wait while we load...")
 
-# Display animated loading GIF
-loading_gif_path = "loading.gif"  # Change this to the path of your GIF file
-st.image(loading_gif_path, use_column_width=True)
+# Define the animation
+animation = "|/-\\"
+idx = 0
 
-
+# Simulate the loading animation
+for _ in range(20):  # Adjust the number of iterations as needed
+    loading_text.text(f"Loading... {animation[idx % len(animation)]}")
+    idx += 1
+    time.sleep(0.1)  # Adjust the delay time between frames as needed
 
 
 
