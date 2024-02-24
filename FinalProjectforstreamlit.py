@@ -11,7 +11,7 @@ def main():
         3. About Hospital for Doctor
         """)
         
-        information = st.text_input("Please Enter a Number for detail you want to know about:")
+        information = st.text_area("Please Enter a Number for detail you want to know about:")
         
         if information == "1":
             st.write("List of diseases")
@@ -67,7 +67,7 @@ def main():
              9. Urinary Tract Infection (UTI)
              10. Conjunctivitis (Pink Eye)
              """)
-            doctor = st.text_input("Enter the number of your Doctor:")
+            doctor = st.text_area("Enter the number of your Doctor:")
             
             if doctor == "1":
                 st.write("Dr. Saleem")
@@ -106,7 +106,7 @@ def main():
             9. Dr. Sultan
             10.Dr. Faizan
             """)
-            doctor = st.text_input("Enter the number of your Doctor:")
+            doctor = st.text_area("Enter the number of your Doctor:")
             
             if doctor == "1":
                 st.write("Muslim Care Hospital")
@@ -131,9 +131,8 @@ def main():
         else:
             st.write("Invalid Input")
             
-        repeat = st.text_input("Do you want to inquire about another topic? (yes/no)")
-        if repeat.lower() == "no":
+        repeat = st.radio("Do you want to inquire about another topic?", ("Yes", "No"))
+        if repeat == "No":
             break
 
-if __name__ == "__main__":
-    main()
+if __name__
