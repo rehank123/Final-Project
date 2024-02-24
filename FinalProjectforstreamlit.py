@@ -1,15 +1,6 @@
 import streamlit as st
 
-# Add title and introduction
-st.title("Welcome to Healthcare Chat Bot")
-st.write("Information List")
-st.write("""
-1. About Medicine for Disease
-2. About Doctor for Disease
-3. About Hospital for Doctor
-""")
-
-# Add image
+# Add custom CSS for background image
 st.markdown(
     """
     <style>
@@ -20,7 +11,16 @@ st.markdown(
     </style>
     """,
     unsafe_allow_html=True
-   
+)
+
+# Add title and introduction
+st.title("Welcome to Healthcare Chat Bot")
+st.write("Information List")
+st.write("""
+1. About Medicine for Disease
+2. About Doctor for Disease
+3. About Hospital for Doctor
+""")
 
 # Collect user input
 information = st.text_input("Please Enter a Number for detail you want to know about:")
