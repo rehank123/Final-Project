@@ -1,11 +1,6 @@
 import streamlit as st
 
-# Welcome note
-st.write("""
-# Welcome to Healthcare Chat Bot
-This chat bot provides information about medicine for diseases, doctors for diseases, and hospitals for doctors.
-""")
-st.title("Welcome to Healthcare Chat Bot")
+st.title("Welcome to Healthcare Chatbot")
 st.write("Information List")
 st.write("""
 1. About Medicine for Disease
