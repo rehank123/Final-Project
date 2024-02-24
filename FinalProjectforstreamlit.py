@@ -5,7 +5,7 @@ import streamlit as st
 
 
 
-import streamlit as st
+
 
 # Add a title
 st.title('Animated Streamlit Example')
