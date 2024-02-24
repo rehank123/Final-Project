@@ -5,29 +5,22 @@ import streamlit as st
 
 
 
+import streamlit as st
+
 # Add a title
 st.title('Animated Streamlit Example')
 
 # Write some text
-st.write("Here's a simple animation using HTML and CSS:")
+st.write("Here's a simple animation using st.anime():")
 
-# Write HTML with CSS animation
-st.write("""
-<div style="width: 100px; height: 100px; background-color: red;
-            position: relative; animation-name: example; 
-            animation-duration: 4s; animation-iteration-count: infinite;">
-</div>
+# Animate text
+with st.anime():
+    st.write("Animating text...")
 
-<style>
-@keyframes example {
-  0%   {background-color:red; left:0px; top:0px;}
-  25%  {background-color:yellow; left:200px; top:0px;}
-  50%  {background-color:blue; left:200px; top:200px;}
-  75%  {background-color:green; left:0px; top:200px;}
-  100% {background-color:red; left:0px; top:0px;}
-}
-</style>
-""")
+# Animate image
+with st.anime():
+    st.image("https://media.giphy.com/media/xT0xezQGU5xCDJuCPe/giphy.gif", width=200)
+
 
 
 
