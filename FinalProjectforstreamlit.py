@@ -3,24 +3,6 @@ import streamlit as st
 
 
 
-def main():
-    st.title("Birdie Chatbot 🐦")
-
-    st.sidebar.subheader("Navigation")
-    page = st.sidebar.radio("Go to", ["Home", "About"])
-
-    if page == "Home":
-        st.image("bird_chatbot.png", use_column_width=True)
-        st.write("Welcome to Birdie Chatbot! How can I assist you today?")
-        user_input = st.text_input("You:", "")
-        if st.button("Send"):
-            st.write("Birdie: Your message has been received:", user_input)
-    elif page == "About":
-        st.write("About Birdie Chatbot: This is a friendly chatbot designed to help you with your healthcare queries.")
-
-if __name__ == "__main__":
-    main()
-
 
 
 
@@ -54,11 +36,7 @@ st.markdown("""
 <div class="medical-item" style="top: 150px; left: -100px; font-size: 20px;">🩺</div>
 <div class="medical-item" style="top: 200px; left: -100px; font-size: 20px;">🌡️</div>
 <div class="medical-item" style="top: 250px; left: -100px; font-size: 20px;">🧴</div>
-<div class="medical-item" style="top: 300px; left: -100px; font-size: 20px;">💊</div>
-<div class="medical-item" style="top: 350px; left: -100px; font-size: 20px;">💉</div>
-<div class="medical-item" style="top: 400px; left: -100px; font-size: 20px;">🩺</div>
-<div class="medical-item" style="top: 450px; left: -100px; font-size: 20px;">🌡️</div>
-<div class="medical-item" style="top: 500px; left: -100px; font-size: 20px;">🧴</div>
+
 </div>
 """, unsafe_allow_html=True)
 
