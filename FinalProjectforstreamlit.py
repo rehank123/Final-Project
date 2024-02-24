@@ -37,7 +37,7 @@ if information == "1":
   elif disease == "4":
     st.write("Recommended medicine: Loratadine")
   elif disease == "5":
-    st.write("Recommended medicine: Azithromycin")
+    st.write("Recommended medicine: Paclitaxel")
   elif disease == "6":
     st.write("Recommended medicine: Amoxicillin")
   elif disease == "7":
