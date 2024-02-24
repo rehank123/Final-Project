@@ -132,7 +132,7 @@ def main():
             st.write("Invalid Input")
             
         repeat = st.text_input("Do you want to inquire about another topic? (yes/no)")
-        if repeat.lower() != "yes":
+        if repeat.lower() == "no":
             break
 
 if __name__ == "__main__":
