@@ -10,7 +10,17 @@ st.write("""
 """)
 
 # Add image
-image = st.image("https://b2461891.smushcdn.com/2461891/wp-content/uploads/2022/09/cover.png?lossy=1&strip=1&webp=1", use_column_width=True)
+st.markdown(
+    """
+    <style>
+    body {
+        background-image: url("https://b2461891.smushcdn.com/2461891/wp-content/uploads/2022/09/cover.png?lossy=1&strip=1&webp=1");
+        background-size: cover;
+    }
+    </style>
+    """
+    unsafe_allow_html=True,
+   
 
 # Collect user input
 information = st.text_input("Please Enter a Number for detail you want to know about:")
