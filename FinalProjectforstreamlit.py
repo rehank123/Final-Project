@@ -6,21 +6,28 @@ import streamlit as st
 
 
 
+import streamlit as st
+import time
 
 # Add a title
 st.title('Animated Streamlit Example')
 
 # Write some text
-st.write("Here's a simple animation using st.anime():")
+st.write("Here's a simple animation using a sequence of images:")
 
-# Animate text
-with st.anime():
-    st.write("Animating text...")
+# Define a list of image URLs (replace these with your own images)
+image_urls = [
+    "https://example.com/frame1.png",
+    "https://example.com/frame2.png",
+    "https://example.com/frame3.png",
+    # Add more image URLs for additional frames
+]
 
-# Animate image
-with st.anime():
-    st.image("https://media.giphy.com/media/xT0xezQGU5xCDJuCPe/giphy.gif", width=200)
-
+# Display images as frames of animation
+for image_url in image_urls:
+    st.image(image_url, use_column_width=True)
+    # Adjust the delay time between frames (in seconds) as needed
+    time.sleep(0.5)
 
 
 
