@@ -1,8 +1,8 @@
 import streamlit as st
 
 def print_welcome_message():
-    st.write("# Welcome to Healthcare Chat Bot")
-    st.write("## Information List")
+    st.write("Welcome to Healthcare Chat Bot")
+    st.write("Information List")
     st.write("""
     1. About Medicine for Disease
     2. About Doctor for Disease
@@ -10,80 +10,134 @@ def print_welcome_message():
     """)
 
 def get_user_input():
-    return st.number_input("Please Enter a Number for the detail you want to know about:", min_value=1, max_value=3, step=1)
+    return st.text_input("Please Enter a Number for the detail you want to know about:")
 
 def handle_medicine_info():
-    st.write("## List of diseases")
-    diseases = {
-        1: "Common Cold",
-        2: "Influenza (Flu)",
-        3: "Headache",
-        4: "Allergies",
-        5: "Bronchitis",
-        6: "Pneumonia",
-        7: "Stomach Flu (Gastroenteritis)",
-        8: "Sinusitis",
-        9: "Urinary Tract Infection (UTI)",
-        10: "Conjunctivitis (Pink Eye)"
-    }
-    disease = st.number_input("Enter the number of your disease:", min_value=1, max_value=10, step=1)
-    medicine = diseases.get(int(disease))
-    if medicine:
-        st.write(f"For {medicine}, take appropriate medicine.")
+    st.write("List of diseases")
+    st.write("""
+    1. Common Cold
+    2. Influenza (Flu)
+    3. Headache
+    4. Allergies
+    5. Bronchitis
+    6. Pneumonia
+    7. Stomach Flu (Gastroenteritis)
+    8. Sinusitis
+    9. Urinary Tract Infection (UTI)
+    10. Conjunctivitis (Pink Eye)
+    """)
+
+    disease = st.text_input("Enter the number of your disease:")
+    if disease == "1":
+        st.write("Take Paracetamol")
+    elif disease == "2":
+        st.write("Take Tylenol")
+    elif disease == "3":
+        st.write("Take Ibuprofen")
+    elif disease == "4":
+        st.write("Take Acetaminophen")
+    elif disease == "5":
+        st.write("Take Aspirin")
+    elif disease == "6":
+        st.write("Take Amoxicillin")
+    elif disease == "7":
+        st.write("Take Fexofenadine")
+    elif disease == "8":
+        st.write("Take Ciprofloxacin")
+    elif disease == "9":
+        st.write("Take Zinc")
+    elif disease == "10":
+        st.write("Take Diclofenac")
     else:
-        st.write("Your disease is not in the list.")
+        st.write("Your disease is not in the list")
 
 def handle_doctor_info():
-    st.write("## List of doctors")
-    doctors = {
-        1: "Dr. Saleem",
-        2: "Dr. Abdullah",
-        3: "Dr. Salman",
-        4: "Dr. Kaleem",
-        5: "Dr. Naimat",
-        6: "Dr. Imran",
-        7: "Dr. Kamran",
-        8: "Dr. Moin",
-        9: "Dr. Sultan",
-        10: "Dr. Faizan"
-    }
-    doctor = st.number_input("Enter the number of your doctor:", min_value=1, max_value=10, step=1)
-    doctor_name = doctors.get(int(doctor))
-    if doctor_name:
-        st.write(f"Your doctor is {doctor_name}.")
+    st.write("List of doctors")
+    st.write("""
+    1. Dr. Saleem
+    2. Dr. Abdullah
+    3. Dr. Salman
+    4. Dr. Kaleem
+    5. Dr. Naimat
+    6. Dr. Imran
+    7. Dr. Kamran
+    8. Dr. Moin
+    9. Dr. Sultan
+    10. Dr. Faizan
+    """)
+
+    doctor = st.text_input("Enter the number of your doctor:")
+    if doctor == "1":
+        st.write("Dr. Saleem")
+    elif doctor == "2":
+        st.write("Dr. Abdullah")
+    elif doctor == "3":
+        st.write("Dr. Salman")
+    elif doctor == "4":
+        st.write("Dr. Kaleem")
+    elif doctor == "5":
+        st.write("Dr. Naimat")
+    elif doctor == "6":
+        st.write("Dr. Imran")
+    elif doctor == "7":
+        st.write("Dr. Kamran")
+    elif doctor == "8":
+        st.write("Dr. Moin")
+    elif doctor == "9":
+        st.write("Dr. Sultan")
+    elif doctor == "10":
+        st.write("Dr. Faizan")
     else:
-        st.write("Invalid Input.")
+        st.write("Invalid Input")
 
 def handle_hospital_info():
-    st.write("## List of Hospitals")
-    hospitals = {
-        1: "Muslim Care Hospital",
-        2: "Islamic Health Center",
-        3: "Al-Muslim Medical Center",
-        4: "Nur Muslim Hospital",
-        5: "Muslim Community Hospital",
-        6: "Iman Muslim Hospital",
-        7: "Muslim Welfare Hospital",
-        8: "Safa Muslim Medical Center",
-        9: "Muslim Relief Hospital",
-        10: "Ummu Hospital"
-    }
-    hospital = st.number_input("Enter the number of your hospital:", min_value=1, max_value=10, step=1)
-    hospital_name = hospitals.get(int(hospital))
-    if hospital_name:
-        st.write(f"Your hospital is {hospital_name}.")
+    st.write("List of Hospitals")
+    st.write("""
+    1. Muslim Care Hospital
+    2. Islamic Health Center
+    3. Al-Muslim Medical Center
+    4. Nur Muslim Hospital
+    5. Muslim Community Hospital
+    6. Iman Muslim Hospital
+    7. Muslim Welfare Hospital
+    8. Safa Muslim Medical Center
+    9. Muslim Relief Hospital
+    10. Ummu Hospital
+    """)
+
+    hospital = st.text_input("Enter the number of your hospital:")
+    if hospital == "1":
+        st.write("Muslim Care Hospital")
+    elif hospital == "2":
+        st.write("Islamic Health Center")
+    elif hospital == "3":
+        st.write("Al-Muslim Medical Center")
+    elif hospital == "4":
+        st.write("Nur Muslim Hospital")
+    elif hospital == "5":
+        st.write("Muslim Community Hospital")
+    elif hospital == "6":
+        st.write("Iman Muslim Hospital")
+    elif hospital == "7":
+        st.write("Muslim Welfare Hospital")
+    elif hospital == "8":
+        st.write("Safa Muslim Medical Center")
+    elif hospital == "9":
+        st.write("Muslim Relief Hospital")
+    elif hospital == "10":
+        st.write("Ummu Hospital")
     else:
-        st.write("Invalid Input.")
+        st.write("Invalid Input")
 
 def main():
     print_welcome_message()
     information = get_user_input()
 
-    if information == 1:
+    if information == "1":
         handle_medicine_info()
-    elif information == 2:
+    elif information == "2":
         handle_doctor_info()
-    elif information == 3:
+    elif information == "3":
         handle_hospital_info()
     else:
         st.write("Invalid Input. Please try again.")
