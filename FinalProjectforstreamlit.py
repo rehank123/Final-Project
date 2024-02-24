@@ -18,8 +18,8 @@ st.markdown(
         background-size: cover;
     }
     </style>
-    """
-    unsafe_allow_html=True,
+    """,
+    unsafe_allow_html=True
    
 
 # Collect user input
