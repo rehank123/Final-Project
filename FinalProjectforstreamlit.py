@@ -26,7 +26,7 @@ if information == "1":
     10. Conjunctivitis (Pink Eye)
     """)
 
-    disease = st.text_input("Enter the number of your disease:")
+    disease = st.text_input("Enter the number of your disease you want medicine for it:")
 
     if disease == "1":
         st.write("Recommended Medicine: Paracetamol")
@@ -65,7 +65,7 @@ elif information == "2":
     9. Dr. Sultan
     10. Dr. Faizan
     """)
-    doctor = st.text_input("Enter the number of your Doctor:")
+    doctor = st.text_input("Enter the number of your Doctor you want to know about it:")
 
     if doctor == "1":
         st.write("Recommended Doctor: Dr. Saleem")
