@@ -5,27 +5,31 @@ import streamlit as st
 
 
 
+# Add a title
+st.title('Animated Streamlit Example')
+
+# Write some text
+st.write("Here's a simple animation using HTML and CSS:")
+
+# Write HTML with CSS animation
+st.write("""
+<div style="width: 100px; height: 100px; background-color: red;
+            position: relative; animation-name: example; 
+            animation-duration: 4s; animation-iteration-count: infinite;">
+</div>
+
+<style>
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+</style>
+""")
 
 
-
-# Create a form for adding a new record
-st.header("Add New Record")
-
-# Get user inputs
-name = st.text_input("Name:")
-age = st.number_input("Age:")
-email = st.text_input("Email:")
-
-# Display the entered details
-st.write("Entered Details:")
-st.write(f"Name: {name}")
-st.write(f"Age: {age}")
-st.write(f"Email: {email}")
-
-# Add a button to save the record
-if st.button("Save Record"):
-    # Here you would typically save the record to a database or perform any other necessary actions
-    st.write("Record saved successfully!")
 
 
 
