@@ -26,7 +26,7 @@ if information == "1":
   10. Conjunctivitis (Pink Eye)
   """)
   
-  disease = st.text_input("Enter the number of your disease:")
+  disease = st.text_input("Enter the number of your Diseases for Medicine:")
 
   if disease == "1":  
     st.write("Recommended medicine: Acetaminophen")
@@ -65,7 +65,7 @@ elif information == "2":
    9.  Urinary Tract Infection (UTI)
    10. Conjunctivitis (Pink Eye)
    """)
-  doctor = st.text_input("Enter the number of your Doctor:")
+  doctor = st.text_input("Enter the number of your Diseases for Doctor:")
 
   if doctor == "1":
     st.write("Dr. Saleem")
@@ -104,7 +104,7 @@ elif information == "3":
   9.  Dr. Sultan
   10. Dr. Faizan
   """)
-  doctor = st.text_input("Enter the number of your Doctor:")
+  doctor = st.text_input("Enter the number of your Doctor for Hospital:")
 
   if doctor == "1":
     st.write("Muslim Care Hospital")
