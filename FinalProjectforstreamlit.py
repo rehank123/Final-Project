@@ -6,23 +6,20 @@ import streamlit as st
 
 
 
+
 import time
+st.balloons()
+st.snow()
+progress_text = "Operation in progress. Please wait."
+my_bar = st.progress(0, text=progress_text)
 
-# Add a title
-st.title('Animated Loading Example')
+for percent_complete in range(100):
+    time.sleep(0.01)
+    my_bar.progress(percent_complete + 1, text=progress_text)
+time.sleep(1)
+my_bar.empty()
 
-# Write some text
-st.write("Operation in progress. Please wait.")
-
-# Display loading spinner animation
-with st.spinner('Loading...'):
-    # Simulate operation
-    time.sleep(5)  # Simulating a 5-second operation
-
-# Once the operation is complete, display a message
-st.success('Operation completed successfully!')
-
-
+st.button("Rerun")
 
 
 
