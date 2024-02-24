@@ -1,18 +1,30 @@
 import streamlit as st
 
-import time
-st.birds()
-st.snow()
-progress_text = "Operation in progress. Please wait."
-my_bar = st.progress(0, text=progress_text)
+st.title("Birds Flying Animation")
 
-for percent_complete in range(100):
-    time.sleep(0.01)
-    my_bar.progress(percent_complete + 1, text=progress_text)
-time.sleep(1)
-my_bar.empty()
+# Use st.markdown to embed custom HTML/CSS/JavaScript
+st.markdown("""
+<style>
+    .bird {
+        position: absolute;
+        animation: fly linear infinite;
+    }
 
-st.button("Rerun")
+    @keyframes fly {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(100%); }
+    }
+</style>
+
+<div class="bird" style="top: 50px; left: -100px; font-size: 30px;">🐦</div>
+<div class="bird" style="top: 150px; left: -100px; font-size: 40px;">🕊️</div>
+<div class="bird" style="top: 250px; left: -100px; font-size: 50px;">🦅</div>
+<div class="bird" style="top: 350px; left: -100px; font-size: 60px;">🦢</div>
+<div class="bird" style="top: 450px; left: -100px; font-size: 70px;">🦜</div>
+""", unsafe_allow_html=True)
+
+
+
 st.title("Welcome to Healthcare Chatbot")
 st.write("Information List")
 st.write("""
