@@ -11,7 +11,7 @@ def main():
         3. About Hospital for Doctor
         """)
         
-        information = st.text_area("Please Enter a Number for detail you want to know about:")
+        information = st.text_input("Please Enter a Number for detail you want to know about:")
         
         if information == "1":
             st.write("List of diseases")
@@ -67,7 +67,7 @@ def main():
              9. Urinary Tract Infection (UTI)
              10. Conjunctivitis (Pink Eye)
              """)
-            doctor = st.text_area("Enter the number of your Doctor:")
+            doctor = st.text_input("Enter the number of your Doctor:")
             
             if doctor == "1":
                 st.write("Dr. Saleem")
@@ -106,27 +106,27 @@ def main():
             9. Dr. Sultan
             10.Dr. Faizan
             """)
-            doctor = st.text_area("Enter the number of your Doctor:")
+            hospital = st.text_input("Enter the number of your Hospital:")
             
-            if doctor == "1":
+            if hospital == "1":
                 st.write("Muslim Care Hospital")
-            elif doctor == "2":
+            elif hospital == "2":
                 st.write("Islamic Health Center")
-            elif doctor == "3":
+            elif hospital == "3":
                 st.write("Al-Muslim Medical Center")
-            elif doctor == "4":
+            elif hospital == "4":
                 st.write("Nur Muslim Hospital")
-            elif doctor == "5":
+            elif hospital == "5":
                 st.write("Muslim Community Hospital")
-            elif doctor == "6":
+            elif hospital == "6":
                 st.write("Iman Muslim Hospital")
-            elif doctor == "7":
+            elif hospital == "7":
                 st.write("Muslim Welfare Hospital")
-            elif doctor == "8":
+            elif hospital == "8":
                 st.write("Safa Muslim Medical Center")
-            elif doctor == "9":
+            elif hospital == "9":
                 st.write("Muslim Relief Hospital")
-            elif doctor == "10":
+            elif hospital == "10":
                 st.write("Ummu Hospital")
         else:
             st.write("Invalid Input")
