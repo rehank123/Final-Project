@@ -1,28 +1,31 @@
 import streamlit as st
 
-st.title("Birds Flying Animation")
+import streamlit as st
+
+st.title("Medical Items Animation")
 
 # Use st.markdown to embed custom HTML/CSS/JavaScript
 st.markdown("""
 <style>
-    .bird {
+    .medical-item {
         position: absolute;
-        animation: fly linear infinite;
+        animation: move linear infinite;
     }
 
-    @keyframes fly {
-        0% { transform: translateX(0%); }
-        100% { transform: translateX(100%); }
+    @keyframes move {
+        0% { transform: translateX(0%) translateY(0%); }
+        50% { transform: translateX(50%) translateY(50%); }
+        100% { transform: translateX(100%) translateY(0%); }
     }
 </style>
 
-<div class="bird" style="top: 50px; left: -100px; font-size: 30px;">🐦</div>
-<div class="bird" style="top: 150px; left: -100px; font-size: 40px;">🕊️</div>
-<div class="bird" style="top: 250px; left: -100px; font-size: 50px;">🦅</div>
-<div class="bird" style="top: 350px; left: -100px; font-size: 60px;">🦢</div>
-<div class="bird" style="top: 450px; left: -100px; font-size: 70px;">🦜</div>
+<div class="medical-item" style="top: 50px; left: -100px; font-size: 30px;">💊</div>
+<div class="medical-item" style="top: 150px; left: -100px; font-size: 40px;">💉</div>
+<div class="medical-item" style="top: 250px; left: -100px; font-size: 50px;">🩺</div>
+<div class="medical-item" style="top: 350px; left: -100px; font-size: 60px;">🌡️</div>
+<div class="medical-item" style="top: 450px; left: -100px; font-size: 70px;">🧴</div>
+</div>
 """, unsafe_allow_html=True)
-
 
 
 st.title("Welcome to Healthcare Chatbot")
