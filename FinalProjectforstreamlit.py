@@ -2,11 +2,11 @@ import streamlit as st
 
 st.title("Welcome to Healthcare Chat Bot ")
 
-st.title("Information List")
+st.write("Information List")
 st.write("""
-1. About Medicine for Disease
-2. About Doctor for Disease
-3. About Hospital for Doctor
+1. Find Medicines for Diseases
+2. Find Doctors for Specific Diseases
+3. Locate Hospitals with Specialized Doctors
 """)
 
 information = st.text_input("Please Enter a Number for detail you want to know about:")
