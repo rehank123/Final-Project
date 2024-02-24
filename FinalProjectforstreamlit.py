@@ -1,5 +1,16 @@
 import streamlit as st
 
+
+
+
+
+
+
+
+
+
+
+
 import streamlit as st
 
 st.title("Medical Items Animation")
@@ -19,13 +30,31 @@ st.markdown("""
     }
 </style>
 
-<div class="medical-item" style="top: 50px; left: -100px; font-size: 30px;">💊</div>
-<div class="medical-item" style="top: 150px; left: -100px; font-size: 40px;">💉</div>
-<div class="medical-item" style="top: 250px; left: -100px; font-size: 50px;">🩺</div>
-<div class="medical-item" style="top: 350px; left: -100px; font-size: 60px;">🌡️</div>
-<div class="medical-item" style="top: 450px; left: -100px; font-size: 70px;">🧴</div>
+<div class="medical-item" style="top: 50px; left: -100px; font-size: 20px;">💊</div>
+<div class="medical-item" style="top: 100px; left: -100px; font-size: 20px;">💉</div>
+<div class="medical-item" style="top: 150px; left: -100px; font-size: 20px;">🩺</div>
+<div class="medical-item" style="top: 200px; left: -100px; font-size: 20px;">🌡️</div>
+<div class="medical-item" style="top: 250px; left: -100px; font-size: 20px;">🧴</div>
+<div class="medical-item" style="top: 300px; left: -100px; font-size: 20px;">💊</div>
+<div class="medical-item" style="top: 350px; left: -100px; font-size: 20px;">💉</div>
+<div class="medical-item" style="top: 400px; left: -100px; font-size: 20px;">🩺</div>
+<div class="medical-item" style="top: 450px; left: -100px; font-size: 20px;">🌡️</div>
+<div class="medical-item" style="top: 500px; left: -100px; font-size: 20px;">🧴</div>
 </div>
 """, unsafe_allow_html=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 st.title("Welcome to Healthcare Chatbot")
