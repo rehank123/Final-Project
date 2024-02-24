@@ -1,18 +1,18 @@
 import streamlit as st
 
-st.title("Welcome to Healthcare Chat Bot ")
+st.write("Welcome to the Healthcare Chat Bot")
 
 st.write("Information List")
 st.write("""
-1. Find Medicines for Diseases
+1. Learn about Medicines for Diseases
 2. Find Doctors for Specific Diseases
 3. Locate Hospitals with Specialized Doctors
 """)
 
-information = st.text_input("Please Enter a Number for detail you want to know about:")
+information = st.text_input("Please Enter the number to get details:")
 
 if information == "1":
-    st.write("List of disease")
+    st.write("List of Diseases:")
     st.write("""
     1. Common Cold
     2. Influenza (Flu)
@@ -26,46 +26,46 @@ if information == "1":
     10. Conjunctivitis (Pink Eye)
     """)
 
-    disease = st.text_input("Enter the number of your disease:")
+    disease = st.text_input("Enter the number corresponding to your disease:")
 
     if disease == "1":
-        st.write("Take Paracetamol")
+        st.write("Recommended Medicine: Paracetamol")
     elif disease == "2":
-        st.write("Take Tylenol")
+        st.write("Recommended Medicine: Tylenol")
     elif disease == "3":
-        st.write("Take Ibuprofen")
+        st.write("Recommended Medicine: Ibuprofen")
     elif disease == "4":
-        st.write("Take Acetaminophen")
+        st.write("Recommended Medicine: Acetaminophen")
     elif disease == "5":
-        st.write("Take Aspirin")
+        st.write("Recommended Medicine: Aspirin")
     elif disease == "6":
-        st.write("Take Amoxicillin")
+        st.write("Recommended Medicine: Amoxicillin")
     elif disease == "7":
-        st.write("Take Fexofenadine")
+        st.write("Recommended Medicine: Fexofenadine")
     elif disease == "8":
-        st.write("Take Ciprofloxacin")
+        st.write("Recommended Medicine: Ciprofloxacin")
     elif disease == "9":
-        st.write("Take Zinc")
+        st.write("Recommended Medicine: Zinc")
     elif disease == "10":
-        st.write("Take Diclofenac")
+        st.write("Recommended Medicine: Diclofenac")
     else:
-        st.write("Your disease is not in the list")
+        st.write("The entered disease is not in the list")
 
 elif information == "2":
-    st.write("List of Doctors")
+    st.write("List of Specialized Doctors:")
     st.write("""
-    1. Dr. Saleem
-    2. Dr. Abdullah
-    3. Dr. Salman
-    4. Dr. Kaleem
-    5. Dr. Naimat
-    6. Dr. Imran
-    7. Dr. Kamran
-    8. Dr. Moin
-    9. Dr. Sultan
-    10. Dr. Faizan
+    1. Cardiologist
+    2. Dermatologist
+    3. Gastroenterologist
+    4. Neurologist
+    5. Ophthalmologist
+    6. Pediatrician
+    7. Psychiatrist
+    8. Urologist
+    9. Psychologist
+    10. Otorhinolaryngologist
     """)
-    doctor = st.text_input("Enter the number of your Doctor:")
+    doctor = st.text_input("Enter the number corresponding to the doctor you're looking for:")
 
     if doctor == "1":
         st.write("Dr. Saleem")
@@ -91,7 +91,7 @@ elif information == "2":
         st.write("Invalid Input")
 
 elif information == "3":
-    st.write("List of Hospitals")
+    st.write("List of Hospitals with Specialized Doctors:")
     st.write("""
     1. Muslim Care Hospital
     2. Islamic Health Center
@@ -104,7 +104,7 @@ elif information == "3":
     9. Muslim Relief Hospital
     10. Ummu Hospital
     """)
-    hospital = st.text_input("Enter the number of your Hospital:")
+    hospital = st.text_input("Enter the number corresponding to the hospital you're looking for:")
 
     if hospital == "1":
         st.write("Muslim Care Hospital")
@@ -126,6 +126,5 @@ elif information == "3":
         st.write("Muslim Relief Hospital")
     elif hospital == "10":
         st.write("Ummu Hospital")
-
-else:
-    st.write("Invalid Input")
+    else:
+        st.write("Invalid Input")
