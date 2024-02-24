@@ -29,25 +29,25 @@ if information == "1":
     disease = st.text_input("Enter the number of your disease:")
 
     if disease == "1":
-        st.write("Take Paracetamol")
+        st.write("Recommended Medicine: Paracetamol")
     elif disease == "2":
-        st.write("Take Tylenol")
+        st.write("Recommended Medicine: Tylenol")
     elif disease == "3":
-        st.write("Take Ibuprofen")
+        st.write("Recommended Medicine: Ibuprofen")
     elif disease == "4":
-        st.write("Take Acetaminophen")
+        st.write("Recommended Medicine: Acetaminophen")
     elif disease == "5":
-        st.write("Take Aspirin")
+        st.write("Recommended Medicine: Aspirin")
     elif disease == "6":
-        st.write("Take Amoxicillin")
+        st.write("Recommended Medicine: Amoxicillin")
     elif disease == "7":
-        st.write("Take Fexofenadine")
+        st.write("Recommended Medicine: Fexofenadine")
     elif disease == "8":
-        st.write("Take Ciprofloxacin")
+        st.write("Recommended Medicine: Ciprofloxacin")
     elif disease == "9":
-        st.write("Take Zinc")
+        st.write("Recommended Medicine: Zinc")
     elif disease == "10":
-        st.write("Take Diclofenac")
+        st.write("Recommended Medicine: Diclofenac")
     else:
         st.write("Your disease is not in the list")
 
@@ -68,25 +68,25 @@ elif information == "2":
     doctor = st.text_input("Enter the number of your Doctor:")
 
     if doctor == "1":
-        st.write("Dr. Saleem")
+        st.write("Recommended Doctor: Dr. Saleem")
     elif doctor == "2":
-        st.write("Dr. Abdullah")
+        st.write("Recommended Doctor: Dr. Abdullah")
     elif doctor == "3":
-        st.write("Dr. Salman")
+        st.write("Recommended Doctor: Dr. Salman")
     elif doctor == "4":
-        st.write("Dr. Kaleem")
+        st.write("Recommended Doctor: Dr. Kaleem")
     elif doctor == "5":
-        st.write("Dr. Naimat")
+        st.write("Recommended Doctor: Dr. Naimat")
     elif doctor == "6":
-        st.write("Dr. Imran")
+        st.write("Recommended Doctor: Dr. Imran")
     elif doctor == "7":
-        st.write("Dr. Kamran")
+        st.write("Recommended Doctor: Dr. Kamran")
     elif doctor == "8":
-        st.write("Dr. Moin")
+        st.write("Recommended Doctor: Dr. Moin")
     elif doctor == "9":
-        st.write("Dr. Sultan")
+        st.write("Recommended Doctor: Dr. Sultan")
     elif doctor == "10":
-        st.write("Dr. Faizan")
+        st.write("Recommended Doctor: Dr. Faizan")
     else:
         st.write("Invalid Input")
 
