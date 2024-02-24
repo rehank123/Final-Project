@@ -14,15 +14,15 @@ if information == "1":
   
   st.write("List of diseases")
   st.write("""
-  1. Common Cold
-  2. Influenza (Flu)
-  3. Headache
-  4. Allergies
-  5. Bronchitis
-  6. Pneumonia
-  7. Stomach Flu (Gastroenteritis)
-  8. Sinusitis
-  9. Urinary Tract Infection (UTI)
+  1.  Common Cold
+  2.  Influenza (Flu)
+  3.  Headache
+  4.  Allergies
+  5.  Bronchitis
+  6.  Pneumonia
+  7.  Stomach Flu (Gastroenteritis)
+  8.  Sinusitis
+  9.  Urinary Tract Infection (UTI)
   10. Conjunctivitis (Pink Eye)
   """)
   
@@ -54,15 +54,15 @@ if information == "1":
 elif information == "2":
   st.write("List of Diseases")
   st.write("""
-   1. Common Cold
-   2. Influenza (Flu)
-   3. Headache
-   4. Allergies
-   5. Bronchitis
-   6. Pneumonia
-   7. Stomach Flu (Gastroenteritis)
-   8. Sinusitis
-   9. Urinary Tract Infection (UTI)
+   1.  Common Cold
+   2.  Influenza (Flu)
+   3.  Headache
+   4.  Allergies
+   5.  Bronchitis
+   6.  Pneumonia
+   7.  Stomach Flu (Gastroenteritis)
+   8.  Sinusitis
+   9.  Urinary Tract Infection (UTI)
    10. Conjunctivitis (Pink Eye)
    """)
   doctor = st.text_input("Enter the number of your Doctor:")
@@ -93,16 +93,16 @@ elif information == "2":
 elif information == "3":
   st.write("List of Doctors")
   st.write("""
-  1. Dr. Saleem
-  2. Dr. Abdullah
-  3. Dr. Salman
-  4. Dr. Kaleem
-  5. Dr. Naimat
-  6. Dr. Imran
-  7. Dr. Kamran
-  8. Dr. Moin
-  9. Dr. Sultan
-  10.Dr. Faizan
+  1.  Dr. Saleem
+  2.  Dr. Abdullah
+  3.  Dr. Salman
+  4.  Dr. Kaleem
+  5.  Dr. Naimat
+  6.  Dr. Imran
+  7.  Dr. Kamran
+  8.  Dr. Moin
+  9.  Dr. Sultan
+  10. Dr. Faizan
   """)
   doctor = st.text_input("Enter the number of your Doctor:")
 
