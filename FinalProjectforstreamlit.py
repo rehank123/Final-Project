@@ -18,7 +18,7 @@ if information == "1":
   2.  Influenza (Flu)
   3.  Headache
   4.  Allergies
-  5.  Bronchitis
+  5.  Cancer
   6.  Pneumonia
   7.  Stomach Flu (Gastroenteritis)
   8.  Sinusitis
@@ -58,7 +58,7 @@ elif information == "2":
    2.  Influenza (Flu)
    3.  Headache
    4.  Allergies
-   5.  Bronchitis
+   5.  Cancer
    6.  Pneumonia
    7.  Stomach Flu (Gastroenteritis)
    8.  Sinusitis
@@ -107,25 +107,25 @@ elif information == "3":
   doctor = st.text_input("Enter the number of your Doctor for Hospital:")
 
   if doctor == "1":
-    st.write("Muslim Care Hospital")
+    st.write("Hospital Name: Zia Care Hospital")
   elif doctor == "2":
-    st.write("Islamic Health Center")
+    st.write("Hospital Name: Noor Health Center")
   elif doctor == "3":
-    st.write("Al-Muslim Medical Center")
+    st.write("Hospital Name: Al-Muslim Medical Center")
   elif doctor == "4":
-    st.write("Nur Muslim Hospital")
+    st.write("Hospital Name: Sultan Hospital")
   elif doctor == "5":
-    st.write("Muslim Community Hospital")
+    st.write("Hospital Name: Shaukat Khanum")
   elif doctor == "6":
-    st.write("Iman Muslim Hospital")
+    st.write("Hospital Name: Imam Clinic Hospital")
   elif doctor == "7":
-    st.write("Muslim Welfare Hospital")
+    st.write("Hospital Name: Muslim Welfare Hospital")
   elif doctor == "8":
-    st.write("Safa Muslim Medical Center")
+    st.write("Hospital Name: Safa  Medical Center")
   elif doctor == "9":
-    st.write("Muslim Relief Hospital")
+    st.write("Hospital Name: Al Khidmat Hospital")
   elif doctor == "10":
-    st.write("Ummu Hospital")
+    st.write("Hospital Name: Zain Hospital")
 
 else:
   st.write("Invalid Input")
