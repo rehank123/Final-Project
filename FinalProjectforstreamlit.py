@@ -1,8 +1,8 @@
 import streamlit as st
 
-st.write("Welcome to Healthcare Chat Bot ")
+st.title("Welcome to Healthcare Chat Bot ")
 
-st.write("Information List")
+st.title("Information List")
 st.write("""
 1. About Medicine for Disease
 2. About Doctor for Disease
