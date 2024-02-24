@@ -5,7 +5,8 @@ import streamlit as st
 
 
 
-import streamlit as st
+
+import time
 
 # Add a title
 st.title('Animated Loading Example')
@@ -14,25 +15,13 @@ st.title('Animated Loading Example')
 st.write("Operation in progress. Please wait.")
 
 # Display loading spinner animation
-st.write("""
-<div class="loading-spinner"></div>
+with st.spinner('Loading...'):
+    # Simulate operation
+    time.sleep(5)  # Simulating a 5-second operation
 
-<style>
-.loading-spinner {
-    border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-}
+# Once the operation is complete, display a message
+st.success('Operation completed successfully!')
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-</style>
-""")
 
 
 
