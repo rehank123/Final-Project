@@ -254,5 +254,4 @@ footer = """
 </div>
 """
 
-# Display the footer content
-st.markdown(footer)
+
