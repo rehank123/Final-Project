@@ -1,41 +1,35 @@
+import openai
 import streamlit as st
-
-# Define a function to respond to user inputs
-def respond_to_message(message):
-    if message == "1":
-        return "Please select a disease from the list provided."
-    elif message == "2":
-        return "Please select a disease to find the corresponding doctor."
-    elif message == "3":
-        return "Please select a doctor to find the corresponding hospital."
-    elif message in ["Common Cold", "Influenza (Flu)", "Headache", "Allergies", "Cancer", 
-                     "Pneumonia", "Stomach Flu (Gastroenteritis)", "Sinusitis", 
-                     "Urinary Tract Infection (UTI)", "Conjunctivitis (Pink Eye)"]:
-        return "Recommended medicine: Acetaminophen"  # You can modify these responses as needed
-    elif message in ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", 
-                     "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"]:
-        return "Hospital Name: Zia Care Hospital"  # You can modify these responses as needed
+ st.title('🤖💬 OpenAI Chatbot')
+    if 'OPENAI_API_KEY' in st.secrets:
+        st.success('API key already provided!', icon='✅')
+        openai.api_key = st.secrets['OPENAI_API_KEY']
     else:
-        return "Invalid input. Please try again."
+        openai.api_key = st.text_input('Enter OpenAI API token:', type='password')
+        if not (openai.api_key.startswith('sk-') and len(openai.api_key)==51):
+            st.warning('Please enter your credentials!', icon='⚠️')
+        else:
+            st.success('Proceed to entering your prompt message!', icon='👉')
 
-# Main Streamlit app code
-st.title("Healthcare Chatbot")
-st.write("Enter your message below:")
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
-conversation_history = st.text_area("Conversation History", value="", height=400, max_chars=None, key=None)
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
-if conversation_history:
-    # Split conversation history into individual messages
-    messages = conversation_history.split('\n')
-    latest_message = messages[-1]
-
-    # Respond to the latest message
-    bot_response = respond_to_message(latest_message)
-
-    # Append bot response to conversation history
-    conversation_history += f"\nBot: {bot_response}"
-
-    # Display updated conversation history
-    st.text_area("Conversation History", value=conversation_history, height=400, max_chars=None, key=None)
-
-# st.text_input("Please Enter a Number for detail you want to know about:")
+if prompt := st.chat_input("What is up?"):
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.markdown(prompt)
+    with st.chat_message("assistant"):
+        message_placeholder = st.empty()
+        full_response = ""
+        for response in openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": m["role"], "content": m["content"]}
+                      for m in st.session_state.messages], stream=True):
+            full_response += response.choices[0].delta.get("content", "")
+            message_placeholder.markdown(full_response + "▌")
+        message_placeholder.markdown(full_response)
+    st.session_state.messages.append({"role": "assistant", "content": full_response})
