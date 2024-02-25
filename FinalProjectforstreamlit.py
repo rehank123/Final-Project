@@ -45,7 +45,9 @@ if selected_tab == "Chatbot":
 
 elif selected_tab == "Contact":
     st.title("Contact")
-    st.write("banoqabil.")
+    st.write("Phone Number# 03118003480")
+    st.write("WhatsApp Number# 03118003480")
+    st.write("Facebook Id# Rehan Ullah")
 
 elif selected_tab == "About":
     st.title("About")
@@ -72,7 +74,7 @@ footer = """
 }
 </style>
 <div class="footer">
-<p>Developed with ❤ by the student of => <a style='display: block; text-align: center;' href="https://banoqabil.pk" target="_blank">Bano Qabil Alkhidmat </a></p>
+<p>Developed with ❤ by the student of  <a style='display: block; text-align: center;' href="https://banoqabil.pk" target="_blank">Bano Qabil Alkhidmat </a></p>
 </div>
 """
 # Display HTML footer
