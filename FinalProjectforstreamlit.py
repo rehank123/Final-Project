@@ -211,17 +211,13 @@ elif selected_tab == "Saved Data":
     if selected_doctor != "All":
         existing_data = existing_data[existing_data["Doctor"] == selected_doctor]
 
-    # Display filter box and graph side by side
-    col1, col2 = st.columns([3, 1])
+    # Display data table in the main column
+    st.write("Below is the list of all saved appointments:")
+    st.dataframe(existing_data)
 
-    with col1:
-        # Display line chart
-        st.title("Appointments Over Time")
-        st.line_chart(existing_data)
-
-    with col2:
-        st.dataframe(existing_data)
-
+    # Display line chart in the sidebar
+    st.sidebar.title("Appointments Over Time")
+    st.sidebar.line_chart(existing_data)
 
 
 
