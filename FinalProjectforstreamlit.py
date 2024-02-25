@@ -1,17 +1,8 @@
 import streamlit as st
 
-# Custom CSS to change background color to light gray
-custom_css = """
-<style>
-body {
-    background-color: #f0f2f6; /* Light gray */
-    color: black; /* Set text color to black for better readability */
-}
-</style>
-"""
-
-# Inject custom CSS
-st.markdown(custom_css, unsafe_allow_html=True)
+# Set the background color to gray
+st.set_page_config(layout="wide", page_title="Healthcare Chatbot", page_icon=":hospital:", 
+                   initial_sidebar_state="collapsed", background='#f0f2f6')
 
 st.title("Welcome to Healthcare Chatbot")
 st.write("Information List")
