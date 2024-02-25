@@ -209,16 +209,52 @@ elif selected_tab == "Take Appointment":
         else:
             print("Invalid option. Please try again.")
             print("")
-elif selected_tab== "Hospital Addresses" :
-      st.title("Hospital Addresses")
-      st.write("Content for the Hospital Addresses tab goes here.")
-  
-      st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Zia Hospital" , width=200)
-      st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Noor Health Care",width=200)
-      st.image("https://stock.adobe.com/images/emergeny-room/30021050", caption="Al-Muslim Medical Center",width=200)
-      st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Imam Health Care", width=200)
-      st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Shuqat Khanum", width=200)
-      st.image("https://stock.adobe.com/images/emergeny-room/30021050", caption="Al Khadmat", width=200)
+
+
+
+
+
+
+
+elif selected_tab == "Hospital Addresses":
+    st.title("Hospital Addresses")
+    st.write("Content for the Hospital Addresses tab goes here.")
+
+    # Define the image URLs and captions
+    image_urls = [
+        "https://stock.adobe.com/images/build-hospital/45207005",
+        "https://stock.adobe.com/images/build-hospital/45207005",
+        "https://stock.adobe.com/images/emergeny-room/30021050",
+        "https://stock.adobe.com/images/build-hospital/45207005",
+        "https://stock.adobe.com/images/build-hospital/45207005",
+        "https://stock.adobe.com/images/emergeny-room/30021050"
+    ]
+    captions = [
+        "Zia Hospital",
+        "Noor Health Care",
+        "Al-Muslim Medical Center",
+        "Imam Health Care",
+        "Shaukat Khanum",
+        "Al Khidmat"
+    ]
+
+    # Create two columns for each image
+    col1, col2 = st.columns(2)
+
+    # Display images in each column
+    with col1:
+        st.image(image_urls[0], caption=captions[0], width=200)
+        st.image(image_urls[1], caption=captions[1], width=200)
+        st.image(image_urls[2], caption=captions[2], width=200)
+
+    with col2:
+        st.image(image_urls[3], caption=captions[3], width=200)
+        st.image(image_urls[4], caption=captions[4], width=200)
+        st.image(image_urls[5], caption=captions[5], width=200)
+
+
+
+
 
 
 
