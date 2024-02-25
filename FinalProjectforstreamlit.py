@@ -228,8 +228,8 @@ elif selected_tab == "Hospital Addresses":
 
     # Define the image URLs and captions
     hospital_data = [
-        {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://example.com/image1.jpg"},
-        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://example.com/image2.jpg"},
+        {"name": "Zia Hospital North Nazimabad Karachi", "image_url": ""},
+        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://www.gettyimages.com/detail/photo/modern-hospital-building-royalty-free-image/1312706504.jpg"},
         {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://example.com/image3.jpg"},
         {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://example.com/image4.jpg"},
         {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://example.com/image5.jpg"},
