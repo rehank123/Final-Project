@@ -250,7 +250,7 @@ footer = """
 }
 </style>
 <div class="footer">
-<p>Developed with ❤️ by the student of  <a style='display: block; text-align: Left;' href="https://banoqabil.pk" target="_blank">Bano Qabil Alkhidmat </a></p>
+<p>Developed with ❤️ by the student of  <a style='display: block; text-align: Center;' href="https://banoqabil.pk" target="_blank">Bano Qabil Alkhidmat </a></p>
 </div>
 """
 
