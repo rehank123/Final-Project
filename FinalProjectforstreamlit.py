@@ -45,9 +45,31 @@ if selected_tab == "Chatbot":
 
 elif selected_tab == "Contact":
     st.title("Contact")
-    st.write("Phone Number# 03118003480")
-    st.write("WhatsApp Number# 03118003480")
-    st.write("Facebook Id# Rehan Ullah")
+    
+    # Define CSS styles for the contact information
+    contact_styles = """
+    <style>
+    .contact-info {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .contact-info a {
+        color: #0366d6; /* Blue color for links */
+        text-decoration: none;
+    }
+    </style>
+    """
+    st.markdown(contact_styles, unsafe_allow_html=True)
+    
+    # Display the contact information with Markdown
+    st.markdown("### Get in Touch")
+    st.markdown("""
+    <div class="contact-info">
+    Phone Number: <a href="tel:+923118003480">0311 8003480</a><br>
+    WhatsApp Number: <a href="https://wa.me/923118003480">0311 8003480</a><br>
+    Facebook ID: <a href="https://www.facebook.com/rehan.ullah">Rehan Ullah</a>
+    </div>
+    """, unsafe_allow_html=True)
 
 elif selected_tab == "About":
     st.title("About")
