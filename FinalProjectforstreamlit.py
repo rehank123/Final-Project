@@ -283,7 +283,11 @@ elif selected_tab == "Tests Saved Data":
     # Load and display saved test data
     try:
         tests_data = pd.read_csv("tests_saved_data.csv")
-        st.dataframe(tests_data)
+        for index, row in tests_data.iterrows():
+            st.subheader(f"Test Name: {row['Test Name']}, Patient Name: {row['Patient Name']}")
+            st.write(f"File Path: {row['File Path']}")
+            # Display the image
+            st.image(row['File Path'], caption='Uploaded Image', use_column_width=True)
     except FileNotFoundError:
         st.write("No tests saved yet.")
 
