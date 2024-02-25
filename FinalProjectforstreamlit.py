@@ -1,10 +1,9 @@
 import streamlit as st
+import pandas as pd
 import os
-
 
 upload_dir = "uploaded_tests"
 os.makedirs(upload_dir, exist_ok=True)
-
 
 doctor_diseases = {
     "Dr. Saleem": ["Common Cold", "Influenza (Flu)", "Headache"],
@@ -239,7 +238,7 @@ elif selected_tab == "Hospital Addresses":
         st.write(f"**{hospital['name']}**")
         st.image(hospital['image_url'], caption=hospital['name'], width=300)
 
-eelif selected_tab == "Upload Tests":
+elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
     st.write("Please fill out the form and upload the test picture.")
 
@@ -262,6 +261,7 @@ eelif selected_tab == "Upload Tests":
 elif selected_tab == "Tests Saved Data":
     st.title("Tests Saved Data")
     # Display saved test data
+    # You can add code here to load and display the saved test data
 
 elif selected_tab == "Contact":
     st.title("Contact")
