@@ -140,7 +140,13 @@ if selected_tab == "Home":
 
 elif selected_tab == "About":
     st.title("About")
-    st.write("This is the about page.")
+    st.write("""
+    This is a healthcare chatbot designed to provide information about various medical conditions, recommended medicines, doctors, and hospitals.
+    You can use the tabs to navigate between different sections:
+    - **Home**: Provides options to explore information about medicines, doctors, and hospitals.
+    - **About**: Gives a brief overview of the chatbot.
+    - **Contact**: Provides contact information.
+    """)
 
 elif selected_tab == "Contact":
     st.title("Contact")
