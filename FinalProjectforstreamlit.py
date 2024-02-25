@@ -1,10 +1,11 @@
 import streamlit as st
 
-# Custom CSS to change background color to gray
+# Custom CSS to change background color to light gray
 custom_css = """
 <style>
 body {
-    background-color: #f0f2f6; /* Change this value to the desired gray shade */
+    background-color: #f0f2f6; /* Light gray */
+    color: black; /* Set text color to black for better readability */
 }
 </style>
 """
