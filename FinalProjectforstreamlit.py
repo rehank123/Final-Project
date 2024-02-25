@@ -1,4 +1,3 @@
-
 import streamlit as st
 
 tabs = ["Chatbot", "Take Appointment", "Saved Data", "Hospital Addresses", "Contact", "About Us"]
@@ -251,6 +250,9 @@ footer = """
 }
 </style>
 <div class="footer">
-<p>Developed with ❤ by the student of  <a style='display: block; text-align: Right;' href="https://banoqabil.pk" target="_blank">Bano Qabil Alkhidmat </a></p>
+<p>Developed with ❤️ by the student of  <a style='display: block; text-align: Right;' href="https://banoqabil.pk" target="_blank">Bano Qabil Alkhidmat </a></p>
 </div>
 """
+
+# Display the footer content
+st.markdown(footer)
