@@ -1,6 +1,14 @@
 import streamlit as st
 
+custom_css = """
+<style>
+body {
+    background-color: #f4f4f4; /* Gray background color */
+}
+</style>
+"""
 
+st.markdown(custom_css, unsafe_allow_html=True)
 tabs = ["Chatbot", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
 
