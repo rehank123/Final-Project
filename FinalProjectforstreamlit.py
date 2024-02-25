@@ -74,7 +74,7 @@ elif selected_tab == "Contact":
     
     # Display the contact information inside a styled box
     st.markdown("### Get in Touch")
-    with st.beta_container():
+     with st.beta_container():
         st.markdown("""
         <div class="contact-box">
             <div class="contact-info">
