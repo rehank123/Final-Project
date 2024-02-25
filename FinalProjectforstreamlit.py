@@ -242,12 +242,13 @@ elif selected_tab == "Hospital Addresses":
         "Al-Muslim Medical Center Malik Chook Lahore",
         "Imam Health Care Five Star Churangi Karachi",
         "Ahmed Ibrahim Eye Hospital Banaras Karachi",
-        "Al Khidmat Medical Center Sahiwal "
+        "Al Khidmat Medical Center Sahiwal"
     ]
 
-    # Display images in two columns
+    # Create two columns for each image
     col1, col2 = st.columns(2)
 
+    # Display images in each column
     with col1:
         st.image(image_urls[0], caption=captions[0], width=200)
         st.image(image_urls[1], caption=captions[1], width=200)
