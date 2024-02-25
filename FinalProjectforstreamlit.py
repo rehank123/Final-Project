@@ -205,9 +205,13 @@ elif selected_tab == "Saved Data":
     except FileNotFoundError:
         existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Disease", "Date", "Time", "Reason"])
 
-    # Display doctor selection dropdown
-    doctors = existing_data["Doctor"].unique()
-    selected_doctor = st.sidebar.selectbox("Select Doctor", ["All"] + list(doctors))
+    # Create two columns layout for search box and line chart
+    col1, col2 = st.columns([3, 1])
+
+    # Display search box in the first column
+    with col1:
+        st.write("Search for Doctor:")
+        selected_doctor = st.sidebar.selectbox("Select Doctor", ["All"] + list(existing_data["Doctor"].unique()))
 
     # Filter appointments by selected doctor
     if selected_doctor == "All":
@@ -218,14 +222,10 @@ elif selected_tab == "Saved Data":
         st.write(f"Below is the list of saved appointments for {selected_doctor}:")
         st.dataframe(filtered_data)
 
-    # Create two columns layout for appointments and line chart
-    col1, col2 = st.columns([2, 1])
-
     # Display line chart in the second column
     with col2:
         st.write("Line Chart for Appointment Data")
         st.line_chart(existing_data)
-
 
 
 
