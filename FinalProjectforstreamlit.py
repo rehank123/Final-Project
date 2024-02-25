@@ -1,5 +1,51 @@
 import streamlit as st
 
+def main():
+    st.title("Welcome to My Streamlit App")
+    st.write("""
+    This is the home page of my Streamlit app. 
+    Use the sidebar to navigate to different sections.
+    """)
+    st.sidebar.title("Navigation")
+    page = st.sidebar.radio("Go to", ["Home", "About", "Contact"])
+
+    if page == "Home":
+        show_home_page()
+    elif page == "About":
+        show_about_page()
+    elif page == "Contact":
+        show_contact_page()
+
+def show_home_page():
+    st.write("This is the home page. You can add more content here.")
+
+def show_about_page():
+    st.write("This is the about page. You can provide information about your app or yourself here.")
+
+def show_contact_page():
+    st.write("This is the contact page. You can provide contact information or a form for users to reach you.")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import streamlit as st
+
 st.title("Welcome to Healthcare Chatbot")
 st.write("Information List")
 st.write("""
