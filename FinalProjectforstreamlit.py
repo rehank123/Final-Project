@@ -167,6 +167,19 @@ elif selected_tab == "Take Appointment":
             st.write("Reason:", reason)
         except Exception as e:
             st.error(f"An error occurred: {e}")
+elif selected_tab == "Saved Data":
+    st.title("Saved Appointment Data")
+    st.write("Below is the list of all saved appointments:")
+
+    # Load existing appointment data from CSV
+    try:
+        existing_data = pd.read_csv("appointments.csv")
+        st.write(existing_data)
+    except FileNotFoundError:
+        st.write("No appointments found.")
+
+
+
 
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
