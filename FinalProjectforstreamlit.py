@@ -1,31 +1,16 @@
 import streamlit as st
 
-# Custom CSS to change background color
+# Custom CSS to change background color to gray
 custom_css = """
 <style>
 body {
-    background-color: #808080; /* Change this value to the desired color */
+    background-color: #f0f2f6; /* Change this value to the desired gray shade */
 }
 </style>
 """
 
 # Inject custom CSS
 st.markdown(custom_css, unsafe_allow_html=True)
-
-# Your Streamlit app code here
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 st.title("Welcome to Healthcare Chatbot")
 st.write("Information List")
