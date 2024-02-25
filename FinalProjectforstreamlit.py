@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 
-}
+
 
 tabs = ["Chatbot", "Take Appointment", "Saved Data", "Hospital Addresses", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
@@ -151,6 +151,7 @@ elif selected_tab == "Take Appointment":
     "Dr. Moin": ["Common Cold", "Influenza (Flu)", "Cancer", "Conjunctivitis (Pink Eye)"],
     "Dr. Sultan": ["Headache", "Allergies", ],
     "Dr. Faizan": ["Common Cold", "Influenza (Flu)", "Cancer", "Pneumonia"]
+    }
     # Create a form for doctor appointment scheduling
     patient_name = st.text_input("Patient Name")
     doctor = st.selectbox("Select Doctor", ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"])
