@@ -152,9 +152,9 @@ elif selected_tab == "Take Appointment":
             except FileNotFoundError:
                 existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Date", "Time", "Reason"])
 
-            # Append the new appointment data to the existing DataFrame
-            new_appointment = {"Patient Name": patient_name, "Doctor": doctor, "Date": date, "Time": time, "Reason": reason}
-            existing_data = existing_data.append(new_appointment, ignore_index=True)
+            # Concatenate the new appointment data with the existing DataFrame
+            new_appointment = pd.DataFrame({"Patient Name": [patient_name], "Doctor": [doctor], "Date": [date], "Time": [time], "Reason": [reason]})
+            existing_data = pd.concat([existing_data, new_appointment], ignore_index=True)
 
             # Save the updated DataFrame back to the CSV file
             existing_data.to_csv("appointments.csv", index=False)
