@@ -220,6 +220,9 @@ elif selected_tab == "Saved Data":
     st.sidebar.line_chart(existing_data)
 
 
+
+
+
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
     st.write("Content for the Hospital Addresses tab goes here.")
@@ -242,10 +245,9 @@ elif selected_tab == "Hospital Addresses":
         "Al Khidmat Medical Center Sahiwal "
     ]
 
-    # Create two columns for each image
+    # Display images in two columns
     col1, col2 = st.columns(2)
 
-    # Display images in each column
     with col1:
         st.image(image_urls[0], caption=captions[0], width=200)
         st.image(image_urls[1], caption=captions[1], width=200)
@@ -255,6 +257,13 @@ elif selected_tab == "Hospital Addresses":
         st.image(image_urls[3], caption=captions[3], width=200)
         st.image(image_urls[4], caption=captions[4], width=200)
         st.image(image_urls[5], caption=captions[5], width=200)
+
+
+
+
+
+
+
 
 elif selected_tab == "Contact":
     st.title("Contact")
