@@ -232,7 +232,7 @@ elif selected_tab == "Hospital Addresses":
         "https://unsplash.com/photos/brown-concrete-building-under-blue-sky-during-daytime-1c8sj2IO2I4",
         "https://unsplash.com/photos/brown-and-white-concrete-building-near-green-trees-under-blue-sky-during-daytime-8PB_TFEy2XQ",
         "https://unsplash.com/photos/white-and-brown-concrete-building-under-blue-sky-during-daytime-b3LF7JHQmms",
-        "https://stock.adobe.com/images/build-hospital/45207005",
+        ""https://images.unsplash.com/photo-1521129406530-7f64828c056a"",
         "https://stock.adobe.com/images/build-hospital/45207005",
         "https://stock.adobe.com/images/emergeny-room/30021050"
     ]
