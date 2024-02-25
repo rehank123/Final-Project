@@ -245,6 +245,7 @@ elif selected_tab == "Upload Tests":
     # Create a form for test details and picture upload
     test_name = st.text_input("Test Name")
     patient_name = st.text_input("Patient Name")
+    patient_age = st.number_input("Patient Age", min_value=0, max_value=150, value=0)
     test_date = st.date_input("Test Date")
     test_type = st.selectbox("Test Type", ["Blood Test", "Urine Test", "X-Ray", "MRI", "CT Scan"])
     notes = st.text_area("Notes")
@@ -260,7 +261,7 @@ elif selected_tab == "Upload Tests":
         st.success("Test picture uploaded successfully!")
 
         # Save test data
-        save_test_data(test_name, patient_name, test_date, test_type, notes, file_path)
+        save_test_data(test_name, patient_name, patient_age, test_date, test_type, notes, file_path)
     else:
         st.warning("Please upload a test picture.")
 
