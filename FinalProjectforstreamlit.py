@@ -134,26 +134,25 @@ if selected_tab == "Chatbot":
             st.write("Invalid Input")
 
 elif selected_tab == "Take Appointment":
-          st.title("Take Doctor Appointment")
-          st.write("Please fill out the form below to schedule a doctor appointment.")
+    st.title("Take Doctor Appointment")
+    st.write("Please fill out the form below to schedule a doctor appointment.")
 
-          # Create a form for doctor appointment scheduling
-          patient_name = st.text_input("Patient Name")
-          doctor = st.selectbox("Select Doctor", ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"])
-          date = st.date_input("Date")
-          time = st.time_input("Time")
-          reason = st.text_area("Reason for Appointment")
-          submit_button = st.form_submit_button(label='Schedule Appointment')
+    # Create a form for doctor appointment scheduling
+    patient_name = st.text_input("Patient Name")
+    doctor = st.selectbox("Select Doctor", ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"])
+    date = st.date_input("Date")
+    time = st.time_input("Time")
+    reason = st.text_area("Reason for Appointment")
+    submit_button = st.form_submit_button(label='Schedule Appointment')
 
-          if submit_button:
-              # Process the form submission (you can save the appointment record to a database, for example)
-              st.success("Doctor appointment scheduled successfully!")
-              st.write("Patient Name:", patient_name)
-              st.write("Doctor:", doctor)
-              st.write("Date:", date)
-              st.write("Time:", time)
-              st.write("Reason:", reason)
-
+    if submit_button:
+        # Process the form submission (you can save the appointment record to a database, for example)
+        st.success("Doctor appointment scheduled successfully!")
+        st.write("Patient Name:", patient_name)
+        st.write("Doctor:", doctor)
+        st.write("Date:", date)
+        st.write("Time:", time)
+        st.write("Reason:", reason)
 
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
