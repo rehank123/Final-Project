@@ -211,6 +211,15 @@ elif selected_tab == "Take Appointment":
 elif selected_tab== "Hospital Addresses" :
       st.title("Hospital Addresses")
       st.write("Content for the Hospital Addresses tab goes here.")
+  
+      st.image("https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dhospital%2Bbuilding&psig=AOvVaw28gHJiT-1kmJ-cBGTRoQnR&ust=1708978107591000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMDy89ulx4QDFQAAAAAdAAAAABAE", caption="Hospital 1")
+      st.image("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F614108099175029192%2F&psig=AOvVaw28gHJiT-1kmJ-cBGTRoQnR&ust=1708978107591000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMDy89ulx4QDFQAAAAAdAAAAABAJ", caption="Hospital 2")
+      st.image("https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dhospital%2Bbuilding&psig=AOvVaw28gHJiT-1kmJ-cBGTRoQnR&ust=1708978107591000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMDy89ulx4QDFQAAAAAdAAAAABA3", caption="Hospital 3")
+
+
+
+
+
 elif selected_tab == "Contact":
     st.title("Contact")
 
