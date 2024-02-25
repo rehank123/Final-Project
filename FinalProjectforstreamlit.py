@@ -126,4 +126,9 @@ def hospital_for_doctor():
         elif doctor == "9":
             st.write("Hospital Name: Al Khidmat Hospital")
         elif doctor == "10":
-            st.write("
+            st.write("Hospital Name: Zain Hospital")
+
+tabs = {"Home": home, "Medicine for Disease": medicine_for_disease, "Doctor for Disease": doctor_for_disease, "Hospital for Doctor": hospital_for_doctor}
+st.sidebar.title('Tabs')
+selection = st.sidebar.radio("Go to", list(tabs.keys()))
+tabs[selection]()
