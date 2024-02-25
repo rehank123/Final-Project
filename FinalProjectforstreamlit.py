@@ -1,8 +1,9 @@
 import streamlit as st
 
-# Define the tabs
+
 tabs = ["Chatbot", "About", "Contact"]
-selected_tab = st.sidebar.selectbox("Select a tab", tabs)
+selected_tab = st.sidebar.radio("Select a tab", tabs)
+
 
 # Display content based on the selected tab
 if selected_tab == "Chatbot":
