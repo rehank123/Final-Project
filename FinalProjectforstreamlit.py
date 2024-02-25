@@ -15,7 +15,7 @@ doctor_diseases = {
     "Dr. Faizan": ["Influenza (Flu)", "Cancer", "Sinusitis"]
 }
 
-tabs = ["Chatbot", "Take Appointment", "Saved Data", "Hospital Addresses", "Upload Tests", "Contact", "About Us"]
+tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospital Addresses", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
 
 if selected_tab == "Chatbot":
@@ -192,8 +192,8 @@ elif selected_tab == "Take Appointment":
         except Exception as e:
             st.error(f"An error occurred: {e}")
 
-elif selected_tab == "Saved Data":
-    st.title("Saved Appointment Data")
+elif selected_tab == "Appointment Data":
+    st.title("Appointment Data")
 
     # Load existing appointment data from CSV
     try:
@@ -238,6 +238,10 @@ elif selected_tab == "Hospital Addresses":
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
     st.write("Content for the Upload Tests tab goes here.")
+
+elif selected_tab == "Tests Saved Data":
+    st.title("Tests Saved Data")
+    st.write("Content for the Tests Saved Data tab goes here.")
 
 elif selected_tab == "Contact":
     st.title("Contact")
