@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 tabs = ["Chatbot", "Take Appointment", "Saved Data", "Hospital Addresses", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
@@ -132,19 +133,7 @@ if selected_tab == "Chatbot":
     else:
         st.write("Invalid Input")
 
-import streamlit as st
-import pandas as pd
-
-# Load existing appointment data from CSV
-try:
-    existing_data = pd.read_csv("appointments.csv")
-except FileNotFoundError:
-    existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Date", "Time", "Reason"])
-
-tabs = ["Take Appointment"]
-selected_tab = st.sidebar.radio("", tabs)
-
-if selected_tab == "Take Appointment":
+elif selected_tab == "Take Appointment":
     st.title("Take Doctor Appointment")
     st.write("Please fill out the form below to schedule a doctor appointment.")
 
@@ -157,6 +146,12 @@ if selected_tab == "Take Appointment":
 
     if st.button("Schedule Appointment"):
         try:
+            # Load existing appointment data from CSV
+            try:
+                existing_data = pd.read_csv("appointments.csv")
+            except FileNotFoundError:
+                existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Date", "Time", "Reason"])
+
             # Append the new appointment data to the existing DataFrame
             new_appointment = {"Patient Name": patient_name, "Doctor": doctor, "Date": date, "Time": time, "Reason": reason}
             existing_data = existing_data.append(new_appointment, ignore_index=True)
@@ -172,7 +167,6 @@ if selected_tab == "Take Appointment":
             st.write("Reason:", reason)
         except Exception as e:
             st.error(f"An error occurred: {e}")
-
 
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
