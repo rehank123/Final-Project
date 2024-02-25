@@ -57,17 +57,17 @@ if selected_tab == "Chatbot":
     elif information == "2":
         st.write("List of Diseases")
         st.write("""
-        1. Common Cold
-        2. Influenza (Flu)
-        3. Headache
-        4. Allergies
-        5. Cancer
-        6. Pneumonia
-        7. Stomach Flu (Gastroenteritis)
-        8. Sinusitis
-        9. Urinary Tract Infection (UTI)
-        10. Conjunctivitis (Pink Eye)
-        """)
+         1. Common Cold
+         2. Influenza (Flu)
+         3. Headache
+         4. Allergies
+         5. Cancer
+         6. Pneumonia
+         7. Stomach Flu (Gastroenteritis)
+         8. Sinusitis
+         9. Urinary Tract Infection (UTI)
+         10. Conjunctivitis (Pink Eye)
+         """)
         doctor = st.text_input("Enter the number of your Doctor for Diseases:")
 
         if doctor == "1":
@@ -129,8 +129,8 @@ if selected_tab == "Chatbot":
             st.write("Hospital Name: Al Khidmat Hospital")
         elif doctor == "10":
             st.write("Hospital Name: Zain Hospital")
-        else:
-            st.write("Invalid Input")
+    else:
+        st.write("Invalid Input")
 
 elif selected_tab == "Take Appointment":
     st.title("Take Doctor Appointment")
@@ -255,4 +255,4 @@ footer = """
 """
 
 # Display the footer content
-st.markdown(footer)
+st.markdown(footer, unsafe_allow_html=True)
