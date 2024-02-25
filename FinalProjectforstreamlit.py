@@ -235,38 +235,21 @@ elif selected_tab == "Hospital Addresses":
         st.write(f"**{hospital['name']}**")
         st.image(hospital['image_url'], caption=hospital['name'], width=300)
 
-elif selected_tab == "Upload Tests":
-    st.title("Upload Tests")
-    st.write("Please fill out the form below and upload your test picture.")
+upload_dir = "uploaded_tests"
+os.makedirs(upload_dir, exist_ok=True)
 
-    # Create a form for test uploading
-    test_type = st.selectbox("Select Test Type", ["Blood Test", "Urine Test", "X-ray", "MRI", "Other"])
-    test_date = st.date_input("Test Date")
-    test_time = st.time_input("Test Time")
-    patient_name = st.text_input("Patient Name")
-    patient_age = st.number_input("Patient Age", min_value=0, max_value=150, value=0)
-    test_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
+# Display a file uploader widget
+uploaded_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
 
-    if st.button("Upload Test"):
-        # Handle form submission and picture upload
-        if test_file is not None:
-            try:
-                # Save the uploaded picture to a specified location
-                with open(f"uploaded_tests/{test_file.name}", "wb") as f:
-                    f.write(test_file.getvalue())
-
-                # Display success message
-                st.success("Test picture uploaded successfully!")
-                st.write("Test Type:", test_type)
-                st.write("Test Date:", test_date)
-                st.write("Test Time:", test_time)
-                st.write("Patient Name:", patient_name)
-                st.write("Patient Age:", patient_age)
-                st.write("File Name:", test_file.name)
-            except Exception as e:
-                st.error(f"An error occurred while uploading the test picture: {e}")
-        else:
-            st.warning("Please upload a test picture before submitting the form.")
+if uploaded_file is not None:
+    # Save the uploaded file to the upload directory
+    file_path = os.path.join(upload_dir, uploaded_file.name)
+    with open(file_path, "wb") as f:
+        f.write(uploaded_file.getbuffer())
+    
+    st.success("Test picture uploaded successfully!")
+else:
+    st.warning("Please upload a test picture.")
 
 elif selected_tab == "Tests Saved Data":
     st.title("Tests Saved Data")
