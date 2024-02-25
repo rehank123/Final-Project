@@ -192,6 +192,9 @@ elif selected_tab == "Take Appointment":
         except Exception as e:
             st.error(f"An error occurred: {e}")
 
+
+
+
 elif selected_tab == "Saved Data":
     st.title("Saved Appointment Data")
     st.write("Below is the list of all saved appointments:")
@@ -215,9 +218,13 @@ elif selected_tab == "Saved Data":
         st.write(f"Below is the list of saved appointments for {selected_doctor}:")
         st.dataframe(filtered_data)
 
-    # Add area chart for the second column in the sidebar
-    st.sidebar.area_chart(existing_data)
-    # Alternatively, you can use st.sidebar.line_chart(existing_data) for a line chart
+    # Create two columns layout for appointments and area chart
+    col1, col2 = st.columns([2, 1])
+
+    # Display area chart in the second column
+    with col2:
+        st.write("Area Chart for Appointment Data")
+        st.area_chart(existing_data)
 
 
 
