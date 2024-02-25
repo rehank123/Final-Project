@@ -15,7 +15,7 @@ doctor_diseases = {
     "Dr. Faizan": ["Influenza (Flu)", "Cancer", "Sinusitis"]
 }
 
-tabs = ["Chatbot", "Take Appointment", "Saved Data", "Hospital Addresses", "Contact", "About Us"]
+tabs = ["Chatbot", "Take Appointment", "Saved Data", "Hospital Addresses", "Upload Tests", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
 
 if selected_tab == "Chatbot":
@@ -192,9 +192,6 @@ elif selected_tab == "Take Appointment":
         except Exception as e:
             st.error(f"An error occurred: {e}")
 
-
-
-
 elif selected_tab == "Saved Data":
     st.title("Saved Appointment Data")
 
@@ -219,9 +216,6 @@ elif selected_tab == "Saved Data":
     st.sidebar.title("Appointments Over Time")
     st.sidebar.line_chart(existing_data)
 
-
-
-
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
     st.write("Content for the Hospital Addresses tab goes here.")
@@ -241,12 +235,9 @@ elif selected_tab == "Hospital Addresses":
         st.write(f"**{hospital['name']}**")
         st.image(hospital['image_url'], caption=hospital['name'], width=300)
 
-
-
-
-
-
-
+elif selected_tab == "Upload Tests":
+    st.title("Upload Tests")
+    st.write("Content for the Upload Tests tab goes here.")
 
 elif selected_tab == "Contact":
     st.title("Contact")
