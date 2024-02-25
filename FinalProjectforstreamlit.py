@@ -1,5 +1,5 @@
+
 import streamlit as st
-from streamlit.elements.image import WidthBehaviour
 
 tabs = ["Chatbot", "Take Appointment", "Saved Data", "Hospital Addresses", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
