@@ -229,17 +229,17 @@ elif selected_tab == "Hospital Addresses":
     # Define the hospital data including names and image URLs
     hospital_data = [
         {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://hotimg.com/hhh.huw4a"},
-        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://stock.adobe.com/images/build-hospital/45207005"},
-        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://stock.adobe.com/images/emergeny-room/30021050"},
-        {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://stock.adobe.com/images/build-hospital/45207005"},
-        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://stock.adobe.com/images/build-hospital/45207005"},
-        {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://stock.adobe.com/images/emergeny-room/30021050"}
+        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://hotimg.com/hos1.huXsf"},
+        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://hotimg.com/hos2.huDhC"},
+        {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://hotimg.com/hos4.hugid"},
+        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://hotimg.com/hos5.hu2tF"},
+        {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://hotimg.com/hos6.huzjz"}
     ]
 
     # Display images and hospital names
     for hospital in hospital_data:
         st.write(f"**{hospital['name']}**")
-        st.image(hospital['image_url'], caption=hospital['name'])
+        st.image(hospital['image_url'], caption=hospital['name'], width=300)
 
 
 
