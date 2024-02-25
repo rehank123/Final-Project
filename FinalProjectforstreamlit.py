@@ -215,10 +215,10 @@ elif selected_tab== "Hospital Addresses" :
   
       st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Zia Hospital" , width=200)
       st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Noor Health Care",width=200)
-      st.image("https://stock.adobe.com/images/emergeny-room/30021050", caption="Al-Muslim Medical Center",width=200")
-      # st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Imam Health Care", width=200)
-      # st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Shuqat Khanum", width=200)
-      # st.image("https://stock.adobe.com/images/emergeny-room/30021050", caption="Al Khadmat", width=200)
+      st.image("https://stock.adobe.com/images/emergeny-room/30021050", caption="Al-Muslim Medical Center",width=200)
+      st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Imam Health Care", width=200)
+      st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Shuqat Khanum", width=200)
+      st.image("https://stock.adobe.com/images/emergeny-room/30021050", caption="Al Khadmat", width=200)
 
 
 
