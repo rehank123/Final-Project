@@ -1,6 +1,10 @@
+# Code refactored from https://docs.streamlit.io/knowledge-base/tutorials/build-conversational-apps
+
 import openai
 import streamlit as st
- st.title('🤖💬 OpenAI Chatbot')
+
+with st.sidebar:
+    st.title('🤖💬 OpenAI Chatbot')
     if 'OPENAI_API_KEY' in st.secrets:
         st.success('API key already provided!', icon='✅')
         openai.api_key = st.secrets['OPENAI_API_KEY']
