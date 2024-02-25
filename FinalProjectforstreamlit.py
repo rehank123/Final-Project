@@ -1,159 +1,158 @@
 import streamlit as st
-from streamlit.elements.image import WidthBehaviour
 
 tabs = ["Chatbot", "Take Appointment", "Saved Data", "Hospital Addresses", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
 
 if selected_tab == "Chatbot":
-    st.title("Welcome to Healthcare Chatbot")
-    st.write("Information List")
-    st.write("""
-    1. About Medicine for Disease
-    2. About Doctor for Disease
-    3. About Hospital for Doctor
-    """)
+            st.title("Welcome to Healthcare Chatbot")
+            st.write("Information List")
+            st.write("""
+            1. About Medicine for Disease
+            2. About Doctor for Disease
+            3. About Hospital for Doctor
+            """)
 
-    information = st.text_input("Please Enter a Number for detail you want to know about:")
+            information = st.text_input("Please Enter a Number for detail you want to know about:")
 
-    if information == "1":
-        st.write("List of diseases")
-        st.write("""
-        1. Common Cold
-        2. Influenza (Flu)
-        3. Headache
-        4. Allergies
-        5. Cancer
-        6. Pneumonia
-        7. Stomach Flu (Gastroenteritis)
-        8. Sinusitis
-        9. Urinary Tract Infection (UTI)
-        10. Conjunctivitis (Pink Eye)
-        """)
+            if information == "1":
 
-        disease = st.text_input("Enter the number of your disease for Medicine:")
+                st.write("List of diseases")
+                st.write("""
+                1. Common Cold
+                2. Influenza (Flu)
+                3. Headache
+                4. Allergies
+                5. Cancer
+                6. Pneumonia
+                7. Stomach Flu (Gastroenteritis)
+                8. Sinusitis
+                9. Urinary Tract Infection (UTI)
+                10. Conjunctivitis (Pink Eye)
+                """)
 
-        if disease == "1":  
-            st.write("Recommended medicine: Acetaminophen")
-        elif disease == "2":
-            st.write("Recommended medicine: Ibuprofen")
-        elif disease == "3":
-            st.write("Recommended medicine: Aspirin")
-        elif disease == "4":
-            st.write("Recommended medicine: Loratadine")
-        elif disease == "5":
-            st.write("Recommended medicine: Paclitaxel")
-        elif disease == "6":
-            st.write("Recommended medicine: Amoxicillin")
-        elif disease == "7":
-            st.write("Recommended medicine: Loperamide")
-        elif disease == "8":
-            st.write("Recommended medicine: Decongestants")
-        elif disease == "9":
-            st.write("Recommended medicine: Phenazopyridine")
-        elif disease == "10":
-            st.write("Recommended medicine: Artificial tears")
-        else:
-            st.write("Your disease is not in the list")
+                disease = st.text_input("Enter the number of your disease for Medicine:")
 
-    elif information == "2":
-        st.write("List of Diseases")
-        st.write("""
-        1. Common Cold
-        2. Influenza (Flu)
-        3. Headache
-        4. Allergies
-        5. Cancer
-        6. Pneumonia
-        7. Stomach Flu (Gastroenteritis)
-        8. Sinusitis
-        9. Urinary Tract Infection (UTI)
-        10. Conjunctivitis (Pink Eye)
-        """)
-        doctor = st.text_input("Enter the number of your Doctor for Diseases:")
+                if disease == "1":  
+                    st.write("Recommended medicine: Acetaminophen")
+                elif disease == "2":
+                    st.write("Recommended medicine: Ibuprofen")
+                elif disease == "3":
+                    st.write("Recommended medicine: Aspirin")
+                elif disease == "4":
+                    st.write("Recommended medicine: Loratadine")
+                elif disease == "5":
+                    st.write("Recommended medicine: Paclitaxel")
+                elif disease == "6":
+                    st.write("Recommended medicine: Amoxicillin")
+                elif disease == "7":
+                    st.write("Recommended medicine: Loperamide")
+                elif disease == "8":
+                    st.write("Recommended medicine: Decongestants")
+                elif disease == "9":
+                    st.write("Recommended medicine: Phenazopyridine")
+                elif disease == "10":
+                    st.write("Recommended medicine: Artificial tears")
+                else:
+                    st.write("Your disease is not in the list")
 
-        if doctor == "1":
-            st.write("Dr. Saleem")
-        elif doctor == "2":
-            st.write("Dr. Abdullah")
-        elif doctor == "3":
-            st.write("Dr. Salman")
-        elif doctor == "4":
-            st.write("Dr. Kaleem")
-        elif doctor == "5":
-            st.write("Dr. Naimat")
-        elif doctor == "6":
-            st.write("Dr. Imran")
-        elif doctor == "7":
-            st.write("Dr. Kamran")
-        elif doctor == "8":
-            st.write("Dr. Moin")
-        elif doctor == "9":
-            st.write("Dr. Sultan")
-        elif doctor == "10":
-            st.write("Dr. Faizan")
-        else:
-            st.write("Invalid Input")
+            elif information == "2":
+                st.write("List of Diseases")
+                st.write("""
+                1. Common Cold
+                2. Influenza (Flu)
+                3. Headache
+                4. Allergies
+                5. Cancer
+                6. Pneumonia
+                7. Stomach Flu (Gastroenteritis)
+                8. Sinusitis
+                9. Urinary Tract Infection (UTI)
+                10. Conjunctivitis (Pink Eye)
+                """)
+                doctor = st.text_input("Enter the number of your Doctor for Diseases:")
 
-    elif information == "3":
-        st.write("List of Doctors")
-        st.write("""
-        1. Dr. Saleem
-        2. Dr. Abdullah
-        3. Dr. Salman
-        4. Dr. Kaleem
-        5. Dr. Naimat
-        6. Dr. Imran
-        7. Dr. Kamran
-        8. Dr. Moin
-        9. Dr. Sultan
-        10. Dr. Faizan
-        """)
-        doctor = st.text_input("Enter the number of your Doctor for Hospital:")
+                if doctor == "1":
+                    st.write("Dr. Saleem")
+                elif doctor == "2":
+                    st.write("Dr. Abdullah")
+                elif doctor == "3":
+                    st.write("Dr. Salman")
+                elif doctor == "4":
+                    st.write("Dr. Kaleem")
+                elif doctor == "5":
+                    st.write("Dr. Naimat")
+                elif doctor == "6":
+                    st.write("Dr. Imran")
+                elif doctor == "7":
+                    st.write("Dr. Kamran")
+                elif doctor == "8":
+                    st.write("Dr. Moin")
+                elif doctor == "9":
+                    st.write("Dr. Sultan")
+                elif doctor == "10":
+                    st.write("Dr. Faizan")
+                else:
+                    st.write("Invalid Input")
 
-        if doctor == "1":
-            st.write("Hospital Name: Zia Care Hospital")
-        elif doctor == "2":
-            st.write("Hospital Name: Noor Health Center")
-        elif doctor == "3":
-            st.write("Hospital Name: Al-Muslim Medical Center")
-        elif doctor == "4":
-            st.write("Hospital Name: Sultan Hospital")
-        elif doctor == "5":
-            st.write("Hospital Name: Shaukat Khanum")
-        elif doctor == "6":
-            st.write("Hospital Name: Imam Clinic Hospital")
-        elif doctor == "7":
-            st.write("Hospital Name: Muslim Welfare Hospital")
-        elif doctor == "8":
-            st.write("Hospital Name: Safa  Medical Center")
-        elif doctor == "9":
-            st.write("Hospital Name: Al Khidmat Hospital")
-        elif doctor == "10":
-            st.write("Hospital Name: Zain Hospital")
-        else:
-            st.write("Invalid Input")
+            elif information == "3":
+                st.write("List of Doctors")
+                st.write("""
+                1. Dr. Saleem
+                2. Dr. Abdullah
+                3. Dr. Salman
+                4. Dr. Kaleem
+                5. Dr. Naimat
+                6. Dr. Imran
+                7. Dr. Kamran
+                8. Dr. Moin
+                9. Dr. Sultan
+                10. Dr. Faizan
+                """)
+                doctor = st.text_input("Enter the number of your Doctor for Hospital:")
+
+                if doctor == "1":
+                    st.write("Hospital Name: Zia Care Hospital")
+                elif doctor == "2":
+                    st.write("Hospital Name: Noor Health Center")
+                elif doctor == "3":
+                    st.write("Hospital Name: Al-Muslim Medical Center")
+                elif doctor == "4":
+                    st.write("Hospital Name: Sultan Hospital")
+                elif doctor == "5":
+                    st.write("Hospital Name: Shaukat Khanum")
+                elif doctor == "6":
+                    st.write("Hospital Name: Imam Clinic Hospital")
+                elif doctor == "7":
+                    st.write("Hospital Name: Muslim Welfare Hospital")
+                elif doctor == "8":
+                    st.write("Hospital Name: Safa  Medical Center")
+                elif doctor == "9":
+                    st.write("Hospital Name: Al Khidmat Hospital")
+                elif doctor == "10":
+                    st.write("Hospital Name: Zain Hospital")
+                else:
+                    st.write("Invalid Input")
 
 elif selected_tab == "Take Appointment":
-          st.title("Take Doctor Appointment")
-          st.write("Please fill out the form below to schedule a doctor appointment.")
+    st.title("Take Doctor Appointment")
+    st.write("Please fill out the form below to schedule a doctor appointment.")
 
-          # Create a form for doctor appointment scheduling
-          patient_name = st.text_input("Patient Name")
-          doctor = st.selectbox("Select Doctor", ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"])
-          date = st.date_input("Date")
-          time = st.time_input("Time")
-          reason = st.text_area("Reason for Appointment")
-          submit_button = st.form_submit_button(label='Schedule Appointment')
+    # Create a form for doctor appointment scheduling
+    patient_name = st.text_input("Patient Name")
+    doctor = st.selectbox("Select Doctor", ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"])
+    date = st.date_input("Date")
+    time = st.time_input("Time")
+    reason = st.text_area("Reason for Appointment")
+    submit_button = st.form_submit_button(label='Schedule Appointment')
 
-          if submit_button:
-              # Process the form submission (you can save the appointment record to a database, for example)
-              st.success("Doctor appointment scheduled successfully!")
-              st.write("Patient Name:", patient_name)
-              st.write("Doctor:", doctor)
-              st.write("Date:", date)
-              st.write("Time:", time)
-              st.write("Reason:", reason)
-
+    if submit_button:
+        # Process the form submission (you can save the appointment record to a database, for example)
+        st.success("Doctor appointment scheduled successfully!")
+        st.write("Patient Name:", patient_name)
+        st.write("Doctor:", doctor)
+        st.write("Date:", date)
+        st.write("Time:", time)
+        st.write("Reason:", reason)
 
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
@@ -252,6 +251,9 @@ footer = """
 }
 </style>
 <div class="footer">
-<p>Developed with ❤ by the student of  <a style='display: block; text-align: Right;' href="https://banoqabil.pk" target="_blank">Bano Qabil Alkhidmat </a></p>
+<p>Developed with ❤️ by the student of  <a style='display: block; text-align: Right;' href="https://banoqabil.pk" target="_blank">Bano Qabil Alkhidmat </a></p>
 </div>
 """
+
+# Display the footer content
+st.markdown(footer)
