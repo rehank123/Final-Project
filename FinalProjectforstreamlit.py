@@ -226,13 +226,20 @@ elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
     st.write("Content for the Hospital Addresses tab goes here.")
 
-    # File uploader for image upload
-    uploaded_files = st.file_uploader("Upload Images", accept_multiple_files=True, type=["jpg", "jpeg", "png"])
+    # Define the image URLs and captions
+    hospital_data = [
+        {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://example.com/image1.jpg"},
+        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://example.com/image2.jpg"},
+        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://example.com/image3.jpg"},
+        {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://example.com/image4.jpg"},
+        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://example.com/image5.jpg"},
+        {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://example.com/image6.jpg"}
+    ]
 
-    # Display uploaded images
-    if uploaded_files:
-        for uploaded_file in uploaded_files:
-            st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
+    # Display images and hospital names
+    for hospital in hospital_data:
+        st.write(f"**{hospital['name']}**")
+        st.image(hospital['image_url'], caption=hospital['name'], width=300)
 
 
 
