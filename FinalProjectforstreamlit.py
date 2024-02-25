@@ -197,7 +197,6 @@ elif selected_tab == "Take Appointment":
 
 elif selected_tab == "Saved Data":
     st.title("Saved Appointment Data")
-    st.write("Below is the list of all saved appointments:")
 
     # Load existing appointment data from CSV
     try:
@@ -212,12 +211,16 @@ elif selected_tab == "Saved Data":
     if selected_doctor != "All":
         existing_data = existing_data[existing_data["Doctor"] == selected_doctor]
 
-    st.dataframe(existing_data)
+    # Display filter box and graph side by side
+    col1, col2 = st.columns([1, 3])
 
-    # Display line chart
-    st.title("Appointments Over Time")
-    st.line_chart(existing_data)
+    with col1:
+        st.dataframe(existing_data)
 
+    with col2:
+        # Display line chart
+        st.title("Appointments Over Time")
+        st.line_chart(existing_data)
 
 
 
