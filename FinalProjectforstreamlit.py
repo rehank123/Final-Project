@@ -156,19 +156,23 @@ if selected_tab == "Take Appointment":
     reason = st.text_area("Reason for Appointment")
 
     if st.button("Schedule Appointment"):
-        # Append the new appointment data to the existing DataFrame
-        new_appointment = {"Patient Name": patient_name, "Doctor": doctor, "Date": date, "Time": time, "Reason": reason}
-        existing_data = existing_data.append(new_appointment, ignore_index=True)
-        
-        # Save the updated DataFrame back to the CSV file
-        existing_data.to_csv("appointments.csv", index=False)
+        try:
+            # Append the new appointment data to the existing DataFrame
+            new_appointment = {"Patient Name": patient_name, "Doctor": doctor, "Date": date, "Time": time, "Reason": reason}
+            existing_data = existing_data.append(new_appointment, ignore_index=True)
 
-        st.success("Doctor appointment scheduled successfully!")
-        st.write("Patient Name:", patient_name)
-        st.write("Doctor:", doctor)
-        st.write("Date:", date)
-        st.write("Time:", time)
-        st.write("Reason:", reason)
+            # Save the updated DataFrame back to the CSV file
+            existing_data.to_csv("appointments.csv", index=False)
+
+            st.success("Doctor appointment scheduled successfully!")
+            st.write("Patient Name:", patient_name)
+            st.write("Doctor:", doctor)
+            st.write("Date:", date)
+            st.write("Time:", time)
+            st.write("Reason:", reason)
+        except Exception as e:
+            st.error(f"An error occurred: {e}")
+
 
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
