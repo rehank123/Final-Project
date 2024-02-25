@@ -1,6 +1,20 @@
 import streamlit as st
 import pandas as pd
 
+# Dictionary to store doctor-diseases mapping
+doctor_diseases = {
+    "Dr. Saleem": ["Common Cold", "Influenza (Flu)", "Headache"],
+    "Dr. Abdullah": ["Allergies", "Cancer", "Pneumonia"],
+    "Dr. Salman": ["Stomach Flu (Gastroenteritis)", "Sinusitis", "Urinary Tract Infection (UTI)"],
+    "Dr. Kaleem": ["Conjunctivitis (Pink Eye)"],
+    "Dr. Naimat": ["Common Cold", "Headache", "Allergies"],
+    "Dr. Imran": ["Influenza (Flu)", "Cancer", "Sinusitis"],
+    "Dr. Kamran": ["Pneumonia", "Stomach Flu (Gastroenteritis)", "Urinary Tract Infection (UTI)"],
+    "Dr. Moin": ["Headache", "Conjunctivitis (Pink Eye)"],
+    "Dr. Sultan": ["Common Cold", "Allergies", "Pneumonia"],
+    "Dr. Faizan": ["Influenza (Flu)", "Cancer", "Sinusitis"]
+}
+
 tabs = ["Chatbot", "Take Appointment", "Saved Data", "Hospital Addresses", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
 
@@ -177,6 +191,39 @@ elif selected_tab == "Take Appointment":
             st.write("Reason:", reason)
         except Exception as e:
             st.error(f"An error occurred: {e}")
+
+
+
+
+elif selected_tab == "Saved Data":
+    st.title("Saved Appointment Data")
+
+    # Load existing appointment data from CSV
+    try:
+        existing_data = pd.read_csv("appointments.csv")
+    except FileNotFoundError:
+        existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Disease", "Date", "Time", "Reason"])
+
+    # Filter appointments by selected doctor
+    st.sidebar.title("Filter by Doctor")
+    selected_doctor = st.sidebar.selectbox("Select Doctor", ["All"] + list(existing_data["Doctor"].unique()))
+
+    if selected_doctor != "All":
+        existing_data = existing_data[existing_data["Doctor"] == selected_doctor]
+
+    # Display data table in the main column
+    st.write("Below is the list of all saved appointments:")
+    st.dataframe(existing_data)
+
+    # Display line chart in the sidebar
+    st.sidebar.title("Appointments Over Time")
+    st.sidebar.line_chart(existing_data)
+
+    # Additional sidebar on the right side
+    st.sidebar.title("Additional Options")
+    st.sidebar.write("You can add more options here.")
+
+
 
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
