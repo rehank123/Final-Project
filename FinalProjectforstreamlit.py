@@ -173,7 +173,7 @@ elif selected_tab == "Contact":
     """, unsafe_allow_html=True)
 
 elif selected_tab == "About Us":
-    st.title("About")
+    st.title("About Us")
     # Display information about the chatbot
     st.write("""
     This is a healthcare chatbot designed to provide information about various medical conditions, recommended medicines, doctors, and hospitals.
