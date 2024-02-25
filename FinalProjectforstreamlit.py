@@ -222,42 +222,17 @@ elif selected_tab == "Saved Data":
 
 
 
-
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
     st.write("Content for the Hospital Addresses tab goes here.")
 
-    # Define the image URLs and captions
-    image_urls = [
-        "https://unsplash.com/photos/brown-concrete-building-under-blue-sky-during-daytime-1c8sj2IO2I4",
-        "https://unsplash.com/photos/brown-and-white-concrete-building-near-green-trees-under-blue-sky-during-daytime-8PB_TFEy2XQ",
-        "https://unsplash.com/photos/white-and-brown-concrete-building-under-blue-sky-during-daytime-b3LF7JHQmms",
-        "https://images.unsplash.com/photo-1521129406530-7f64828c056a",
-        "https://stock.adobe.com/images/build-hospital/45207005",
-        "https://stock.adobe.com/images/emergeny-room/30021050"
-    ]
-    captions = [
-        "Zia Hospital North Nazimabad Karachi",
-        "Noor Health Care Manghopir Sultanabad Karachi",
-        "Al-Muslim Medical Center Malik Chook Lahore",
-        "Imam Health Care Five Star Churangi Karachi",
-        "Ahmed Ibrahim Eye Hospital Banaras Karachi",
-        "Al Khidmat Medical Center Sahiwal"
-    ]
+    # File uploader for image upload
+    uploaded_files = st.file_uploader("Upload Images", accept_multiple_files=True, type=["jpg", "jpeg", "png"])
 
-    # Create two columns for each image
-    col1, col2 = st.columns(2)
-
-    # Display images in each column
-    with col1:
-        st.image(image_urls[0], caption=captions[0], width=200)
-        st.image(image_urls[1], caption=captions[1], width=200)
-        st.image(image_urls[2], caption=captions[2], width=200)
-
-    with col2:
-        st.image(image_urls[3], caption=captions[3], width=200)
-        st.image(image_urls[4], caption=captions[4], width=200)
-        st.image(image_urls[5], caption=captions[5], width=200)
+    # Display uploaded images
+    if uploaded_files:
+        for uploaded_file in uploaded_files:
+            st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
 
 
 
