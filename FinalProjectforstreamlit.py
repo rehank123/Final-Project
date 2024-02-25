@@ -1,6 +1,20 @@
 import streamlit as st
 import pandas as pd
 
+# Dictionary mapping doctors to their respective diseases
+doctor_diseases = {
+    "Dr. Saleem": ["Common Cold", "Headache", "Pneumonia", "Sinusitis"],
+    "Dr. Abdullah": ["Influenza (Flu)", "Allergies", "Cancer", "Urinary Tract Infection (UTI)"],
+    "Dr. Salman": ["Stomach Flu (Gastroenteritis)", "Conjunctivitis (Pink Eye)"],
+    "Dr. Kaleem": ["Headache", "Allergies", "Cancer", "Pneumonia"],
+    "Dr. Naimat": ["Common Cold", "Influenza (Flu)", "Sinusitis", "Urinary Tract Infection (UTI)"],
+    "Dr. Imran": ["Common Cold", "Headache", "Allergies", "Conjunctivitis (Pink Eye)"],
+    "Dr. Kamran": ["Influenza (Flu)", "Stomach Flu (Gastroenteritis)", "Pneumonia", "Sinusitis"],
+    "Dr. Moin": ["Common Cold", "Influenza (Flu)", "Cancer", "Conjunctivitis (Pink Eye)"],
+    "Dr. Sultan": ["Headache", "Allergies", "Stomach Flu (Gastroenteritis)", "Urinary Tract Infection (UTI)"],
+    "Dr. Faizan": ["Common Cold", "Influenza (Flu)", "Cancer", "Pneumonia"]
+}
+
 tabs = ["Chatbot", "Take Appointment", "Saved Data", "Hospital Addresses", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
 
@@ -140,7 +154,15 @@ elif selected_tab == "Take Appointment":
     # Create a form for doctor appointment scheduling
     patient_name = st.text_input("Patient Name")
     doctor = st.selectbox("Select Doctor", ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"])
-    disease = st.selectbox("Select Disease", ["Common Cold", "Influenza (Flu)", "Headache", "Allergies", "Cancer", "Pneumonia", "Stomach Flu (Gastroenteritis)", "Sinusitis", "Urinary Tract Infection (UTI)", "Conjunctivitis (Pink Eye)"])
+    
+    # Populate the diseases dropdown based on the selected doctor
+    if doctor in doctor_diseases:
+        diseases = doctor_diseases[doctor]
+    else:
+        diseases = []
+    
+    disease = st.selectbox("Select Disease", diseases)
+    
     date = st.date_input("Date")
     time = st.time_input("Time")
     reason = st.text_area("Reason for Appointment")
@@ -153,9 +175,9 @@ elif selected_tab == "Take Appointment":
             except FileNotFoundError:
                 existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Disease", "Date", "Time", "Reason"])
 
-            # Concatenate the new appointment data with the existing DataFrame
-            new_appointment = pd.DataFrame({"Patient Name": [patient_name], "Doctor": [doctor], "Disease": [disease], "Date": [date], "Time": [time], "Reason": [reason]})
-            existing_data = pd.concat([existing_data, new_appointment], ignore_index=True)
+            # Append the new appointment data to the existing DataFrame
+            new_appointment = {"Patient Name": patient_name, "Doctor": doctor, "Disease": disease, "Date": date, "Time": time, "Reason": reason}
+            existing_data = existing_data.append(new_appointment, ignore_index=True)
 
             # Save the updated DataFrame back to the CSV file
             existing_data.to_csv("appointments.csv", index=False)
