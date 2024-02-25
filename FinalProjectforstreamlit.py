@@ -219,9 +219,9 @@ elif selected_tab == "Saved Data":
     st.sidebar.title("Appointments Over Time")
     st.sidebar.line_chart(existing_data)
 
-# Additional sidebar on the right side
-st.sidebar.title("Additional Options")
-st.sidebar.write("You can add more options here.")
+    # Additional sidebar on the right side
+    st.sidebar.title("Additional Options")
+    st.sidebar.write("You can add more options here.")
 
 
 
