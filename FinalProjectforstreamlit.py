@@ -238,30 +238,56 @@ elif selected_tab == "Hospital Addresses":
         st.write(f"**{hospital['name']}**")
         st.image(hospital['image_url'], caption=hospital['name'], width=300)
 
-elif selected_tab == "Upload Tests":
-    st.title("Upload Tests")
-    st.write("Please fill out the form and upload the test picture.")
+upload_dir = "uploaded_tests"
+os.makedirs(upload_dir, exist_ok=True)
 
-    # Create a form for test picture upload
-    test_name = st.text_input("Test Name")
-    patient_name = st.text_input("Patient Name")
+# Function to save test data
+def save_test_data(test_name, patient_name, file_path):
+    # Load existing test data from CSV
+    try:
+        existing_data = pd.read_csv("tests_saved_data.csv")
+    except FileNotFoundError:
+        existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "File Path"])
 
-    uploaded_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
+    # Append the new test data
+    new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "File Path": [file_path]})
+    existing_data = pd.concat([existing_data, new_test], ignore_index=True)
 
-    if uploaded_file is not None:
-        # Save the uploaded file to the upload directory
-        file_path = os.path.join(upload_dir, uploaded_file.name)
-        with open(file_path, "wb") as f:
-            f.write(uploaded_file.getbuffer())
+    # Save the updated DataFrame back to the CSV file
+    existing_data.to_csv("tests_saved_data.csv", index=False)
 
-        st.success("Test picture uploaded successfully!")
-    else:
-        st.warning("Please upload a test picture.")
+# Upload Tests tab
+st.title("Upload Tests")
+st.write("Please fill out the form and upload the test picture.")
 
-elif selected_tab == "Tests Saved Data":
-    st.title("Tests Saved Data")
-    # Display saved test data
-    # You can add code here to load and display the saved test data
+# Create a form for test picture upload
+test_name = st.text_input("Test Name")
+patient_name = st.text_input("Patient Name")
+
+uploaded_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
+
+if uploaded_file is not None:
+    # Save the uploaded file to the upload directory
+    file_path = os.path.join(upload_dir, uploaded_file.name)
+    with open(file_path, "wb") as f:
+        f.write(uploaded_file.getbuffer())
+
+    st.success("Test picture uploaded successfully!")
+
+    # Save test data
+    save_test_data(test_name, patient_name, file_path)
+else:
+    st.warning("Please upload a test picture.")
+
+# Tests Saved Data tab
+st.title("Tests Saved Data")
+
+# Load and display saved test data
+try:
+    tests_data = pd.read_csv("tests_saved_data.csv")
+    st.dataframe(tests_data)
+except FileNotFoundError:
+    st.write("No tests saved yet.")
 
 elif selected_tab == "Contact":
     st.title("Contact")
