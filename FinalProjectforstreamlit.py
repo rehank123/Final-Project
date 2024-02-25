@@ -205,27 +205,18 @@ elif selected_tab == "Saved Data":
     except FileNotFoundError:
         existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Disease", "Date", "Time", "Reason"])
 
-    # Create two columns layout for search box and line chart
-    col1, col2 = st.columns([3, 1])
-
-    # Display search box in the first column
-    with col1:
-        st.write("Search for Doctor:")
-        selected_doctor = st.sidebar.selectbox("Select Doctor", ["All"] + list(existing_data["Doctor"].unique()))
-
     # Filter appointments by selected doctor
-    if selected_doctor == "All":
-        st.write("Below is the list of all saved appointments:")
-        st.dataframe(existing_data)
-    else:
-        filtered_data = existing_data[existing_data["Doctor"] == selected_doctor]
-        st.write(f"Below is the list of saved appointments for {selected_doctor}:")
-        st.dataframe(filtered_data)
+    st.sidebar.title("Filter by Doctor")
+    selected_doctor = st.sidebar.selectbox("Select Doctor", ["All"] + list(existing_data["Doctor"].unique()))
 
-    # Display line chart in the second column
-    with col2:
-        st.write("Line Chart for Appointment Data")
-        st.line_chart(existing_data)
+    if selected_doctor != "All":
+        existing_data = existing_data[existing_data["Doctor"] == selected_doctor]
+
+    st.dataframe(existing_data)
+
+    # Display line chart
+    st.title("Appointments Over Time")
+    st.line_chart(existing_data)
 
 
 
