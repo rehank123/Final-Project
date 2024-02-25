@@ -145,9 +145,9 @@ elif information == "3":
 
 
     
-    elif page == "About":
+elif page == "About":
         show_about_page()
-    elif page == "Contact":
+elif page == "Contact":
         show_contact_page()
 
 def show_home_page():
