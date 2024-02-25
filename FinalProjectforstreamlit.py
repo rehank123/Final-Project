@@ -1,6 +1,4 @@
-Sure, I'll add tabs to your existing code without changing the if-else structure. Here's the modified code with tabs:
 
-```python
 import streamlit as st
 
 # Add tabs
@@ -138,5 +136,5 @@ elif selected_tab == "About Hospital":
 # Invalid tab
 else:
     st.write("Invalid Input")
-```
+
 
