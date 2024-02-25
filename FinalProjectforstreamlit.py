@@ -145,7 +145,7 @@ elif selected_tab == "Take Appointment":
     "Dr. Abdullah": ["Influenza (Flu)", "Allergies",],
     "Dr. Salman": ["Stomach Flu (Gastroenteritis)", ],
     "Dr. Kaleem": ["Headache", "Allergies", "Cancer", "Pneumonia"],
-    "Dr. Naimat": ["Cancer", ", "Urinary Tract Infection (UTI)"],
+    "Dr. Naimat": ["Cancer", "Urinary Tract Infection (UTI)"],
     "Dr. Imran": ["Common Cold", "Headache", "Allergies", "Conjunctivitis (Pink Eye)"],
     "Dr. Kamran": ["Influenza (Flu)", "Stomach Flu (Gastroenteritis)"],
     "Dr. Moin": ["Common Cold", "Influenza (Flu)", "Cancer", "Conjunctivitis (Pink Eye)"],
@@ -155,15 +155,15 @@ elif selected_tab == "Take Appointment":
     # Create a form for doctor appointment scheduling
     patient_name = st.text_input("Patient Name")
     doctor = st.selectbox("Select Doctor", ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"])
-    
+
     # Populate the diseases dropdown based on the selected doctor
     if doctor in doctor_diseases:
         diseases = doctor_diseases[doctor]
     else:
         diseases = []
-    
+
     disease = st.selectbox("Select Disease", diseases)
-    
+
     date = st.date_input("Date")
     time = st.time_input("Time")
     reason = st.text_area("Reason for Appointment")
