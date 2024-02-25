@@ -230,12 +230,12 @@ elif selected_tab == "Hospital Addresses":
         "https://stock.adobe.com/images/emergeny-room/30021050"
     ]
     captions = [
-        "Zia Hospital",
-        "Noor Health Care",
-        "Al-Muslim Medical Center",
-        "Imam Health Care",
-        "Shaukat Khanum",
-        "Al Khidmat"
+        "Zia Hospital North Nazimabad Karachi",
+        "Noor Health Care Manghopir Sultanabad Karachi",
+        "Al-Muslim Medical Center Malik Chook Lahore",
+        "Imam Health Care Five Star Churangi Karachi",
+        "Ahmed Ibrahim Eye Hospital Banaras Karachi",
+        "Al Khidmat Medical Center Sahiwal "
     ]
 
     # Create two columns for each image
