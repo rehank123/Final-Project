@@ -140,6 +140,7 @@ elif selected_tab == "Take Appointment":
     # Create a form for doctor appointment scheduling
     patient_name = st.text_input("Patient Name")
     doctor = st.selectbox("Select Doctor", ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"])
+    disease = st.selectbox("Select Disease", ["Common Cold", "Influenza (Flu)", "Headache", "Allergies", "Cancer", "Pneumonia", "Stomach Flu (Gastroenteritis)", "Sinusitis", "Urinary Tract Infection (UTI)", "Conjunctivitis (Pink Eye)"])
     date = st.date_input("Date")
     time = st.time_input("Time")
     reason = st.text_area("Reason for Appointment")
@@ -150,10 +151,10 @@ elif selected_tab == "Take Appointment":
             try:
                 existing_data = pd.read_csv("appointments.csv")
             except FileNotFoundError:
-                existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Date", "Time", "Reason"])
+                existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Disease", "Date", "Time", "Reason"])
 
             # Concatenate the new appointment data with the existing DataFrame
-            new_appointment = pd.DataFrame({"Patient Name": [patient_name], "Doctor": [doctor], "Date": [date], "Time": [time], "Reason": [reason]})
+            new_appointment = pd.DataFrame({"Patient Name": [patient_name], "Doctor": [doctor], "Disease": [disease], "Date": [date], "Time": [time], "Reason": [reason]})
             existing_data = pd.concat([existing_data, new_appointment], ignore_index=True)
 
             # Save the updated DataFrame back to the CSV file
@@ -162,6 +163,7 @@ elif selected_tab == "Take Appointment":
             st.success("Doctor appointment scheduled successfully!")
             st.write("Patient Name:", patient_name)
             st.write("Doctor:", doctor)
+            st.write("Disease:", disease)
             st.write("Date:", date)
             st.write("Time:", time)
             st.write("Reason:", reason)
@@ -177,9 +179,6 @@ elif selected_tab == "Saved Data":
         st.write(existing_data)
     except FileNotFoundError:
         st.write("No appointments found.")
-
-
-
 
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
