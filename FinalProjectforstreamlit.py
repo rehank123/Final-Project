@@ -1,18 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-# Dictionary mapping doctors to their respective diseases
-doctor_diseases = {
-    "Dr. Saleem": ["Common Cold", "Headache", "Pneumonia", "Sinusitis"],
-    "Dr. Abdullah": ["Influenza (Flu)", "Allergies", "Cancer", "Urinary Tract Infection (UTI)"],
-    "Dr. Salman": ["Stomach Flu (Gastroenteritis)", "Conjunctivitis (Pink Eye)"],
-    "Dr. Kaleem": ["Headache", "Allergies", "Cancer", "Pneumonia"],
-    "Dr. Naimat": ["Common Cold", "Influenza (Flu)", "Sinusitis", "Urinary Tract Infection (UTI)"],
-    "Dr. Imran": ["Common Cold", "Headache", "Allergies", "Conjunctivitis (Pink Eye)"],
-    "Dr. Kamran": ["Influenza (Flu)", "Stomach Flu (Gastroenteritis)", "Pneumonia", "Sinusitis"],
-    "Dr. Moin": ["Common Cold", "Influenza (Flu)", "Cancer", "Conjunctivitis (Pink Eye)"],
-    "Dr. Sultan": ["Headache", "Allergies", "Stomach Flu (Gastroenteritis)", "Urinary Tract Infection (UTI)"],
-    "Dr. Faizan": ["Common Cold", "Influenza (Flu)", "Cancer", "Pneumonia"]
+
 }
 
 tabs = ["Chatbot", "Take Appointment", "Saved Data", "Hospital Addresses", "Contact", "About Us"]
@@ -150,7 +139,18 @@ if selected_tab == "Chatbot":
 elif selected_tab == "Take Appointment":
     st.title("Take Doctor Appointment")
     st.write("Please fill out the form below to schedule a doctor appointment.")
-
+    # Dictionary mapping doctors to their respective diseases
+    doctor_diseases = {
+    "Dr. Saleem": ["Common Cold", "Headache", "Pneumonia", "Sinusitis"],
+    "Dr. Abdullah": ["Influenza (Flu)", "Allergies",],
+    "Dr. Salman": ["Stomach Flu (Gastroenteritis)", ],
+    "Dr. Kaleem": ["Headache", "Allergies", "Cancer", "Pneumonia"],
+    "Dr. Naimat": ["Cancer", ", "Urinary Tract Infection (UTI)"],
+    "Dr. Imran": ["Common Cold", "Headache", "Allergies", "Conjunctivitis (Pink Eye)"],
+    "Dr. Kamran": ["Influenza (Flu)", "Stomach Flu (Gastroenteritis)"],
+    "Dr. Moin": ["Common Cold", "Influenza (Flu)", "Cancer", "Conjunctivitis (Pink Eye)"],
+    "Dr. Sultan": ["Headache", "Allergies", ],
+    "Dr. Faizan": ["Common Cold", "Influenza (Flu)", "Cancer", "Pneumonia"]
     # Create a form for doctor appointment scheduling
     patient_name = st.text_input("Patient Name")
     doctor = st.selectbox("Select Doctor", ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"])
