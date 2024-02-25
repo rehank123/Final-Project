@@ -218,14 +218,13 @@ elif selected_tab == "Saved Data":
         st.write(f"Below is the list of saved appointments for {selected_doctor}:")
         st.dataframe(filtered_data)
 
-    # Create two columns layout for appointments and area chart
+    # Create two columns layout for appointments and line chart
     col1, col2 = st.columns([2, 1])
 
-    # Display area chart in the second column
+    # Display line chart in the second column
     with col2:
-        st.write("Area Chart for Appointment Data")
-        st.area_chart(existing_data)
-
+        st.write("Line Chart for Appointment Data")
+        st.line_chart(existing_data)
 
 
 
