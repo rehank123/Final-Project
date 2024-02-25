@@ -1,17 +1,25 @@
+Sure, I'll add tabs to your existing code without changing the if-else structure. Here's the modified code with tabs:
+
+```python
 import streamlit as st
 
-st.title("Welcome to Healthcare Chatbot")
-st.write("Information List")
-st.write("""
-1. About Medicine for Disease
-2. About Doctor for Disease
-3. About Hospital for Doctor
-""")
+# Add tabs
+tabs = ["Home", "About Medicine", "About Doctor", "About Hospital"]
+selected_tab = st.sidebar.radio("Select an option", tabs)
 
-information = st.text_input("Please Enter a Number for detail you want to know about:")
+# Home tab
+if selected_tab == "Home":
+    st.title("Welcome to Healthcare Chatbot")
+    st.write("Information List")
+    st.write("""
+    1. About Medicine for Disease
+    2. About Doctor for Disease
+    3. About Hospital for Doctor
+    """)
+    st.write("Please Enter a Number for detail you want to know about:")
 
-if information == "1":
-
+# About Medicine tab
+elif selected_tab == "About Medicine":
     st.write("List of diseases")
     st.write("""
     1. Common Cold
@@ -25,9 +33,7 @@ if information == "1":
     9. Urinary Tract Infection (UTI)
     10. Conjunctivitis (Pink Eye)
     """)
-
     disease = st.text_input("Enter the number of your disease for Medicine:")
-
     if disease == "1":  
         st.write("Recommended medicine: Acetaminophen")
     elif disease == "2":
@@ -51,8 +57,8 @@ if information == "1":
     else:
         st.write("Your disease is not in the list")
 
-elif information == "2":
-
+# About Doctor tab
+elif selected_tab == "About Doctor":
     st.write("List of Diseases")
     st.write("""
     1. Common Cold
@@ -67,7 +73,6 @@ elif information == "2":
     10. Conjunctivitis (Pink Eye)
     """)
     doctor = st.text_input("Enter the number of your Doctor for Diseases:")
-
     if doctor == "1":
         st.write("Dr. Saleem")
     elif doctor == "2":
@@ -91,8 +96,8 @@ elif information == "2":
     else:
         st.write("Invalid Input")
 
-elif information == "3":
-
+# About Hospital tab
+elif selected_tab == "About Hospital":
     st.write("List of Doctors")
     st.write("""
     1. Dr. Saleem
@@ -107,7 +112,6 @@ elif information == "3":
     10. Dr. Faizan
     """)
     doctor = st.text_input("Enter the number of your Doctor for Hospital:")
-
     if doctor == "1":
         st.write("Hospital Name: Zia Care Hospital")
     elif doctor == "2":
@@ -119,6 +123,8 @@ elif information == "3":
     elif doctor == "5":
         st.write("Hospital Name: Shaukat Khanum")
     elif doctor == "6":
+
+
         st.write("Hospital Name: Imam Clinic Hospital")
     elif doctor == "7":
         st.write("Hospital Name: Muslim Welfare Hospital")
@@ -129,5 +135,8 @@ elif information == "3":
     elif doctor == "10":
         st.write("Hospital Name: Zain Hospital")
 
+# Invalid tab
 else:
     st.write("Invalid Input")
+```
+
