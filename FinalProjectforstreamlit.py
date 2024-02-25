@@ -212,15 +212,15 @@ elif selected_tab == "Saved Data":
         existing_data = existing_data[existing_data["Doctor"] == selected_doctor]
 
     # Display filter box and graph side by side
-    col1, col2 = st.columns([1, 3])
+    col1, col2 = st.columns([3, 1])
 
     with col1:
-        st.dataframe(existing_data)
-
-    with col2:
         # Display line chart
         st.title("Appointments Over Time")
         st.line_chart(existing_data)
+
+    with col2:
+        st.dataframe(existing_data)
 
 
 
