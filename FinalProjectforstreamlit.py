@@ -226,27 +226,21 @@ elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
     st.write("Content for the Hospital Addresses tab goes here.")
 
-    # Define the hospital data including names and image file data
+    # Define the hospital data including names and image URLs
     hospital_data = [
-        {"name": "Zia Hospital North Nazimabad Karachi", "image_data": None},
-        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_data": None},
-        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_data": None},
-        {"name": "Imam Health Care Five Star Churangi Karachi", "image_data": None},
-        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_data": None},
-        {"name": "Al Khidmat Medical Center Sahiwal", "image_data": None}
+        {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://example.com/image1.jpg"},
+        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://example.com/image2.jpg"},
+        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://example.com/image3.jpg"},
+        {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://example.com/image4.jpg"},
+        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://example.com/image5.jpg"},
+        {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://example.com/image6.jpg"}
     ]
-
-    # Allow users to upload images for each hospital
-    for hospital in hospital_data:
-        st.write(f"**{hospital['name']}**")
-        hospital['image_data'] = st.file_uploader(f"Upload image for {hospital['name']}", type=["jpg", "jpeg", "png"])
 
     # Display images and hospital names
     for hospital in hospital_data:
-        if hospital['image_data'] is not None:
-            st.image(hospital['image_data'], caption=hospital['name'], width=300, use_column_width='auto')
-        else:
-            st.write("No image uploaded for", hospital['name'])
+        st.write(f"**{hospital['name']}**")
+        st.image(hospital['image_url'], caption=hospital['name'], width=300)
+
 
 
 
