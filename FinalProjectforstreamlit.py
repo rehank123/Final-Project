@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit.elements.image import WidthBehaviour
 
 tabs = ["Chatbot", "Take Appointment", "Saved Data", "Hospital Addresses", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
@@ -212,10 +213,12 @@ elif selected_tab== "Hospital Addresses" :
       st.title("Hospital Addresses")
       st.write("Content for the Hospital Addresses tab goes here.")
   
-      st.image("https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dhospital%2Bbuilding&psig=AOvVaw28gHJiT-1kmJ-cBGTRoQnR&ust=1708978107591000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMDy89ulx4QDFQAAAAAdAAAAABAE", caption="Hospital 1")
-      st.image("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F614108099175029192%2F&psig=AOvVaw28gHJiT-1kmJ-cBGTRoQnR&ust=1708978107591000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMDy89ulx4QDFQAAAAAdAAAAABAJ", caption="Hospital 2")
-      st.image("https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dhospital%2Bbuilding&psig=AOvVaw28gHJiT-1kmJ-cBGTRoQnR&ust=1708978107591000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMDy89ulx4QDFQAAAAAdAAAAABA3", caption="Hospital 3")
-
+      st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Zia Hospital" , width=200)
+      st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Noor Health Care",width=200)
+      st.image("https://stock.adobe.com/images/emergeny-room/30021050", caption="Al-Muslim Medical Center",width=200")
+      st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Imam Health Care", width=200)
+      st.image("https://stock.adobe.com/images/build-hospital/45207005", caption="Shuqat Khanum", width=200)
+      st.image("https://stock.adobe.com/images/emergeny-room/30021050", caption="Al Khadmat", width=200)
 
 
 
