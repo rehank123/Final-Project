@@ -133,82 +133,30 @@ if selected_tab == "Chatbot":
         else:
             st.write("Invalid Input")
 
-elif selected_tab == "Take Appointment":
-    st.title("Take Appointment")
-    st.write("Content for the Take Appointment tab goes here.")
 
-    class Patient:
-        def __init__(self, name, age, gender, doctor_specialization):
-            self.name = name
-            self.age = age
-            self.gender = gender
-            self.doctor_specialization = doctor_specialization
 
-    patients = []
-    total_patients = 0
+elif selected_tab == "Take Doctor Appointment":
+  st.title("Take Doctor Appointment")
+  st.write("Please fill out the form below to schedule a doctor appointment.")
 
-    doctor_specializations = {
-        1: 'Cardiologist',
-        2: 'Dermatologist',
-        3: 'Pediatrician',
-        4: 'Orthopedic',
-        5: 'Neurologist'
-    }
+  # Create a form for doctor appointment scheduling
+  with st.form(key='doctor_appointment_form'):
+      patient_name = st.text_input("Patient Name")
+      doctor = st.selectbox("Select Doctor", ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"])
+      date = st.date_input("Date")
+      time = st.time_input("Time")
+      reason = st.text_area("Reason for Appointment")
+      submit_button = st.form_submit_button(label='Schedule Appointment')
 
-    def book_appointment():
-        name = input("Enter patient's name: ")
-        age = int(input("Enter patient's age: "))
-        gender = input("Enter patient's gender: ")
-        print("Specializations:")
-        for key, value in doctor_specializations.items():
-            print(f"{key}. {value}")
-        choice = int(input("Choose doctor's specialization: "))
-        doctor_specialization = doctor_specializations.get(choice)
-        if doctor_specialization is None:
-            print("Invalid choice.")
-            return
-        new_patient = Patient(name, age, gender, doctor_specialization)
-        patients.append(new_patient)
-        global total_patients
-        total_patients += 1
-        print(f"Appointment booked for {name} with {doctor_specialization}")
-        input("Press Enter to continue....")
-        print("")
+      if submit_button:
+          # Process the form submission (you can save the appointment record to a database, for example)
+          st.success("Doctor appointment scheduled successfully!")
+          st.write("Patient Name:", patient_name)
+          st.write("Doctor:", doctor)
+          st.write("Date:", date)
+          st.write("Time:", time)
+          st.write("Reason:", reason)
 
-    def view_appointments():
-        if total_patients == 0:
-            print("No appointments booked yet.")
-            return
-        print("List of Appointments:")
-        for i, patient in enumerate(patients, start=1):
-            print(f"{i}. Name: {patient.name}, Age: {patient.age}, Gender: {patient.gender}, Doctor: {patient.doctor_specialization}")
-        input("Press Enter to continue....")
-        print("")
-
-    while True:
-        if total_patients == 0:
-            print("No appointments booked yet.")
-        else:
-            print(f"Total appointments booked: {total_patients}")
-        print("")
-        print("Enter an option: ")
-        print("1. Book an appointment")
-        print("2. View appointments")
-        print("3. Exit")
-        print("")
-
-        option = int(input())
-
-        if option == 1:
-            book_appointment()
-        elif option == 2:
-            view_appointments()
-        elif option == 3:
-            print("Goodbye!")
-            break
-        else:
-            print("Invalid option. Please try again.")
-            print("")
 
 
 
