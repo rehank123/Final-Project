@@ -43,12 +43,24 @@ if selected_tab == "Chatbot":
     else:
         st.write("Invalid Input")
 
+
+
+
+
+
+
 elif selected_tab == "Contact":
     st.title("Contact")
     
-    # Define CSS styles for the contact information
+    # Define CSS styles for the contact information box
     contact_styles = """
     <style>
+    .contact-box {
+        background-color: #f4f4f4; /* Light gray background */
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Box shadow for depth */
+    }
     .contact-info {
         font-size: 18px;
         margin-bottom: 10px;
@@ -61,15 +73,29 @@ elif selected_tab == "Contact":
     """
     st.markdown(contact_styles, unsafe_allow_html=True)
     
-    # Display the contact information with Markdown
+    # Display the contact information inside a styled box
     st.markdown("### Get in Touch")
-    st.markdown("""
-    <div class="contact-info">
-    Phone Number: <a href="tel:+923118003480">0311 8003480</a><br>
-    WhatsApp Number: <a href="https://wa.me/923118003480">0311 8003480</a><br>
-    Facebook ID: <a href="https://www.facebook.com/rehan.ullah">Rehan Ullah</a>
-    </div>
-    """, unsafe_allow_html=True)
+    with st.markdown("<div class='contact-box'>", unsafe_allow_html=True):
+        st.markdown("""
+        <div class="contact-info">
+        Phone Number: <a href="tel:+923118003480">0311 8003480</a><br>
+        WhatsApp Number: <a href="https://wa.me/923118003480">0311 8003480</a><br>
+        Facebook ID: <a href="https://www.facebook.com/rehan.ullah">Rehan Ullah</a>
+        </div>
+        """, unsafe_allow_html=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 elif selected_tab == "About":
     st.title("About")
