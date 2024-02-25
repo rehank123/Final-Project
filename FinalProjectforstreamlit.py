@@ -229,9 +229,9 @@ elif selected_tab == "Hospital Addresses":
 
     # Define the image URLs and captions
     image_urls = [
-        "https://www.gettyimages.com/detail/photo/study-of-architectural-form-05-royalty-free-image/173799627",
-        "https://stock.adobe.com/images/build-hospital/45207005",
-        "https://stock.adobe.com/images/emergeny-room/30021050",
+        "https://unsplash.com/photos/brown-concrete-building-under-blue-sky-during-daytime-1c8sj2IO2I4",
+        "https://unsplash.com/photos/brown-and-white-concrete-building-near-green-trees-under-blue-sky-during-daytime-8PB_TFEy2XQ",
+        "https://unsplash.com/photos/white-and-brown-concrete-building-under-blue-sky-during-daytime-b3LF7JHQmms",
         "https://stock.adobe.com/images/build-hospital/45207005",
         "https://stock.adobe.com/images/build-hospital/45207005",
         "https://stock.adobe.com/images/emergeny-room/30021050"
