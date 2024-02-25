@@ -138,8 +138,31 @@ if selected_tab == "Chatbot":
     else:
         st.write("Invalid Input")
 
+
+elif selected_tab == "Contact":
+    st.title("Contact")
+    st.write("banoqabil.")
+
 elif selected_tab == "About":
     st.title("About")
+
+
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: white;
+color: black;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Developed with ❤ by <a style='display: block; text-align: center;' href="https://banoqabil.pk" target="_blank">Bano Qabil Alkhidmat </a></p>
+</div>
+"""
+st.markdown(footer,unsafe_allow_html=True)
     st.write("""
     This is a healthcare chatbot designed to provide information about various medical conditions, recommended medicines, doctors, and hospitals.
     You can use the tabs to navigate between different sections:
@@ -147,7 +170,3 @@ elif selected_tab == "About":
     - **About**: Gives a brief overview of the chatbot.
     - **Contact**: Provides contact information.
     """)
-
-elif selected_tab == "Contact":
-    st.title("Contact")
-    st.write("This is the contact page.")
