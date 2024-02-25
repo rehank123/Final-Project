@@ -3,7 +3,7 @@ import streamlit as st
 
 
 
-tabs = ["Chatbot", "Contact", "About Us", Save Data "Hospital Addresses"]
+tabs = ["Chatbot", "Contact", "About Us", "Saved Data", "Hospital Addresses"]
 selected_tab = st.sidebar.radio("", tabs)
 
 
