@@ -208,7 +208,9 @@ elif selected_tab == "Take Appointment":
         else:
             print("Invalid option. Please try again.")
             print("")
-
+elif "Hospital Addresses" in selected_tabs:
+      st.title("Hospital Addresses")
+      st.write("Content for the Hospital Addresses tab goes here.")
 elif selected_tab == "Contact":
     st.title("Contact")
 
