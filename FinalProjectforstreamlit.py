@@ -48,7 +48,6 @@ if selected_tab == "Chatbot":
 
 
 
-
 elif selected_tab == "Contact":
     st.title("Contact")
     
@@ -75,14 +74,17 @@ elif selected_tab == "Contact":
     
     # Display the contact information inside a styled box
     st.markdown("### Get in Touch")
-    with st.markdown("<div class='contact-box'>", unsafe_allow_html=True):
+    with st.beta_container():
         st.markdown("""
-        <div class="contact-info">
-        Phone Number: <a href="tel:+923118003480">0311 8003480</a><br>
-        WhatsApp Number: <a href="https://wa.me/923118003480">0311 8003480</a><br>
-        Facebook ID: <a href="https://www.facebook.com/rehan.ullah">Rehan Ullah</a>
+        <div class="contact-box">
+            <div class="contact-info">
+                Phone Number: <a href="tel:+923118003480">0311 8003480</a><br>
+                WhatsApp Number: <a href="https://wa.me/923118003480">0311 8003480</a><br>
+                Facebook ID: <a href="https://www.facebook.com/rehan.ullah">Rehan Ullah</a>
+            </div>
         </div>
         """, unsafe_allow_html=True)
+
 
 
 
