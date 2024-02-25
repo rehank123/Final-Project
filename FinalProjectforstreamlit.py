@@ -60,21 +60,21 @@ if selected_tab == "Chatbot":
       else:
             st.write("Your disease is not in the list")
 
-elif information == "2":
-  st.write("List of Diseases")
-  st.write("""
-   1. Common Cold
-   2. Influenza (Flu)
-   3. Headache
-   4. Allergies
-   5. Cancer
-   6. Pneumonia
-   7. Stomach Flu (Gastroenteritis)
-   8. Sinusitis
-   9. Urinary Tract Infection (UTI)
-   10. Conjunctivitis (Pink Eye)
-   """)
-  doctor = st.text_input("Enter the number of your Doctor for Diseases:")
+   elif information == "2":
+        st.write("List of Diseases")
+        st.write("""
+        1. Common Cold
+         2. Influenza (Flu)
+         3. Headache
+         4. Allergies
+         5. Cancer
+         6. Pneumonia
+         7. Stomach Flu (Gastroenteritis)
+         8. Sinusitis
+         9. Urinary Tract Infection (UTI)
+         10. Conjunctivitis (Pink Eye)
+         """)
+        doctor = st.text_input("Enter the number of your Doctor for Diseases:")
 
   if doctor == "1":
     st.write("Dr. Saleem")
