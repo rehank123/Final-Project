@@ -1,5 +1,21 @@
 import streamlit as st
 
+# Create tabs
+tabs = ["Tab 1", "Tab 2", "Tab 3"]
+selected_tab = st.sidebar.selectbox("Select a tab", tabs)
+
+# Display content based on selected tab
+if selected_tab == "Tab 1":
+    st.write("This is content for Tab 1")
+elif selected_tab == "Tab 2":
+    st.write("This is content for Tab 2")
+elif selected_tab == "Tab 3":
+    st.write("This is content for Tab 3")
+
+
+
+
+
 st.title("Welcome to Healthcare Chatbot")
 st.write("Information List")
 st.write("""
