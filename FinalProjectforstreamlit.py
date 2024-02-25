@@ -77,9 +77,9 @@ elif selected_tab == "Contact":
     st.markdown("""
     <div class="contact-box">
         <div class="contact-info">
-            Phone Number:                   &nbsp;&nbsp; <a href="tel:+923118003480">0311 8003480</a><br>
-            WhatsApp Number:                &nbsp;&nbsp;  <a href="https://wa.me/923118003480">0311 8003480</a><br>
-            Facebook ID:                    &nbsp;&nbsp;  <a href="https://www.facebook.com/rehan.ullah">Rehan Ullah</a>
+            Phone Number:                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="tel:+923118003480">0311 8003480</a><br>
+            WhatsApp Number:                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="https://wa.me/923118003480">0311 8003480</a><br>
+            Facebook ID:                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="https://www.facebook.com/rehan.ullah">Rehan Ullah</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
