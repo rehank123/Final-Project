@@ -132,7 +132,19 @@ if selected_tab == "Chatbot":
     else:
         st.write("Invalid Input")
 
-elif selected_tab == "Take Appointment":
+import streamlit as st
+import pandas as pd
+
+# Load existing appointment data from CSV
+try:
+    existing_data = pd.read_csv("appointments.csv")
+except FileNotFoundError:
+    existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Date", "Time", "Reason"])
+
+tabs = ["Take Appointment"]
+selected_tab = st.sidebar.radio("", tabs)
+
+if selected_tab == "Take Appointment":
     st.title("Take Doctor Appointment")
     st.write("Please fill out the form below to schedule a doctor appointment.")
 
@@ -142,10 +154,15 @@ elif selected_tab == "Take Appointment":
     date = st.date_input("Date")
     time = st.time_input("Time")
     reason = st.text_area("Reason for Appointment")
-    submit_button = st.form_submit_button(label='Schedule Appointment')
 
-    if submit_button:
-        # Process the form submission (you can save the appointment record to a database, for example)
+    if st.button("Schedule Appointment"):
+        # Append the new appointment data to the existing DataFrame
+        new_appointment = {"Patient Name": patient_name, "Doctor": doctor, "Date": date, "Time": time, "Reason": reason}
+        existing_data = existing_data.append(new_appointment, ignore_index=True)
+        
+        # Save the updated DataFrame back to the CSV file
+        existing_data.to_csv("appointments.csv", index=False)
+
         st.success("Doctor appointment scheduled successfully!")
         st.write("Patient Name:", patient_name)
         st.write("Doctor:", doctor)
