@@ -203,6 +203,29 @@ elif selected_tab == "Saved Data":
     except FileNotFoundError:
         st.write("No appointments found.")
 
+     try:
+        existing_data = pd.read_csv("appointments.csv")
+        
+        # Display doctor selection dropdown
+        doctors = existing_data["Doctor"].unique()
+        selected_doctor = st.selectbox("Select Doctor", ["All"] + list(doctors))
+        
+        if selected_doctor == "All":
+            st.write("Below is the list of all saved appointments:")
+            st.dataframe(existing_data)
+        else:
+            # Filter appointments by selected doctor
+            filtered_data = existing_data[existing_data["Doctor"] == selected_doctor]
+            st.write(f"Below is the list of saved appointments for {selected_doctor}:")
+            st.dataframe(filtered_data)
+        except FileNotFoundError:
+        st.write("No appointments found.")
+
+
+
+
+
+
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
     st.write("Content for the Hospital Addresses tab goes here.")
