@@ -238,31 +238,45 @@ elif selected_tab == "Hospital Addresses":
         st.write(f"**{hospital['name']}**")
         st.image(hospital['image_url'], caption=hospital['name'], width=300)
 
-elif selected_tab == "Upload Tests":
-    st.title("Upload Tests")
-    st.write("Please fill out the form and upload the test picture.")
+# Function to save test data
+def save_test_data(test_name, patient_name, patient_age, test_date, file_path):
+    # Load existing test data from CSV
+    try:
+        existing_data = pd.read_csv("tests_saved_data.csv")
+    except FileNotFoundError:
+        existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "Patient Age", "Test Date", "File Path"])
 
-    # Create a form for test details and picture upload
-    test_name = st.text_input("Test Name")
-    patient_name = st.text_input("Patient Name")
-    patient_age = st.number_input("Patient Age", min_value=0, max_value=150, value=0)
-    test_date = st.date_input("Test Date")
-    notes = st.text_area("Notes")
+    # Append the new test data
+    new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "Patient Age": [patient_age], "Test Date": [test_date], "File Path": [file_path]})
+    existing_data = pd.concat([existing_data, new_test], ignore_index=True)
 
-    uploaded_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
+    # Save the updated DataFrame back to the CSV file
+    existing_data.to_csv("tests_saved_data.csv", index=False)
 
-    if uploaded_file is not None:
-        # Save the uploaded file to the upload directory
-        file_path = os.path.join(upload_dir, uploaded_file.name)
-        with open(file_path, "wb") as f:
-            f.write(uploaded_file.getbuffer())
+# Upload Tests tab
+st.title("Upload Tests")
+st.write("Please fill out the form and upload the test picture.")
 
-        st.success("Test picture uploaded successfully!")
+# Create a form for test picture upload
+test_name = st.text_input("Test Name")
+patient_name = st.text_input("Patient Name")
+patient_age = st.number_input("Patient Age", min_value=0, max_value=150, value=0)
+test_date = st.date_input("Test Date")
 
-        # Save test data
-        save_test_data(test_name, patient_name, patient_age, test_date, notes, file_path)
-    else:
-        st.warning("Please upload a test picture.")
+uploaded_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
+
+if uploaded_file is not None:
+    # Save the uploaded file to the upload directory
+    file_path = os.path.join(upload_dir, uploaded_file.name)
+    with open(file_path, "wb") as f:
+        f.write(uploaded_file.getbuffer())
+
+    st.success("Test picture uploaded successfully!")
+
+    # Save test data
+    save_test_data(test_name, patient_name, patient_age, test_date, file_path)
+else:
+    st.warning("Please upload a test picture.")
 
 elif selected_tab == "Tests Saved Data":
     st.title("Tests Saved Data")
