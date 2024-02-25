@@ -1,8 +1,19 @@
 import streamlit as st
 import pandas as pd
 
-
-
+# Dictionary to store doctor-diseases mapping
+doctor_diseases = {
+    "Dr. Saleem": ["Common Cold", "Influenza (Flu)", "Headache"],
+    "Dr. Abdullah": ["Allergies", "Cancer", "Pneumonia"],
+    "Dr. Salman": ["Stomach Flu (Gastroenteritis)", "Sinusitis", "Urinary Tract Infection (UTI)"],
+    "Dr. Kaleem": ["Conjunctivitis (Pink Eye)"],
+    "Dr. Naimat": ["Common Cold", "Headache", "Allergies"],
+    "Dr. Imran": ["Influenza (Flu)", "Cancer", "Sinusitis"],
+    "Dr. Kamran": ["Pneumonia", "Stomach Flu (Gastroenteritis)", "Urinary Tract Infection (UTI)"],
+    "Dr. Moin": ["Headache", "Conjunctivitis (Pink Eye)"],
+    "Dr. Sultan": ["Common Cold", "Allergies", "Pneumonia"],
+    "Dr. Faizan": ["Influenza (Flu)", "Cancer", "Sinusitis"]
+}
 
 tabs = ["Chatbot", "Take Appointment", "Saved Data", "Hospital Addresses", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
@@ -139,31 +150,19 @@ if selected_tab == "Chatbot":
 elif selected_tab == "Take Appointment":
     st.title("Take Doctor Appointment")
     st.write("Please fill out the form below to schedule a doctor appointment.")
-    # Dictionary mapping doctors to their respective diseases
-    doctor_diseases = {
-    "Dr. Saleem": ["Common Cold", "Headache", "Pneumonia", "Sinusitis"],
-    "Dr. Abdullah": ["Influenza (Flu)", "Allergies",],
-    "Dr. Salman": ["Stomach Flu (Gastroenteritis)", ],
-    "Dr. Kaleem": ["Headache", "Allergies", "Cancer", "Pneumonia"],
-    "Dr. Naimat": ["Cancer", "Urinary Tract Infection (UTI)"],
-    "Dr. Imran": ["Common Cold", "Headache", "Allergies", "Conjunctivitis (Pink Eye)"],
-    "Dr. Kamran": ["Influenza (Flu)", "Stomach Flu (Gastroenteritis)"],
-    "Dr. Moin": ["Common Cold", "Influenza (Flu)", "Cancer", "Conjunctivitis (Pink Eye)"],
-    "Dr. Sultan": ["Headache", "Allergies", ],
-    "Dr. Faizan": ["Common Cold", "Influenza (Flu)", "Cancer", "Pneumonia"]
-    }
+
     # Create a form for doctor appointment scheduling
     patient_name = st.text_input("Patient Name")
     doctor = st.selectbox("Select Doctor", ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"])
-
-    # Populate the diseases dropdown based on the selected doctor
-    if doctor in doctor_diseases:
-        diseases = doctor_diseases[doctor]
-    else:
-        diseases = []
-
-    disease = st.selectbox("Select Disease", diseases)
-
+    
+    # Populate diseases based on selected doctor
+    diseases = doctor_diseases.get(doctor, [])
+    
+    # Convert diseases list to dictionary for selectbox options
+    disease_options = {disease: disease for disease in diseases}
+    
+    disease = st.selectbox("Select Disease", list(disease_options.keys()))
+    
     date = st.date_input("Date")
     time = st.time_input("Time")
     reason = st.text_area("Reason for Appointment")
@@ -176,9 +175,9 @@ elif selected_tab == "Take Appointment":
             except FileNotFoundError:
                 existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Disease", "Date", "Time", "Reason"])
 
-            # Append the new appointment data to the existing DataFrame
-            new_appointment = {"Patient Name": patient_name, "Doctor": doctor, "Disease": disease, "Date": date, "Time": time, "Reason": reason}
-            existing_data = existing_data.append(new_appointment, ignore_index=True)
+            # Concatenate the new appointment data with the existing DataFrame
+            new_appointment = pd.DataFrame({"Patient Name": [patient_name], "Doctor": [doctor], "Disease": [disease], "Date": [date], "Time": [time], "Reason": [reason]})
+            existing_data = pd.concat([existing_data, new_appointment], ignore_index=True)
 
             # Save the updated DataFrame back to the CSV file
             existing_data.to_csv("appointments.csv", index=False)
@@ -192,6 +191,7 @@ elif selected_tab == "Take Appointment":
             st.write("Reason:", reason)
         except Exception as e:
             st.error(f"An error occurred: {e}")
+
 elif selected_tab == "Saved Data":
     st.title("Saved Appointment Data")
     st.write("Below is the list of all saved appointments:")
