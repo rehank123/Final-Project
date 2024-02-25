@@ -278,7 +278,6 @@ def save_test_data(test_name, patient_name, patient_age, test_date, file_path):
         save_test_data(test_name, patient_name, patient_age, test_date, file_path)
     else:
         st.warning("Please upload a test picture.")
-
 elif selected_tab == "Tests Saved Data":
     st.title("Tests Saved Data")
 
