@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-tabs = ["Chatbot", "Contact", "About"]
+tabs = ["Chatbot", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("Select a tab", tabs)
 
 
@@ -35,11 +35,11 @@ if selected_tab == "Chatbot":
 
     elif information == "2":
         st.write("List of Diseases")
-        # Add logic to display list of doctors based on disease input
+       
 
     elif information == "3":
         st.write("List of Doctors")
-        # Add logic to display hospital names based on doctor input
+        
 
     else:
         st.write("Invalid Input")
@@ -52,7 +52,7 @@ if selected_tab == "Chatbot":
 elif selected_tab == "Contact":
     st.title("Contact")
     
-    # Define CSS styles for the contact information box
+  
     contact_styles = """
     <style>
     .contact-box {
@@ -99,14 +99,14 @@ elif selected_tab == "Contact":
 
 
 
-elif selected_tab == "About":
+elif selected_tab == "About Us":
     st.title("About")
     # Display information about the chatbot
     st.write("""
     This is a healthcare chatbot designed to provide information about various medical conditions, recommended medicines, doctors, and hospitals.
     You can use the tabs to navigate between different sections:
     - **Home**: Provides options to explore information about medicines, doctors, and hospitals.
-    - **About**: Gives a brief overview of the chatbot.
+    - **About Us**: Gives a brief overview of the chatbot.
     - **Contact**: Provides contact information.
     """)
 
