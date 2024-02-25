@@ -199,21 +199,26 @@ elif selected_tab == "Saved Data":
     # Load existing appointment data from CSV
     try:
         existing_data = pd.read_csv("appointments.csv")
-        
-        # Display doctor selection dropdown
-        doctors = existing_data["Doctor"].unique()
-        selected_doctor = st.selectbox("Select Doctor", ["All"] + list(doctors))
-        
-        if selected_doctor == "All":
-            st.write("Below is the list of all saved appointments:")
-            st.dataframe(existing_data)
-        else:
-            # Filter appointments by selected doctor
-            filtered_data = existing_data[existing_data["Doctor"] == selected_doctor]
-            st.write(f"Below is the list of saved appointments for {selected_doctor}:")
-            st.dataframe(filtered_data)
     except FileNotFoundError:
-        st.write("No appointments found.")
+        existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Disease", "Date", "Time", "Reason"])
+
+    # Display doctor selection dropdown
+    doctors = existing_data["Doctor"].unique()
+    selected_doctor = st.sidebar.selectbox("Select Doctor", ["All"] + list(doctors))
+
+    # Filter appointments by selected doctor
+    if selected_doctor == "All":
+        st.write("Below is the list of all saved appointments:")
+        st.dataframe(existing_data)
+    else:
+        filtered_data = existing_data[existing_data["Doctor"] == selected_doctor]
+        st.write(f"Below is the list of saved appointments for {selected_doctor}:")
+        st.dataframe(filtered_data)
+
+    # Add area chart for the second column in the sidebar
+    st.sidebar.area_chart(existing_data)
+    # Alternatively, you can use st.sidebar.line_chart(existing_data) for a line chart
+
 
 
 
