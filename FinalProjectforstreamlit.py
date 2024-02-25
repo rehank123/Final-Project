@@ -199,12 +199,6 @@ elif selected_tab == "Saved Data":
     # Load existing appointment data from CSV
     try:
         existing_data = pd.read_csv("appointments.csv")
-        st.write(existing_data)
-    except FileNotFoundError:
-        st.write("No appointments found.")
-
-     try:
-        existing_data = pd.read_csv("appointments.csv")
         
         # Display doctor selection dropdown
         doctors = existing_data["Doctor"].unique()
@@ -218,7 +212,7 @@ elif selected_tab == "Saved Data":
             filtered_data = existing_data[existing_data["Doctor"] == selected_doctor]
             st.write(f"Below is the list of saved appointments for {selected_doctor}:")
             st.dataframe(filtered_data)
-        except FileNotFoundError:
+    except FileNotFoundError:
         st.write("No appointments found.")
 
 
