@@ -201,7 +201,6 @@ elif selected_tab == "Take Appointment":
 
 
 
-
 elif selected_tab == "Appointment Data":
     st.title("Appointment Data")
 
