@@ -262,6 +262,8 @@ elif selected_tab == "Upload Tests":
     # Create a form for test picture upload
     test_name = st.text_input("Test Name")
     patient_name = st.text_input("Patient Name")
+    test_date = st.date_input("Test Date")
+    test_result = st.selectbox("Test Result", ["Positive", "Negative"])
 
     uploaded_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
 
@@ -279,10 +281,10 @@ elif selected_tab == "Upload Tests":
             try:
                 existing_data = pd.read_csv("tests_saved_data.csv")
             except FileNotFoundError:
-                existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "File Path"])
+                existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "Test Date", "Test Result", "File Path"])
 
             # Append the new test data
-            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "File Path": [file_path]})
+            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "Test Date": [test_date], "Test Result": [test_result], "File Path": [file_path]})
             existing_data = pd.concat([existing_data, new_test], ignore_index=True)
 
             # Save the updated DataFrame back to the CSV file
