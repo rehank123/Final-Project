@@ -245,44 +245,35 @@ elif selected_tab == "Upload Tests":
     # Create a form for test picture upload
     test_name = st.text_input("Test Name")
     patient_name = st.text_input("Patient Name")
-    test_type = st.selectbox("Test Type", ["Blood Test", "Urine Test", "X-Ray", "MRI", "CT Scan"])
-    test_date = st.date_input("Test Date")
-    test_time = st.time_input("Test Time")
 
     uploaded_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
-        # Display the uploaded image
-        st.image(uploaded_file, caption="Uploaded Test Picture", use_column_width=True)
+        # Save the uploaded file to the upload directory
+        file_path = os.path.join(upload_dir, uploaded_file.name)
+        with open(file_path, "wb") as f:
+            f.write(uploaded_file.getbuffer())
 
-        # Save the uploaded file path to a designated folder
+        st.success("Test picture uploaded successfully!")
+
+        # Save test data
         try:
-            file_path = os.path.join("uploads", f"{test_name}_{patient_name}_{uploaded_file.name}")
-            with open(file_path, "wb") as f:
-                f.write(uploaded_file.getbuffer())
-
-            st.success("Test picture uploaded successfully!")
-
-            # Save test data
+            # Load existing test data from CSV
             try:
-                # Load existing test data from CSV or create a new DataFrame
-                try:
-                    existing_data = pd.read_csv("tests_saved_data.csv")
-                except FileNotFoundError:
-                    existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "Test Type", "Test Date", "Test Time", "File"])
+                existing_data = pd.read_csv("tests_saved_data.csv")
+            except FileNotFoundError:
+                existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "File Path"])
 
-                # Append the new test data
-                new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "Test Type": [test_type], "Test Date": [test_date], "Test Time": [test_time], "File": [file_path]})
-                existing_data = pd.concat([existing_data, new_test], ignore_index=True)
+            # Append the new test data
+            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "File Path": [file_path]})
+            existing_data = pd.concat([existing_data, new_test], ignore_index=True)
 
-                # Save the updated DataFrame back to the CSV file
-                existing_data.to_csv("tests_saved_data.csv", index=False)
+            # Save the updated DataFrame back to the CSV file
+            existing_data.to_csv("tests_saved_data.csv", index=False)
 
-                st.success("Test data saved successfully!")
-            except Exception as e:
-                st.error(f"An error occurred while saving test data: {e}")
+            st.success("Test data saved successfully!")
         except Exception as e:
-            st.error(f"An error occurred while saving the uploaded file: {e}")
+            st.error(f"An error occurred while saving test data: {e}")
     else:
         st.warning("Please upload a test picture.")
 
@@ -292,21 +283,9 @@ elif selected_tab == "Tests Saved Data":
     # Load and display saved test data
     try:
         tests_data = pd.read_csv("tests_saved_data.csv")
-
-        # Display test data along with images
-        for index, row in tests_data.iterrows():
-            st.write("**Test Name:**", row["Test Name"])
-            st.write("**Patient Name:**", row["Patient Name"])
-            st.write("**Test Type:**", row["Test Type"])
-            st.write("**Test Date:**", row["Test Date"])
-            st.write("**Test Time:**", row["Test Time"])
-            file_path = row["File"]
-            st.image(file_path, caption="Uploaded Test Picture", use_column_width=True)
-            st.write("---")
+        st.dataframe(tests_data)
     except FileNotFoundError:
         st.write("No tests saved yet.")
-
-
 
 elif selected_tab == "Contact":
     st.title("Contact")
