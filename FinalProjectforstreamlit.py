@@ -203,7 +203,16 @@ elif selected_tab == "Appointment Data":
         existing_data = pd.read_csv("appointments.csv")
     except FileNotFoundError:
         existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Disease", "Date", "Time", "Reason"])
+os.makedirs(upload_dir, exist_ok=True)
 
+# Sample appointment data
+appointment_data = pd.DataFrame({
+    "Doctor": ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat"],
+    "Appointments": [10, 15, 8, 12, 20]
+})
+
+tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospital Addresses", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
+selected_tab = st.sidebar.radio("", tabs)
     # Filter appointments by selected doctor
     st.sidebar.title("Filter by Doctor")
     selected_doctor = st.sidebar.selectbox("Select Doctor", ["All"] + list(existing_data["Doctor"].unique()))
