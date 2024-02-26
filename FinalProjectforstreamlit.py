@@ -240,10 +240,15 @@ elif selected_tab == "Appointment Data":
         # Plotting the bar chart in the sidebar with colorful design
         st.sidebar.title('Number of Appointments per Doctor')
         color_palette = ['#FF5733', '#33FF57', '#3357FF', '#FF33EC', '#33ECFF']  # Define color palette
-        st.sidebar.bar_chart(appointment_counts, width=250, height=250, use_container_width=False, color=color_palette)
+        color_index = 0
+        for doctor, count in appointment_counts.items():
+            st.sidebar.subheader(doctor)
+            st.sidebar.bar_chart({doctor: count}, color=color_palette[color_index])
+            color_index = (color_index + 1) % len(color_palette)
 
     else:
         st.write("No appointments found.")
+
 
 
 elif selected_tab == "Hospital Addresses":
