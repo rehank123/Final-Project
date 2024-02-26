@@ -32,18 +32,7 @@ st.sidebar.markdown("""
 tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospitals Preview", "Upload Tests", "Tests Saved Data", "Contact Us", "About Us"]
 
 # Add the "Home" title above the tabsst.
-st.sidebar.markdown("""
-    <style>
-        .go-to {
-            font-size: 24px;
-            font-weight: bold;
-            color: red;
-            margin-bottom: -190px;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-st.sidebar.markdown("<p class='go-to'>Go to</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<h1 style='text-align: left; color: red; font-family: Arial, sans-serif; margin-bottom: -190px;'>Go to</h1>", unsafe_allow_html=True)
 
 # Display the radio button for selecting tabs
 selected_tab = st.sidebar.radio("", tabs)
