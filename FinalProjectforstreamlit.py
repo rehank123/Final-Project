@@ -255,33 +255,36 @@ elif selected_tab == "Upload Tests":
         # Display the uploaded image
         st.image(uploaded_file, caption="Uploaded Test Picture", use_column_width=True)
 
-        # Save the uploaded file to a temporary location
-        with open(os.path.join("temp", uploaded_file.name), "wb") as f:
-            f.write(uploaded_file.getbuffer())
-
-        st.success("Test picture uploaded successfully!")
-
-        # Save test data
+        # Save the uploaded file to the same directory as the script
         try:
-            # Load existing test data from CSV
+            file_path = f"{test_name}_{patient_name}_{uploaded_file.name}"
+            with open(file_path, "wb") as f:
+                f.write(uploaded_file.getbuffer())
+
+            st.success("Test picture uploaded successfully!")
+
+            # Save test data
             try:
-                existing_data = pd.read_csv("tests_saved_data.csv")
-            except FileNotFoundError:
-                existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "Test Type", "Test Date", "Test Time", "File"])
+                # Load existing test data from CSV or create a new DataFrame
+                try:
+                    existing_data = pd.read_csv("tests_saved_data.csv")
+                except FileNotFoundError:
+                    existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "Test Type", "Test Date", "Test Time", "File"])
 
-            # Append the new test data
-            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "Test Type": [test_type], "Test Date": [test_date], "Test Time": [test_time], "File": [os.path.join("temp", uploaded_file.name)]})
-            existing_data = pd.concat([existing_data, new_test], ignore_index=True)
+                # Append the new test data
+                new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "Test Type": [test_type], "Test Date": [test_date], "Test Time": [test_time], "File": [file_path]})
+                existing_data = pd.concat([existing_data, new_test], ignore_index=True)
 
-            # Save the updated DataFrame back to the CSV file
-            existing_data.to_csv("tests_saved_data.csv", index=False)
+                # Save the updated DataFrame back to the CSV file
+                existing_data.to_csv("tests_saved_data.csv", index=False)
 
-            st.success("Test data saved successfully!")
+                st.success("Test data saved successfully!")
+            except Exception as e:
+                st.error(f"An error occurred while saving test data: {e}")
         except Exception as e:
-            st.error(f"An error occurred while saving test data: {e}")
+            st.error(f"An error occurred while saving the uploaded file: {e}")
     else:
         st.warning("Please upload a test picture.")
-
 
 elif selected_tab == "Tests Saved Data":
     st.title("Tests Saved Data")
@@ -301,7 +304,6 @@ elif selected_tab == "Tests Saved Data":
             st.write("---")
     except FileNotFoundError:
         st.write("No tests saved yet.")
-
 
 elif selected_tab == "Contact":
     st.title("Contact")
