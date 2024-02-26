@@ -86,7 +86,7 @@ if selected_tab == "Chatbot":
         elif disease == "10":
             st.write("Recommended medicine: Artificial tears")
         else:
-            st.write("Your disease is not in the list")
+            st.error("Your disease is not in the list")
 
     elif information == "2":
         st.write("List of Diseases")
@@ -125,7 +125,7 @@ if selected_tab == "Chatbot":
         elif doctor == "10":
             st.write("Dr. Faizan")
         else:
-            st.write("Invalid Input")
+            st.error("Invalid Input")
 
     elif information == "3":
         st.write("List of Doctors")
