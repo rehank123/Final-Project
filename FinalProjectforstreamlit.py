@@ -238,6 +238,43 @@ elif selected_tab == "Hospital Addresses":
         st.write(f"**{hospital['name']}**")
         st.image(hospital['image_url'], caption=hospital['name'], width=300)
 
+elif selected_tab == "Upload Tests":
+    st.title("Upload Tests")
+    st.write("Please fill out the form and upload the test picture.")
+
+    # Create a form for test picture upload
+    test_name = st.text_input("Test Name")
+    patient_name = st.text_input("Patient Name")
+    test_type = st.selectbox("Test Type", ["Blood Test", "Urine Test", "X-Ray", "MRI", "CT Scan"])
+    test_date = st.date_input("Test Date")
+    test_time = st.time_input("Test Time")
+
+    uploaded_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
+
+    if uploaded_file is not None:
+        # Display the uploaded image
+        st.image(uploaded_file, caption="Uploaded Test Picture", use_column_width=True)
+
+        # Save test data
+        try:
+            # Load existing test data from CSV
+            try:
+                existing_data = pd.read_csv("tests_saved_data.csv")
+            except FileNotFoundError:
+                existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "Test Type", "Test Date", "Test Time", "File"])
+
+            # Append the new test data
+            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "Test Type": [test_type], "Test Date": [test_date], "Test Time": [test_time], "File": [uploaded_file]})
+            existing_data = pd.concat([existing_data, new_test], ignore_index=True)
+
+            # Save the updated DataFrame back to the CSV file
+            existing_data.to_csv("tests_saved_data.csv", index=False)
+
+            st.success("Test data saved successfully!")
+        except Exception as e:
+            st.error(f"An error occurred while saving test data: {e}")
+    else:
+        st.warning("Please upload a test picture.")
 
 elif selected_tab == "Tests Saved Data":
     st.title("Tests Saved Data")
@@ -255,16 +292,6 @@ elif selected_tab == "Tests Saved Data":
             st.write("**Test Time:**", row["Test Time"])
             st.image(row["File"], caption="Uploaded Test Picture", use_column_width=True)
             st.write("---")
-    except FileNotFoundError:
-        st.write("No tests saved yet.")
-
-elif selected_tab == "Tests Saved Data":
-    st.title("Tests Saved Data")
-
-    # Load and display saved test data
-    try:
-        tests_data = pd.read_csv("tests_saved_data.csv")
-        st.dataframe(tests_data)
     except FileNotFoundError:
         st.write("No tests saved yet.")
 
