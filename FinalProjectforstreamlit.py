@@ -5,6 +5,18 @@ import os
 upload_dir = "uploaded_tests"
 os.makedirs(upload_dir, exist_ok=True)
 
+
+try:
+    existing_data = pd.read_csv("tests_saved_data.csv")
+except FileNotFoundError:
+    existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "Test Date", "Test Time", "Test Details", "File Path"])
+
+tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospital Addresses", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
+selected_tab = st.sidebar.radio("", tabs)
+
+
+
+
 doctor_diseases = {
     "Dr. Saleem": ["Common Cold", "Influenza (Flu)", "Headache"],
     "Dr. Abdullah": ["Allergies", "Cancer", "Pneumonia"],
