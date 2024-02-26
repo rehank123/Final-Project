@@ -164,7 +164,7 @@ if selected_tab == "Chatbot":
         elif doctor == "10":
             st.write("Hospital Name: Zain Hospital")
     else:
-        st.write("Invalid Input")
+        st.error("Invalid Input")
 
 elif selected_tab == "Take Appointment":
     st.title("Take Doctor Appointment")
