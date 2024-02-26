@@ -237,7 +237,6 @@ elif selected_tab == "Hospital Addresses":
     for hospital in hospital_data:
         st.write(f"**{hospital['name']}**")
         st.image(hospital['image_url'], caption=hospital['name'], width=300)
-
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
     st.write("Please fill out the form and upload the test picture.")
@@ -252,12 +251,8 @@ elif selected_tab == "Upload Tests":
     uploaded_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
-        # Save the uploaded file to the upload directory
-        file_path = os.path.join(upload_dir, uploaded_file.name)
-        with open(file_path, "wb") as f:
-            f.write(uploaded_file.getbuffer())
-
-        st.success("Test picture uploaded successfully!")
+        # Display the uploaded image
+        st.image(uploaded_file, caption="Uploaded Test Picture", use_column_width=True)
 
         # Save test data
         try:
@@ -268,7 +263,7 @@ elif selected_tab == "Upload Tests":
                 existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "Test Type", "Test Date", "Test Time", "File Path"])
 
             # Append the new test data
-            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "Test Type": [test_type], "Test Date": [test_date], "Test Time": [test_time], "File Path": [file_path]})
+            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "Test Type": [test_type], "Test Date": [test_date], "Test Time": [test_time], "File": [uploaded_file]})
             existing_data = pd.concat([existing_data, new_test], ignore_index=True)
 
             # Save the updated DataFrame back to the CSV file
@@ -279,7 +274,6 @@ elif selected_tab == "Upload Tests":
             st.error(f"An error occurred while saving test data: {e}")
     else:
         st.warning("Please upload a test picture.")
-
 
 elif selected_tab == "Tests Saved Data":
     st.title("Tests Saved Data")
