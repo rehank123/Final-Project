@@ -249,7 +249,7 @@ elif selected_tab == "Hospitals Preview":
     st.write("Picture of Zia Hospital.")
 
     # URL of the hospital building image
-    image_url = "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.gettyimages.com%2Fid%2F182344359%2Fphoto%2Fhospital.jpg%3Fs%3D612x612%26w%3Dgi%26k%3D20%26c%3DZRBwQkDUDNaHUEJmcAonowN1gZuec5NQLOS0MS-sEU8%3D&tbnid=2Dj6gIGjVXz3ZM&vet=12ahUKEwie8LeE8MiEAxULVaQEHddFDh8QMygEegQIARA-..i&imgrefurl=https%3A%2F%2Fwww.gettyimages.com%2Fphotos%2Fhospital-building&docid=4CJCyudwghnGgM&w=612&h=454&itg=1&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwie8LeE8MiEAxULVaQEHddFDh8QMygEegQIARA-"
+    image_url = "https://media.istockphoto.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D"
 
     # Display the hospital building image
     st.image(image_url, caption="Hospital Building", use_column_width=True)
