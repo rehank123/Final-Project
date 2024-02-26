@@ -195,12 +195,6 @@ elif selected_tab == "Take Appointment":
         except Exception as e:
             st.error(f"An error occurred: {e}")
 
-
-
-
-
-
-
 elif selected_tab == "Appointment Data":
     st.title("Appointment Data")
 
@@ -250,8 +244,6 @@ elif selected_tab == "Appointment Data":
     else:
         st.write("No appointments found.")
 
-
-
 import streamlit as st
 
 def hospital_addresses_page():
@@ -266,11 +258,11 @@ def hospital_addresses_page():
         },
         "Noor Health Center": {
             "address": "456 Elm Street, City, Country",
-            "https://www.google.com/imgres?imgurl=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fmodern-style-hospital-building-straight-lines-concrete-facing-30588884.jpg&tbnid=4gIjCfyup5SbMM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygDegQIARA7..i&imgrefurl=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fbuilding-hospital.html&docid=mmg0orFBwNjeUM&w=800&h=704&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygDegQIARA7"
+            "image_url": "https://thumbs.dreamstime.com/b/modern-style-hospital-building-straight-lines-concrete-facing-30588884.jpg"
         },
         "Al-Muslim Medical Center": {
             "address": "789 Oak Street, City, Country",
-            "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dhospital%2Bbuilding&psig=AOvVaw037ZT5564Wka8HO0pdmvsH&ust=1709029273667000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCICTvKjkyIQDFQAAAAAdAAAAABAE"
+            "image_url": "https://stock.adobe.com/search?k=hospital+building"
         },
         "Sultan Hospital": {
             "address": "456 Pine Street, City, Country",
@@ -444,9 +436,7 @@ footer = """
 }
 </style>
 <div class="footer">
-<p>Developed with ❤️ by the student of  <a style='display: block; text-align: Center;' href="https://banoqabil.pk" target="_blank">Bano Qabil Alkhidmat </a></p>
+  <p>Developed with ❤️ by Rehan Ullah</p>
 </div>
 """
-
-# Display the footer content
 st.markdown(footer, unsafe_allow_html=True)
