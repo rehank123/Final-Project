@@ -17,10 +17,16 @@ doctor_diseases = {
     "Dr. Sultan": ["Common Cold", "Allergies", "Pneumonia"],
     "Dr. Faizan": ["Influenza (Flu)", "Cancer", "Sinusitis"]
 }
-# Sidebar image
-st.sidebar.image("https://banoqabil.pk/media/logo.png", width=200)
 
-# Rest of your code
+
+
+st.sidebar.markdown("""
+    <div style="display: flex; justify-content: center;">
+        <img src="https://banoqabil.pk/media/logo.png" width="200">
+    </div>
+""", unsafe_allow_html=True)
+
+
 
 tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospitals Preview", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
