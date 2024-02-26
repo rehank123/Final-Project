@@ -203,7 +203,7 @@ elif selected_tab == "Take Appointment":
 
 
 elif selected_tab == "Appointment Data":
-    st.sidebar.title("Appointment Data")
+    st.title("Appointment Data")
 
     # Load existing appointment data from CSV
     try:
@@ -212,20 +212,21 @@ elif selected_tab == "Appointment Data":
         existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Disease", "Date", "Time", "Reason"])
 
     # Filter appointments by selected doctor
-    selected_doctor = st.sidebar.selectbox("Filter by Doctor", ["All"] + list(existing_data["Doctor"].unique()))
+    st.sidebar.title("Filter by Doctor")
+    selected_doctor = st.sidebar.selectbox("Select Doctor", ["All"] + list(existing_data["Doctor"].unique()))
 
     if selected_doctor != "All":
         existing_data = existing_data[existing_data["Doctor"] == selected_doctor]
 
-    # Display data table in the sidebar
-    st.sidebar.write("Below is the list of all saved appointments:")
+    # Display data table in the main column
+    st.write("Below is the list of all saved appointments:")
     if not existing_data.empty:
-        st.sidebar.dataframe(existing_data)
+        st.dataframe(existing_data)
 
         # Allow users to input the index or indices of rows to delete
-        rows_to_delete_input = st.sidebar.text_input("Enter index or indices of rows to delete (comma-separated):")
+        rows_to_delete_input = st.text_input("Enter index or indices of rows to delete (comma-separated):")
 
-        if st.sidebar.button("Delete rows"):
+        if st.button("Delete rows"):
             try:
                 # Convert input string to a list of integers
                 indices_to_delete = [int(index.strip()) for index in rows_to_delete_input.split(",")]
@@ -236,18 +237,21 @@ elif selected_tab == "Appointment Data":
                 # Save the updated DataFrame back to the CSV file
                 existing_data.to_csv("appointments.csv", index=False)
 
-                st.sidebar.success("Selected rows deleted successfully!")
+                st.success("Selected rows deleted successfully!")
             except Exception as e:
-                st.sidebar.error(f"An error occurred while deleting rows: {e}")
+                st.error(f"An error occurred while deleting rows: {e}")
+
+        # Count the number of appointments per doctor
+        appointment_counts = existing_data['Doctor'].value_counts()
+
+        # Plotting the bar chart in the sidebar
+        st.sidebar.title('Number of Appointments per Doctor')
+        st.sidebar.bar_chart(appointment_counts)
+
     else:
-        st.sidebar.write("No appointments found.")
+        st.write("No appointments found.")
 
-    # Count the number of appointments per doctor
-    appointment_counts = existing_data['Doctor'].value_counts()
 
-    # Plotting the bar chart in the main column
-    st.title('Number of Appointments for All Doctors')
-    st.bar_chart(appointment_counts)
 
 
 
