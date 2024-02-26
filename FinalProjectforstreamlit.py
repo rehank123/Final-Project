@@ -28,9 +28,14 @@ st.sidebar.markdown("""
 
 
 
+# Define the tabs
 tabs = ["Home", "Chatbot", "Take Appointment", "Appointment Data", "Hospitals Preview", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
-selected_tab = st.sidebar.radio("", tabs)
 
+# Add the "Home" title above the tabs
+st.sidebar.markdown("<h1 style='text-align: center;'>Home</h1>", unsafe_allow_html=True)
+
+# Display the radio button for selecting tabs
+selected_tab = st.sidebar.radio("", tabs)
 
 
 
