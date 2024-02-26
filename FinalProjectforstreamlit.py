@@ -233,6 +233,14 @@ elif selected_tab == "Appointment Data":
                 st.success("Selected rows deleted successfully!")
             except Exception as e:
                 st.error(f"An error occurred while deleting rows: {e}")
+
+        # Count the number of appointments per doctor
+        appointment_counts = existing_data['Doctor'].value_counts()
+
+        # Plotting the bar chart
+        st.write("Number of Appointments per Doctor:")
+        st.bar_chart(appointment_counts)
+
     else:
         st.write("No appointments found.")
 
