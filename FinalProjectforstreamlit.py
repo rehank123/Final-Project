@@ -18,7 +18,7 @@ doctor_diseases = {
     "Dr. Faizan": ["Influenza (Flu)", "Cancer", "Sinusitis"]
 }
 
-tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospital Addresses", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
+tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospitals Preview", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
 
 if selected_tab == "Chatbot":
@@ -244,9 +244,9 @@ elif selected_tab == "Appointment Data":
     else:
         st.write("No appointments found.")
 
-elif selected_tab == "Hospital Addresses":
-    st.title("Hospital Addresses")
-    st.write("Content for the Hospital Addresses tab goes here.")
+elif selected_tab == "Hospitals Preview":
+    st.title("Hospitals Preview")
+    st.write("Picture of Zia Hospital.")
 
     # URL of the hospital building image
     image_url = "https://media.istockphoto.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D"
