@@ -255,19 +255,18 @@ elif selected_tab == "Appointment Data":
 
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
-    st.write("Content for the Hospital Addresses tab goes here.")
-    
-    # List of hospital image URLs
+
+    # List of hospital image URLs from Google
     hospital_image_urls = [
-        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fid%2F1312706413%2Fphoto%2Fmodern-hospital-building.jpg%3Fs%3D612x612%26w%3D0%26k%3D20%26c%3DoUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D&tbnid=ApFWotwvyklDVM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygBegQIARA1..i&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fhospital-building&docid=K8s9OO14ksVoTM&w=612&h=444&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygBegQIARA1",
-        "https://media.istockphoto.com/photos/hospital-building-with-blue-sky-background-picture-id687717924?k=20&m=687717924&s=612x612&w=0&h=yut9-LSkCM4x_D8r-wRrjIvEInSQu1c6-iFc9tP-KgY=",
-        "https://media.istockphoto.com/photos/city-hospital-picture-id484354269?k=20&m=484354269&s=612x612&w=0&h=j2kQFzQBFV7R2dWSr4quzOqhzUcWGZiutKdtBB_b1cY=",
-        "https://media.istockphoto.com/photos/modern-hospital-building-picture-id1320610947?k=20&m=1320610947&s=612x612&w=0&h=_CFRPO2K_V1LReVW9YyYrfRq7HZ2aWxRkDdqOjUblfM=",
-        "https://media.istockphoto.com/photos/hospital-building-picture-id596002150?k=20&m=596002150&s=612x612&w=0&h=vdYK0OipI45sHyYg7vDBbm3wtzNQQIzJpxLvRoVd_yI=",
-        "https://media.istockphoto.com/photos/modern-hospital-building-picture-id1170819880?k=20&m=1170819880&s=612x612&w=0&h=9f9u95nIZLL2vD_L7X0fEzPovPQmnNTihtqyIzU8Pz8=",
-        "https://media.istockphoto.com/photos/modern-hospital-building-picture-id171660828?k=20&m=171660828&s=612x612&w=0&h=8ZiNIMQfuxmawb8vJQ7GF9U1O10xWY_9K-3_MJ_zcS0=",
-        "https://media.istockphoto.com/photos/hospital-building-picture-id184060185?k=20&m=184060185&s=612x612&w=0&h=wR7ywLYgJnW6RZU-X4DV2a1cTcz2xxXQ8ezPj82GUcE=",
-        "https://media.istockphoto.com/photos/medical-staff-waving-from-hospital-building-picture-id1194143753?k=20&m=1194143753&s=612x612&w=0&h=rVnGz9gVdqTfVO38oIfGnzFHYMMLJj2VI4nR2VKoZfY="
+        "https://www.gstatic.com/webp/gallery/1.jpg",
+        "https://www.gstatic.com/webp/gallery/2.jpg",
+        "https://www.gstatic.com/webp/gallery/3.jpg",
+        "https://www.gstatic.com/webp/gallery/4.jpg",
+        "https://www.gstatic.com/webp/gallery/5.jpg",
+        "https://www.gstatic.com/webp/gallery/6.jpg",
+        "https://www.gstatic.com/webp/gallery/7.jpg",
+        "https://www.gstatic.com/webp/gallery/8.jpg",
+        "https://www.gstatic.com/webp/gallery/9.jpg"
     ]
 
     # Function to display hospital addresses and images
