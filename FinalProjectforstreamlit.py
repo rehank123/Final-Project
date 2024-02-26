@@ -253,34 +253,19 @@ elif selected_tab == "Appointment Data":
 
 
 
-elif selected_tab == "Hospital Addresses":
-    st.title("Hospital Addresses")
 
-    # List of hospital image URLs from Google
-    hospital_image_urls = [
-        "https://www.gstatic.com/webp/gallery/1.jpg",
-        "https://www.gstatic.com/webp/gallery/2.jpg",
-        "https://www.gstatic.com/webp/gallery/3.jpg",
-        "https://www.gstatic.com/webp/gallery/4.jpg",
-        "https://www.gstatic.com/webp/gallery/5.jpg",
-        "https://www.gstatic.com/webp/gallery/6.jpg",
-        "https://www.gstatic.com/webp/gallery/7.jpg",
-        "https://www.gstatic.com/webp/gallery/8.jpg",
-        "https://www.gstatic.com/webp/gallery/9.jpg"
-    ]
+def hospital_addresses_page():
+        st.title("Hospital Addresses")
+        st.write("Content for the Hospital Addresses tab goes here.")
 
-    # Function to display hospital addresses and images
-    def display_hospital_addresses():
-        for i, url in enumerate(hospital_image_urls, start=1):
-            st.subheader(f"Hospital {i}")
-            st.image(url, use_column_width=True)
+        # URL of the hospital building image
+        image_url = "https://media.istockphoto.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D"
 
-    # Call the function to display hospital addresses
-    display_hospital_addresses()
-)
+        # Display the hospital building image
+        st.image(image_url, caption="Hospital Building", use_column_width=True)
 
-
-
+if __name__ == "__main__":
+        hospital_addresses_page()
 
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
