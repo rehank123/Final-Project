@@ -254,24 +254,18 @@ elif selected_tab == "Appointment Data":
 
 
 
-elif selected_tab == "Hospital Addresses":
-    st.title("Hospital Addresses")
-    st.write("Content for the Hospital Addresses tab goes here.")
+def hospital_addresses_page():
+        st.title("Hospital Addresses")
+        st.write("Content for the Hospital Addresses tab goes here.")
 
-    # Define the hospital data including names and image URLs
-    hospital_data = [
-        {"name": "Zia Hospital North Nazimabad Karachi", "img_scr": "hos1.png"},
-        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://hotimg.com/hos1.huXsf"},
-        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://hotimg.com/hos2.huDhC"},
-        {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://hotimg.com/hos4.hugid"},
-        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://hotimg.com/hos5.hu2tF"},
-        {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://hotimg.com/hos6.huzjz"}
-    ]
+        # URL of the hospital building image
+        image_url = "https://media.istockphoto.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D"
 
-    # Display images and hospital names
-    for hospital in hospital_data:
-        st.write(f"**{hospital['name']}**")
-        st.image(hospital['image_url'], caption=hospital['name'], width=300)
+        # Display the hospital building image
+        st.image(image_url, caption="Hospital Building", use_column_width=True)
+
+if __name__ == "__main__":
+        hospital_addresses_page()
 
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
