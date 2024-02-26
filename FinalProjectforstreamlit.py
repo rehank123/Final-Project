@@ -266,12 +266,21 @@ def hospital_addresses_page():
         "https://www.google.com/imgres?imgurl=https%3A%2F%2Ft4.ftcdn.net%2Fjpg%2F03%2F88%2F00%2F37%2F360_F_388003741_3pDGioOwlLIEr0Af2DaepDlLxc3tgqUZ.jpg&tbnid=JMe-WnoKw6EiNM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygJegQIARBN..i&imgrefurl=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dhospital%2Bbuilding&docid=SLjE9eXB-6GTLM&w=540&h=360&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygJegQIARBN",
     ]
 
-    # Display each hospital building image
-    for i, url in enumerate(image_urls, start=1):
+    # List of hospital addresses
+    hospital_addresses = [
+        "123 Main Street, Cityville",
+        "456 Elm Street, Townsville",
+        "789 Oak Street, Villagetown",
+    ]
+
+    # Display each hospital building image and its address
+    for i, (url, address) in enumerate(zip(image_urls, hospital_addresses), start=1):
         st.image(url, caption=f"Hospital Building {i}", use_column_width=True)
+        st.write(f"Address: {address}")
 
 if __name__ == "__main__":
     hospital_addresses_page()
+
 
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
