@@ -18,11 +18,11 @@ doctor_diseases = {
     "Dr. Faizan": ["Influenza (Flu)", "Cancer", "Sinusitis"]
 }
 
-tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
+tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospital Addresses", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
 
 if selected_tab == "Chatbot":
-    st.title("Welcome to Healthcare Chatbot 🤖")
+    st.title("Welcome to Healthcare Chatbot")
     st.write("Information List")
     st.write("""
     1. About Medicine for Disease
@@ -75,17 +75,17 @@ if selected_tab == "Chatbot":
     elif information == "2":
         st.write("List of Diseases")
         st.write("""
-        1. Common Cold
-        2. Influenza (Flu)
-        3. Headache
-        4. Allergies
-        5. Cancer
-        6. Pneumonia
-        7. Stomach Flu (Gastroenteritis)
-        8. Sinusitis
-        9. Urinary Tract Infection (UTI)
-        10. Conjunctivitis (Pink Eye)
-        """)
+         1. Common Cold
+         2. Influenza (Flu)
+         3. Headache
+         4. Allergies
+         5. Cancer
+         6. Pneumonia
+         7. Stomach Flu (Gastroenteritis)
+         8. Sinusitis
+         9. Urinary Tract Infection (UTI)
+         10. Conjunctivitis (Pink Eye)
+         """)
         doctor = st.text_input("Enter the number of your Doctor for Diseases:")
 
         if doctor == "1":
@@ -157,15 +157,15 @@ elif selected_tab == "Take Appointment":
     # Create a form for doctor appointment scheduling
     patient_name = st.text_input("Patient Name")
     doctor = st.selectbox("Select Doctor", ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"])
-
+    
     # Populate diseases based on selected doctor
     diseases = doctor_diseases.get(doctor, [])
-
+    
     # Convert diseases list to dictionary for selectbox options
     disease_options = {disease: disease for disease in diseases}
-
+    
     disease = st.selectbox("Select Disease", list(disease_options.keys()))
-
+    
     date = st.date_input("Date")
     time = st.time_input("Time")
     reason = st.text_area("Reason for Appointment")
@@ -195,7 +195,145 @@ elif selected_tab == "Take Appointment":
         except Exception as e:
             st.error(f"An error occurred: {e}")
 
-# Add the rest of the tabs in a similar manner
+elif selected_tab == "Appointment Data":
+    st.title("Appointment Data")
+
+    # Load existing appointment data from CSV
+    try:
+        existing_data = pd.read_csv("appointments.csv")
+    except FileNotFoundError:
+        existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Disease", "Date", "Time", "Reason"])
+
+    # Filter appointments by selected doctor
+    st.sidebar.title("Filter by Doctor")
+    selected_doctor = st.sidebar.selectbox("Select Doctor", ["All"] + list(existing_data["Doctor"].unique()))
+
+    if selected_doctor != "All":
+        existing_data = existing_data[existing_data["Doctor"] == selected_doctor]
+
+    # Display data table in the main column
+    st.write("Below is the list of all saved appointments:")
+    st.dataframe(existing_data)
+
+    # Display line chart in the sidebar
+    st.sidebar.title("Appointments Over Time")
+    st.sidebar.line_chart(existing_data)
+
+elif selected_tab == "Hospital Addresses":
+    st.title("Hospital Addresses")
+    st.write("Content for the Hospital Addresses tab goes here.")
+
+    # Define the hospital data including names and image URLs
+    hospital_data = [
+        {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://via.placeholder.com/300"},
+        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://via.placeholder.com/300"},
+        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://via.placeholder.com/300"},
+        {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://via.placeholder.com/300"},
+        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://via.placeholder.com/300"},
+        {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://via.placeholder.com/300"}
+    ]
+
+    # Display images and hospital names
+    for hospital in hospital_data:
+        st.write(f"**{hospital['name']}**")
+        st.image(hospital['image_url'], caption=hospital['name'], use_column_width=True)
+
+
+elif selected_tab == "Upload Tests":
+    st.title("Upload Tests")
+    st.write("Please fill out the form and upload the test picture.")
+
+    # Create a form for test picture upload
+    test_name = st.text_input("Test Name")
+    patient_name = st.text_input("Patient Name")
+
+    uploaded_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
+
+    if uploaded_file is not None:
+        # Save the uploaded file to the upload directory
+        file_path = os.path.join(upload_dir, uploaded_file.name)
+        with open(file_path, "wb") as f:
+            f.write(uploaded_file.getbuffer())
+
+        st.success("Test picture uploaded successfully!")
+
+        # Save test data
+        try:
+            # Load existing test data from CSV
+            try:
+                existing_data = pd.read_csv("tests_saved_data.csv")
+            except FileNotFoundError:
+                existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "File Path"])
+
+            # Append the new test data
+            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "File Path": [file_path]})
+            existing_data = pd.concat([existing_data, new_test], ignore_index=True)
+
+            # Save the updated DataFrame back to the CSV file
+            existing_data.to_csv("tests_saved_data.csv", index=False)
+
+            st.success("Test data saved successfully!")
+        except Exception as e:
+            st.error(f"An error occurred while saving test data: {e}")
+    else:
+        st.warning("Please upload a test picture.")
+
+elif selected_tab == "Tests Saved Data":
+    st.title("Tests Saved Data")
+
+    # Load and display saved test data
+    try:
+        tests_data = pd.read_csv("tests_saved_data.csv")
+        st.dataframe(tests_data)
+    except FileNotFoundError:
+        st.write("No tests saved yet.")
+
+elif selected_tab == "Contact":
+    st.title("Contact")
+
+    # Custom CSS for styling the contact information box
+    contact_styles = """
+    <style>
+    .contact-box {
+        background-color: #f4f4f4; /* Light gray background */
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Box shadow for depth */
+    }
+    .contact-info {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .contact-info a {
+        color: #0366d6; /* Blue color for links */
+        text-decoration: none;
+    }
+    </style>
+    """
+    st.markdown(contact_styles, unsafe_allow_html=True)
+
+    # Display the contact information inside a styled box
+    st.markdown("### Get in Touch")
+    st.markdown("""
+    <div class="contact-box">
+        <div class="contact-info">
+            Phone Number:                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="tel:+923118003480">0311 8003480</a><br>
+            WhatsApp Number:                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="https://wa.me/923118003480">0311 8003480</a><br>
+            Facebook ID:                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="https://www.facebook.com/rehan.ullah">Rehan Ullah</a>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+elif selected_tab == "About Us":
+    st.title("About Us")
+    # Display information about the chatbot
+    st.write("""
+    This is a healthcare chatbot designed to provide information about various medical conditions, recommended medicines, doctors, and hospitals.
+    You can use the tabs to navigate between different sections:
+    - **Home**: Provides options to explore information about medicines, doctors, and hospitals.
+    - **About Us**: Gives a brief overview of the chatbot.
+    - **Contact**: Provides contact information.
+    """)
 
 # HTML footer
 footer = """
