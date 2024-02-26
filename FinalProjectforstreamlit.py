@@ -350,9 +350,10 @@ elif selected_tab == "Contact Us":
     We're here to assist you with any questions, feedback, or inquiries you may have. Feel free to reach out to us using the contact information provided below:
 
     ### Contact Information:
-    - **Email:** [contact@healthcarechatbot.com](mailto:contact@healthcarechatbot.com)
-    - **Phone:** +1 (123) 456-7890
-    - **Address:** 123 Healthcare Street, Cityville, State, Country
+    - **Email:** [muharehan414@gmail.com](mailto:muharehan414@gmail.com)
+    - **Phone:** +92 311 8003480
+    - **WhatsApp:** [+92 311 8003480](https://wa.me/923118003480)
+    - **Address:** Manghopir Sultanabad, Karachi, Pakistan
 
     ### Social Media:
     Connect with us on social media for the latest updates, news, and announcements:
