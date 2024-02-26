@@ -253,9 +253,6 @@ elif selected_tab == "Hospitals Preview":
     # Display the hospital building image
     st.image(image_url, caption="Hospital Building", use_column_width=True)
     
-    
-    
-
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
     st.write("Please fill out the form and upload the test picture.")
