@@ -195,55 +195,36 @@ elif selected_tab == "Take Appointment":
         except Exception as e:
             st.error(f"An error occurred: {e}")
 
-elif selected_tab == "Appointment Data":
-    st.title("Appointment Data")
+elif selected_tab == "Tests Saved Data":
+    st.title("Tests Saved Data")
 
-    # Load existing appointment data from CSV
+    # Load and display saved test data
     try:
-        existing_data = pd.read_csv("appointments.csv")
+        tests_data = pd.read_csv("tests_saved_data.csv")
+        if not tests_data.empty:
+            st.dataframe(tests_data)
+
+            # Allow users to input the index or indices of rows to delete
+            rows_to_delete_input = st.text_input("Enter index or indices of rows to delete (comma-separated):")
+
+            if st.button("Delete rows"):
+                try:
+                    # Convert input string to a list of integers
+                    indices_to_delete = [int(index.strip()) for index in rows_to_delete_input.split(",")]
+
+                    # Remove the specified rows from the DataFrame
+                    tests_data.drop(indices_to_delete, inplace=True)
+
+                    # Save the updated DataFrame back to the CSV file
+                    tests_data.to_csv("tests_saved_data.csv", index=False)
+
+                    st.success("Selected rows deleted successfully!")
+                except Exception as e:
+                    st.error(f"An error occurred while deleting rows: {e}")
+        else:
+            st.write("No tests saved yet.")
     except FileNotFoundError:
-        existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Disease", "Date", "Time", "Reason"])
-os.makedirs(upload_dir, exist_ok=True)
-
-# Sample appointment data
-appointment_data = pd.DataFrame({
-    "Doctor": ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat"],
-    "Appointments": [10, 15, 8, 12, 20]
-})
-
-tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospital Addresses", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
-selected_tab = st.sidebar.radio("", tabs)
-    # Filter appointments by selected doctor
-    st.sidebar.title("Filter by Doctor")
-    selected_doctor = st.sidebar.selectbox("Select Doctor", ["All"] + list(existing_data["Doctor"].unique()))
-
-    if selected_doctor != "All":
-        existing_data = existing_data[existing_data["Doctor"] == selected_doctor]
-
-    # Display data table in the main column
-    st.write("Below is the list of all saved appointments:")
-    if not existing_data.empty:
-        st.dataframe(existing_data)
-
-        # Allow users to input the index or indices of rows to delete
-        rows_to_delete_input = st.text_input("Enter index or indices of rows to delete (comma-separated):")
-
-        if st.button("Delete rows"):
-            try:
-                # Convert input string to a list of integers
-                indices_to_delete = [int(index.strip()) for index in rows_to_delete_input.split(",")]
-
-                # Remove the specified rows from the DataFrame
-                existing_data.drop(indices_to_delete, inplace=True)
-
-                # Save the updated DataFrame back to the CSV file
-                existing_data.to_csv("appointments.csv", index=False)
-
-                st.success("Selected rows deleted successfully!")
-            except Exception as e:
-                st.error(f"An error occurred while deleting rows: {e}")
-    else:
-        st.write("No appointments found.")
+        st.write("No tests saved yet.")
 
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
