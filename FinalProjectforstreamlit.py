@@ -377,31 +377,37 @@ elif selected_tab == "Contact":
     </div>
     """, unsafe_allow_html=True)
 
-elif selected_tab == "About Us":
-    st.title("About Us")
-    about_us_html = """
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1>Final Project Healthcare Chatbot</h1>
-        <p>
-            <strong>Objectives:</strong>
-            <ul>
-                <li><strong>Objective 1:</strong> Develop a comprehensive Python project to fulfill the final assessment requirements of Bano Qabil 2.0.</li>
-                <li><strong>Objective 2:</strong> Showcase proficiency in Python programming by implementing advanced features and functionalities.</li>
-                <li><strong>Objective 3:</strong> Demonstrate problem-solving skills by addressing challenges encountered during the development process.</li>
-                <li><strong>Objective 4:</strong> Present a practical application of acquired knowledge and concepts in a real-world scenario.</li>
-            </ul>
-        </p>
-        <!-- Include other sections of your HTML content here -->
-    </body>
-    </html>
-    """
-    st.markdown(about_us_html, unsafe_allow_html=True)
+st.write("""
+## Welcome to Our Healthcare Chatbot Project 🤖
+
+### Project Overview:
+Our healthcare chatbot project aims to revolutionize the way people access medical information and services. With the power of artificial intelligence and natural language processing, we strive to provide users with instant access to accurate healthcare data, enabling them to make informed decisions about their well-being.
+
+### Our Mission:
+Our mission is to make healthcare information and services readily accessible to everyone, regardless of their location or socioeconomic status. By leveraging cutting-edge technology, we aim to bridge the gap between individuals and quality healthcare resources, thereby improving health outcomes and promoting well-being in our communities.
+
+### Key Features:
+- **Medicine Information:** Get detailed information about various medicines and their usage for different medical conditions.
+- **Doctor Directory:** Explore a comprehensive directory of doctors, their specialties, and contact information to find the right healthcare provider for your needs.
+- **Hospital Locator:** Find nearby hospitals, clinics, and healthcare facilities with ease, along with essential details such as address, contact numbers, and services offered.
+
+### Our Team:
+Our team consists of dedicated individuals passionate about leveraging technology to enhance healthcare accessibility and affordability. With diverse backgrounds in healthcare, software development, and data science, we bring together a unique blend of expertise to deliver innovative solutions in the healthcare domain.
+
+### Contact Us:
+Have questions or feedback? We'd love to hear from you! Feel free to reach out to us via email at [contact@healthcarechatbot.com](mailto:contact@healthcarechatbot.com) or connect with us on social media:
+
+- [Twitter](https://twitter.com/healthchatbot)
+- [Facebook](https://www.facebook.com/healthcarechatbot)
+- [LinkedIn](https://www.linkedin.com/company/healthcarechatbot)
+
+### Acknowledgments:
+We extend our gratitude to our mentors, instructors, and fellow learners who have supported us throughout this journey. Together, we're making a positive impact on healthcare delivery and accessibility worldwide.
+
+Thank you for choosing our healthcare chatbot for your medical needs. We're committed to continuously improving and expanding our services to better serve you.
+
+**Let's transform healthcare together!**
+""")
 else:
     st.write("This section is under construction. Check back soon!")
 
