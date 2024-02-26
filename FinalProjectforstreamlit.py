@@ -18,7 +18,7 @@ doctor_diseases = {
     "Dr. Faizan": ["Influenza (Flu)", "Cancer", "Sinusitis"]
 }
 
-tabs = "Main Menu",["Chatbot", "Take Appointment", "Appointment Data", "Hospital Addresses", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
+tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospital Addresses", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
 
 if selected_tab == "Chatbot":
