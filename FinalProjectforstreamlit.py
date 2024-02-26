@@ -225,12 +225,12 @@ elif selected_tab == "Hospital Addresses":
 
     # Define the hospital data including names and image URLs
     hospital_data = [
-        {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://hotimg.com/hhh.huw4a"},
-        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://hotimg.com/hos1.huXsf"},
-        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://hotimg.com/hos2.huDhC"},
-        {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://hotimg.com/hos4.hugid"},
-        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://hotimg.com/hos5.hu2tF"},
-        {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://hotimg.com/hos6.huzjz"}
+        {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://via.placeholder.com/300"},
+        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://via.placeholder.com/300"},
+        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://via.placeholder.com/300"},
+        {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://via.placeholder.com/300"},
+        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://via.placeholder.com/300"},
+        {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://via.placeholder.com/300"}
     ]
 
     # Display images and hospital names
