@@ -37,9 +37,13 @@ st.sidebar.markdown("<h1 style='text-align: center;'>Home</h1>", unsafe_allow_ht
 # Display the radio button for selecting tabs
 selected_tab = st.sidebar.radio("", tabs)
 
+if selected_tab == "Home":
+    st.title("Welcome to Healthcare Application 🏥")
+    st.write("This application provides various healthcare services to help you manage your health effectively.")
+    st.write("Explore the tabs on the left to access different features.")
 
 
-if selected_tab == "Chatbot":
+elif selected_tab == "Chatbot":
     st.title("Welcome to Healthcare Chatbot 🤖")
     st.write("Information List")
     st.write("""
