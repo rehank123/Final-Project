@@ -380,40 +380,45 @@ elif selected_tab == "Contact Us":
     **Healthcare Chatbot Team**
     """)
 
-elif selected_tab == "About Us":
-    st.title("About Us")
+elif selected_tab == "Contact Us":
+    st.title("Contact Us")
 
     st.write("""
-    ## Welcome to Our Healthcare Chatbot Project 🤖
+    ## Get in Touch
 
-    ### Project Overview:
-    Our healthcare chatbot project aims to revolutionize the way people access medical information and services. With the power of artificial intelligence and natural language processing, we strive to provide users with instant access to accurate healthcare data, enabling them to make informed decisions about their well-being.
+    We're here to assist you with any questions, feedback, or inquiries you may have. Feel free to reach out to us using the contact information provided below:
 
-    ### Our Mission:
-    Our mission is to make healthcare information and services readily accessible to everyone, regardless of their location or socioeconomic status. By leveraging cutting-edge technology, we aim to bridge the gap between individuals and quality healthcare resources, thereby improving health outcomes and promoting well-being in our communities.
+    ### Contact Information:
+    - **Email:** [contact@healthcarechatbot.com](mailto:contact@healthcarechatbot.com)
+    - **Phone:** +1 (123) 456-7890
+    - **Address:** 123 Healthcare Street, Cityville, State, Country
 
-    ### Key Features:
-    - **Medicine Information:** Get detailed information about various medicines and their usage for different medical conditions.
-    - **Doctor Directory:** Explore a comprehensive directory of doctors, their specialties, and contact information to find the right healthcare provider for your needs.
-    - **Hospital Locator:** Find nearby hospitals, clinics, and healthcare facilities with ease, along with essential details such as address, contact numbers, and services offered.
-
-    ### Our Team:
-    Our team consists of dedicated individuals passionate about leveraging technology to enhance healthcare accessibility and affordability. With diverse backgrounds in healthcare, software development, and data science, we bring together a unique blend of expertise to deliver innovative solutions in the healthcare domain.
-
-    ### Contact Us:
-    Have questions or feedback? We'd love to hear from you! Feel free to reach out to us via email at [contact@healthcarechatbot.com](mailto:contact@healthcarechatbot.com) or connect with us on social media:
-
-    - [Twitter](https://twitter.com/healthchatbot)
+    ### Social Media:
+    Connect with us on social media for the latest updates, news, and announcements:
+    - [Twitter](https://twitter.com/healthcarechatbot)
     - [Facebook](https://www.facebook.com/healthcarechatbot)
     - [LinkedIn](https://www.linkedin.com/company/healthcarechatbot)
 
-    ### Acknowledgments:
-    We extend our gratitude to our mentors, instructors, and fellow learners who have supported us throughout this journey. Together, we're making a positive impact on healthcare delivery and accessibility worldwide.
+    ### Support Hours:
+    Our dedicated support team is available to assist you during the following hours:
+    - Monday to Friday: 9:00 AM - 6:00 PM (Local Time)
+    - Saturday: 10:00 AM - 4:00 PM (Local Time)
+    - Sunday: Closed
 
-    Thank you for choosing our healthcare chatbot for your medical needs. We're committed to continuously improving and expanding our services to better serve you.
+    ### Feedback:
+    We value your feedback and suggestions. Please take a moment to complete our [feedback form](https://forms.example.com/feedback) to help us improve our services.
 
-    **Let's transform healthcare together!**
+    ### Technical Support:
+    For technical assistance or issues related to the healthcare chatbot platform, please email our technical support team at [support@healthcarechatbot.com](mailto:support@healthcarechatbot.com).
+
+    ### Business Partnerships:
+    Interested in partnering with us? For business inquiries, collaborations, or partnerships, please contact our business development team at [partnerships@healthcarechatbot.com](mailto:partnerships@healthcarechatbot.com).
+
+    We look forward to hearing from you and assisting you with your healthcare needs!
+
+    **Healthcare Chatbot Team**
     """)
+
 
 else:
     st.write("This section is under construction. Check back soon!")
