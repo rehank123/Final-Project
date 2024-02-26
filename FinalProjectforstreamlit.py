@@ -29,7 +29,7 @@ st.sidebar.markdown("""
 
 
 # Define the tabs
-tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospitals Preview", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
+tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospitals Preview", "Upload Tests", "Tests Saved Data", "Contact Us", "About Us"]
 
 # Add the "Home" title above the tabs
 st.sidebar.markdown("<h1 style='text-align: left; color: red; font-family: Arial, sans-serif; margin-bottom: -200px;'>Go to</h1>", unsafe_allow_html=True)
@@ -379,6 +379,7 @@ elif selected_tab == "Contact Us":
 
     **Healthcare Chatbot Team**
     """)
+
 
 elif selected_tab == "About Us":
     st.title("About Us")
