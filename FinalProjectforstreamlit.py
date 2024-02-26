@@ -195,12 +195,6 @@ elif selected_tab == "Take Appointment":
         except Exception as e:
             st.error(f"An error occurred: {e}")
 
-
-
-
-
-
-
 elif selected_tab == "Appointment Data":
     st.title("Appointment Data")
 
@@ -250,22 +244,8 @@ elif selected_tab == "Appointment Data":
     else:
         st.write("No appointments found.")
 
-
-
-
-
-def hospital_addresses_page():
-        st.title("Hospital Addresses")
-        st.write("Content for the Hospital Addresses tab goes here.")
-
-        # URL of the hospital building image
-        image_url = "https://media.istockphoto.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D"
-
-        # Display the hospital building image
-        st.image(image_url, caption="Hospital Building", use_column_width=True)
-
-if _name_ == "_main_":
-        hospital_addresses_page()
+elif selected_tab == "Hospital Addresses":
+    hospital_addresses_page()
 
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
@@ -338,8 +318,6 @@ elif selected_tab == "Tests Saved Data":
             st.write("No tests saved yet.")
     except FileNotFoundError:
         st.write("No tests saved yet.")
-
-
 
 elif selected_tab == "Contact":
     st.title("Contact")
