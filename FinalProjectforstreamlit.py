@@ -225,16 +225,12 @@ elif selected_tab == "Hospital Addresses":
 
     # Define the hospital data including names and image URLs
     hospital_data = [
-        {"name": "Zia Care Hospital", "image_url": "https://images.unsplash.com/photo-1576671040529-d84df7aa6df5"},
-        {"name": "Noor Health Center", "image_url": "https://images.unsplash.com/photo-1576671040529-d84df7aa6df5"},
-        {"name": "Al-Muslim Medical Center", "image_url": "https://images.unsplash.com/photo-1576671040529-d84df7aa6df5"},
-        {"name": "Sultan Hospital", "image_url": "https://images.unsplash.com/photo-1576671040529-d84df7aa6df5"},
-        {"name": "Shaukat Khanum", "image_url": "https://images.unsplash.com/photo-1576671040529-d84df7aa6df5"},
-        {"name": "Imam Clinic Hospital", "image_url": "https://images.unsplash.com/photo-1576671040529-d84df7aa6df5"},
-        {"name": "Muslim Welfare Hospital", "image_url": "https://images.unsplash.com/photo-1576671040529-d84df7aa6df5"},
-        {"name": "Safa Medical Center", "image_url": "https://images.unsplash.com/photo-1576671040529-d84df7aa6df5"},
-        {"name": "Al Khidmat Hospital", "image_url": "https://images.unsplash.com/photo-1576671040529-d84df7aa6df5"},
-        {"name": "Zain Hospital", "image_url": "https://images.unsplash.com/photo-1576671040529-d84df7aa6df5"}
+        {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://example.com/image1.jpg"},
+        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://example.com/image2.jpg"},
+        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://example.com/image3.jpg"},
+        {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://example.com/image4.jpg"},
+        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://example.com/image5.jpg"},
+        {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://example.com/image6.jpg"}
     ]
 
     # Display images and hospital names
