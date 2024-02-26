@@ -281,6 +281,18 @@ elif selected_tab == "Upload Tests":
     else:
         st.warning("Please upload a test picture.")
 
+    # Display the uploaded test data in a table
+    st.title("Uploaded Test Data")
+    st.write("Below is the list of all uploaded test data:")
+    st.dataframe(existing_data)
+
+    # Allow users to delete specific data entries
+    if st.button("Delete Selected Data"):
+        selected_rows = st.multiselect("Select rows to delete", existing_data.index)
+        existing_data.drop(selected_rows, inplace=True)
+        existing_data.to_csv("tests_saved_data.csv", index=False)
+        st.success("Selected data deleted successfully!")
+
 
 elif selected_tab == "Tests Saved Data":
     st.title("Tests Saved Data")
