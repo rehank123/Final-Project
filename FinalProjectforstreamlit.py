@@ -253,43 +253,31 @@ elif selected_tab == "Appointment Data":
 
 
 
-
-def hospital_addresses_page():
-        st.title("Hospital Addresses")
-        st.write("Content for the Hospital Addresses tab goes here.")
-
-     import streamlit as st
-
-# List of hospital image URLs
-hospital_image_urls = [
-    "https://media.istockphoto.com/photos/modern-hospital-building-picture-id174183974?k=20&m=174183974&s=612x612&w=0&h=Ys3T1IivmrDeObNmdaqIyLPmEro-bRtZhQh0cL4dvLE=",
-    "https://media.istockphoto.com/photos/hospital-building-with-blue-sky-background-picture-id687717924?k=20&m=687717924&s=612x612&w=0&h=yut9-LSkCM4x_D8r-wRrjIvEInSQu1c6-iFc9tP-KgY=",
-    "https://media.istockphoto.com/photos/city-hospital-picture-id484354269?k=20&m=484354269&s=612x612&w=0&h=j2kQFzQBFV7R2dWSr4quzOqhzUcWGZiutKdtBB_b1cY=",
-    "https://media.istockphoto.com/photos/modern-hospital-building-picture-id1320610947?k=20&m=1320610947&s=612x612&w=0&h=_CFRPO2K_V1LReVW9YyYrfRq7HZ2aWxRkDdqOjUblfM=",
-    "https://media.istockphoto.com/photos/hospital-building-picture-id596002150?k=20&m=596002150&s=612x612&w=0&h=vdYK0OipI45sHyYg7vDBbm3wtzNQQIzJpxLvRoVd_yI=",
-    "https://media.istockphoto.com/photos/modern-hospital-building-picture-id1170819880?k=20&m=1170819880&s=612x612&w=0&h=9f9u95nIZLL2vD_L7X0fEzPovPQmnNTihtqyIzU8Pz8=",
-    "https://media.istockphoto.com/photos/modern-hospital-building-picture-id171660828?k=20&m=171660828&s=612x612&w=0&h=8ZiNIMQfuxmawb8vJQ7GF9U1O10xWY_9K-3_MJ_zcS0=",
-    "https://media.istockphoto.com/photos/hospital-building-picture-id184060185?k=20&m=184060185&s=612x612&w=0&h=wR7ywLYgJnW6RZU-X4DV2a1cTcz2xxXQ8ezPj82GUcE=",
-    "https://media.istockphoto.com/photos/medical-staff-waving-from-hospital-building-picture-id1194143753?k=20&m=1194143753&s=612x612&w=0&h=rVnGz9gVdqTfVO38oIfGnzFHYMMLJj2VI4nR2VKoZfY="
-]
-
-# Function to display hospital addresses and images
-def display_hospital_addresses():
+elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
-    for i, url in enumerate(hospital_image_urls, start=1):
-        st.subheader(f"Hospital {i}")
-        st.image(url, use_column_width=True)
+    st.write("Content for the Hospital Addresses tab goes here.")
+    
+    # List of hospital image URLs
+    hospital_image_urls = [
+        "https://media.istockphoto.com/photos/modern-hospital-building-picture-id174183974?k=20&m=174183974&s=612x612&w=0&h=Ys3T1IivmrDeObNmdaqIyLPmEro-bRtZhQh0cL4dvLE=",
+        "https://media.istockphoto.com/photos/hospital-building-with-blue-sky-background-picture-id687717924?k=20&m=687717924&s=612x612&w=0&h=yut9-LSkCM4x_D8r-wRrjIvEInSQu1c6-iFc9tP-KgY=",
+        "https://media.istockphoto.com/photos/city-hospital-picture-id484354269?k=20&m=484354269&s=612x612&w=0&h=j2kQFzQBFV7R2dWSr4quzOqhzUcWGZiutKdtBB_b1cY=",
+        "https://media.istockphoto.com/photos/modern-hospital-building-picture-id1320610947?k=20&m=1320610947&s=612x612&w=0&h=_CFRPO2K_V1LReVW9YyYrfRq7HZ2aWxRkDdqOjUblfM=",
+        "https://media.istockphoto.com/photos/hospital-building-picture-id596002150?k=20&m=596002150&s=612x612&w=0&h=vdYK0OipI45sHyYg7vDBbm3wtzNQQIzJpxLvRoVd_yI=",
+        "https://media.istockphoto.com/photos/modern-hospital-building-picture-id1170819880?k=20&m=1170819880&s=612x612&w=0&h=9f9u95nIZLL2vD_L7X0fEzPovPQmnNTihtqyIzU8Pz8=",
+        "https://media.istockphoto.com/photos/modern-hospital-building-picture-id171660828?k=20&m=171660828&s=612x612&w=0&h=8ZiNIMQfuxmawb8vJQ7GF9U1O10xWY_9K-3_MJ_zcS0=",
+        "https://media.istockphoto.com/photos/hospital-building-picture-id184060185?k=20&m=184060185&s=612x612&w=0&h=wR7ywLYgJnW6RZU-X4DV2a1cTcz2xxXQ8ezPj82GUcE=",
+        "https://media.istockphoto.com/photos/medical-staff-waving-from-hospital-building-picture-id1194143753?k=20&m=1194143753&s=612x612&w=0&h=rVnGz9gVdqTfVO38oIfGnzFHYMMLJj2VI4nR2VKoZfY="
+    ]
 
-# Main function
-def main():
-    st.sidebar.title("Navigation")
-    selected_tab = st.sidebar.radio("Go to", ["Hospital Addresses"])
+    # Function to display hospital addresses and images
+    def display_hospital_addresses():
+        for i, url in enumerate(hospital_image_urls, start=1):
+            st.subheader(f"Hospital {i}")
+            st.image(url, use_column_width=True)
 
-    if selected_tab == "Hospital Addresses":
-        display_hospital_addresses()
-
-if __name__ == "__main__":
-    main()
+    # Call the function to display hospital addresses
+    display_hospital_addresses()
 
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
