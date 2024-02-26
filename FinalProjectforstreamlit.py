@@ -215,9 +215,6 @@ elif selected_tab == "Appointment Data":
     plt.xlabel('Doctor')
     plt.ylabel('Number of Appointments')
     st.pyplot(plt)
-
-else:
-    st.write("Under development")
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
     st.write("Content for the Hospital Addresses tab goes here.")
@@ -236,6 +233,7 @@ elif selected_tab == "Hospital Addresses":
     for hospital in hospital_data:
         st.write(f"**{hospital['name']}**")
         st.image(hospital['image_url'], caption=hospital['name'], width=300)
+
 
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
