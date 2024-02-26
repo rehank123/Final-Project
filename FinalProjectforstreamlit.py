@@ -29,21 +29,18 @@ st.sidebar.markdown("""
 
 
 # Define the tabs
-tabs = ["Home", "Chatbot", "Take Appointment", "Appointment Data", "Hospitals Preview", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
+tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospitals Preview", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
 
 # Add the "Home" title above the tabs
-st.sidebar.markdown("<h1 style='text-align: center;'>Home</h1>", unsafe_allow_html=True)
+st.sidebar.markdown("<h1 style='text-align: center;'>Go to => </h1>", unsafe_allow_html=True)
 
 # Display the radio button for selecting tabs
 selected_tab = st.sidebar.radio("", tabs)
 
-if selected_tab == "Home":
-    st.title("Welcome to Healthcare Application 🏥")
-    st.write("This application provides various healthcare services to help you manage your health effectively.")
-    st.write("Explore the tabs on the left to access different features.")
 
 
-elif selected_tab == "Chatbot":
+
+if selected_tab == "Chatbot":
     st.title("Welcome to Healthcare Chatbot 🤖")
     st.write("Information List")
     st.write("""
