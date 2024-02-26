@@ -341,41 +341,44 @@ elif selected_tab == "Tests Saved Data":
     except FileNotFoundError:
         st.write("No tests saved yet.")
 
-elif selected_tab == "Contact":
-    st.title("Contact")
+elif selected_tab == "Contact Us":
+    st.title("Contact Us")
 
-    # Custom CSS for styling the contact information box
-    contact_styles = """
-    <style>
-    .contact-box {
-        background-color: #f4f4f4; /* Light gray background */
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Box shadow for depth */
-    }
-    .contact-info {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-    .contact-info a {
-        color: #0366d6; /* Blue color for links */
-        text-decoration: none;
-    }
-    </style>
-    """
-    st.markdown(contact_styles, unsafe_allow_html=True)
+    st.write("""
+    ## Get in Touch
 
-    # Display the contact information inside a styled box
-    st.markdown("### Get in Touch")
-    st.markdown("""
-    <div class="contact-box">
-        <div class="contact-info">
-            Phone Number:                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="tel:+923118003480">0311 8003480</a><br>
-            WhatsApp Number:                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="https://wa.me/923118003480">0311 8003480</a><br>
-            Facebook ID:                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a href="https://www.facebook.com/rehan.ullah">Rehan Ullah</a>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    We're here to assist you with any questions, feedback, or inquiries you may have. Feel free to reach out to us using the contact information provided below:
+
+    ### Contact Information:
+    - **Email:** [contact@healthcarechatbot.com](mailto:contact@healthcarechatbot.com)
+    - **Phone:** +1 (123) 456-7890
+    - **Address:** 123 Healthcare Street, Cityville, State, Country
+
+    ### Social Media:
+    Connect with us on social media for the latest updates, news, and announcements:
+    - [Twitter](https://twitter.com/healthcarechatbot)
+    - [Facebook](https://www.facebook.com/healthcarechatbot)
+    - [LinkedIn](https://www.linkedin.com/company/healthcarechatbot)
+
+    ### Support Hours:
+    Our dedicated support team is available to assist you during the following hours:
+    - Monday to Friday: 9:00 AM - 6:00 PM (Local Time)
+    - Saturday: 10:00 AM - 4:00 PM (Local Time)
+    - Sunday: Closed
+
+    ### Feedback:
+    We value your feedback and suggestions. Please take a moment to complete our [feedback form](https://forms.example.com/feedback) to help us improve our services.
+
+    ### Technical Support:
+    For technical assistance or issues related to the healthcare chatbot platform, please email our technical support team at [support@healthcarechatbot.com](mailto:support@healthcarechatbot.com).
+
+    ### Business Partnerships:
+    Interested in partnering with us? For business inquiries, collaborations, or partnerships, please contact our business development team at [partnerships@healthcarechatbot.com](mailto:partnerships@healthcarechatbot.com).
+
+    We look forward to hearing from you and assisting you with your healthcare needs!
+
+    **Healthcare Chatbot Team**
+    """)
 
 elif selected_tab == "About Us":
     st.title("About Us")
