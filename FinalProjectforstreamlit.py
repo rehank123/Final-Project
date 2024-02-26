@@ -66,25 +66,25 @@ if selected_tab == "Chatbot":
         disease = st.text_input("Enter the number of your disease for Medicine:")
 
         if disease == "1":  
-            st.write("Recommended medicine: Acetaminophen")
+            st.info("Recommended medicine: Acetaminophen")
         elif disease == "2":
-            st.write("Recommended medicine: Ibuprofen")
+            st.info("Recommended medicine: Ibuprofen")
         elif disease == "3":
-            st.write("Recommended medicine: Aspirin")
+            st.info("Recommended medicine: Aspirin")
         elif disease == "4":
-            st.write("Recommended medicine: Loratadine")
+            st.info("Recommended medicine: Loratadine")
         elif disease == "5":
-            st.write("Recommended medicine: Paclitaxel")
+            st.info("Recommended medicine: Paclitaxel")
         elif disease == "6":
-            st.write("Recommended medicine: Amoxicillin")
+            st.info("Recommended medicine: Amoxicillin")
         elif disease == "7":
-            st.write("Recommended medicine: Loperamide")
+            st.info("Recommended medicine: Loperamide")
         elif disease == "8":
-            st.write("Recommended medicine: Decongestants")
+            st.info("Recommended medicine: Decongestants")
         elif disease == "9":
-            st.write("Recommended medicine: Phenazopyridine")
+            st.info("Recommended medicine: Phenazopyridine")
         elif disease == "10":
-            st.write("Recommended medicine: Artificial tears")
+            st.info("Recommended medicine: Artificial tears")
         else:
             st.error("Your disease is not in the list")
 
@@ -105,25 +105,25 @@ if selected_tab == "Chatbot":
         doctor = st.text_input("Enter the number of your Doctor for Diseases:")
 
         if doctor == "1":
-            st.write("Dr. Saleem")
+            st.info("Dr. Saleem")
         elif doctor == "2":
-            st.write("Dr. Abdullah")
+            st.info("Dr. Abdullah")
         elif doctor == "3":
-            st.write("Dr. Salman")
+            st.info("Dr. Salman")
         elif doctor == "4":
-            st.write("Dr. Kaleem")
+            st.info("Dr. Kaleem")
         elif doctor == "5":
-            st.write("Dr. Naimat")
+            st.info("Dr. Naimat")
         elif doctor == "6":
-            st.write("Dr. Imran")
+            st.info("Dr. Imran")
         elif doctor == "7":
-            st.write("Dr. Kamran")
+            st.info("Dr. Kamran")
         elif doctor == "8":
-            st.write("Dr. Moin")
+            st.info("Dr. Moin")
         elif doctor == "9":
-            st.write("Dr. Sultan")
+            st.info("Dr. Sultan")
         elif doctor == "10":
-            st.write("Dr. Faizan")
+            st.info("Dr. Faizan")
         else:
             st.error("Invalid Input")
 
@@ -144,25 +144,25 @@ if selected_tab == "Chatbot":
         doctor = st.text_input("Enter the number of your Doctor for Hospital:")
 
         if doctor == "1":
-            st.write("Hospital Name: Zia Care Hospital")
+            st.info("Hospital Name: Zia Care Hospital")
         elif doctor == "2":
-            st.write("Hospital Name: Noor Health Center")
+            st.info("Hospital Name: Noor Health Center")
         elif doctor == "3":
-            st.write("Hospital Name: Al-Muslim Medical Center")
+            st.info("Hospital Name: Al-Muslim Medical Center")
         elif doctor == "4":
-            st.write("Hospital Name: Sultan Hospital")
+            st.info("Hospital Name: Sultan Hospital")
         elif doctor == "5":
-            st.write("Hospital Name: Shaukat Khanum")
+            st.info("Hospital Name: Shaukat Khanum")
         elif doctor == "6":
-            st.write("Hospital Name: Imam Clinic Hospital")
+            st.info("Hospital Name: Imam Clinic Hospital")
         elif doctor == "7":
-            st.write("Hospital Name: Muslim Welfare Hospital")
+            st.info("Hospital Name: Muslim Welfare Hospital")
         elif doctor == "8":
-            st.write("Hospital Name: Safa  Medical Center")
+            st.info("Hospital Name: Safa  Medical Center")
         elif doctor == "9":
-            st.write("Hospital Name: Al Khidmat Hospital")
+            st.info("Hospital Name: Al Khidmat Hospital")
         elif doctor == "10":
-            st.write("Hospital Name: Zain Hospital")
+            st.info("Hospital Name: Zain Hospital")
     else:
         st.error("Invalid Input")
 
