@@ -21,6 +21,12 @@ doctor_diseases = {
 tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospitals Preview", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
 
+# Sidebar image
+st.sidebar.image("https://www.google.com/imgres?imgurl=https%3A%2F%2Fbanoqabil.pk%2Fmedia%2Flogo.png&tbnid=dW53I5LiaJf5OM&vet=12ahUKEwjUxOHE2MmEAxVzVKQEHab5BK8QMygCegQIARBb..i&imgrefurl=https%3A%2F%2Fbanoqabil.pk%2F&docid=yLxLVUSTPQb7fM&w=1706&h=1120&q=bano%20qabil&ved=2ahUKEwjUxOHE2MmEAxVzVKQEHab5BK8QMygCegQIARBb")
+
+# Rest of your code
+
+
 if selected_tab == "Chatbot":
     st.title("Welcome to Healthcare Chatbot 🤖")
     st.write("Information List")
