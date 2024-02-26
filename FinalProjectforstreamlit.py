@@ -157,15 +157,15 @@ elif selected_tab == "Take Appointment":
     # Create a form for doctor appointment scheduling
     patient_name = st.text_input("Patient Name")
     doctor = st.selectbox("Select Doctor", ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat", "Dr. Imran", "Dr. Kamran", "Dr. Moin", "Dr. Sultan", "Dr. Faizan"])
-    
+
     # Populate diseases based on selected doctor
     diseases = doctor_diseases.get(doctor, [])
-    
+
     # Convert diseases list to dictionary for selectbox options
     disease_options = {disease: disease for disease in diseases}
-    
+
     disease = st.selectbox("Select Disease", list(disease_options.keys()))
-    
+
     date = st.date_input("Date")
     time = st.time_input("Time")
     reason = st.text_area("Reason for Appointment")
@@ -194,6 +194,7 @@ elif selected_tab == "Take Appointment":
             st.write("Reason:", reason)
         except Exception as e:
             st.error(f"An error occurred: {e}")
+
 elif selected_tab == "Appointment Data":
     st.title("Appointment Data")
 
@@ -202,17 +203,7 @@ elif selected_tab == "Appointment Data":
         existing_data = pd.read_csv("appointments.csv")
     except FileNotFoundError:
         existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Disease", "Date", "Time", "Reason"])
-    os.makedirs(upload_dir, exist_ok=True)
 
-    # Sample appointment data
-    appointment_data = pd.DataFrame({
-        "Doctor": ["Dr. Saleem", "Dr. Abdullah", "Dr. Salman", "Dr. Kaleem", "Dr. Naimat"],
-        "Appointments": [10, 15, 8, 12, 20]
-    })
-
-    tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospital Addresses", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
-    selected_tab = st.sidebar.radio("", tabs)
-    
     # Filter appointments by selected doctor
     st.sidebar.title("Filter by Doctor")
     selected_doctor = st.sidebar.selectbox("Select Doctor", ["All"] + list(existing_data["Doctor"].unique()))
@@ -244,37 +235,6 @@ elif selected_tab == "Appointment Data":
                 st.error(f"An error occurred while deleting rows: {e}")
     else:
         st.write("No appointments found.")
-
-elif selected_tab == "Tests Saved Data":
-    st.title("Tests Saved Data")
-
-    # Load and display saved test data
-    try:
-        tests_data = pd.read_csv("tests_saved_data.csv")
-        if not tests_data.empty:
-            st.dataframe(tests_data)
-
-            # Allow users to input the index or indices of rows to delete
-            rows_to_delete_input = st.text_input("Enter index or indices of rows to delete (comma-separated):")
-
-            if st.button("Delete rows"):
-                try:
-                    # Convert input string to a list of integers
-                    indices_to_delete = [int(index.strip()) for index in rows_to_delete_input.split(",")]
-
-                    # Remove the specified rows from the DataFrame
-                    tests_data.drop(indices_to_delete, inplace=True)
-
-                    # Save the updated DataFrame back to the CSV file
-                    tests_data.to_csv("tests_saved_data.csv", index=False)
-
-                    st.success("Selected rows deleted successfully!")
-                except Exception as e:
-                    st.error(f"An error occurred while deleting rows: {e}")
-        else:
-            st.write("No tests saved yet.")
-    except FileNotFoundError:
-        st.write("No tests saved yet.")
 
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
