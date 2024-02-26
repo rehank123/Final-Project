@@ -254,37 +254,25 @@ elif selected_tab == "Appointment Data":
 
 
 
-# Define hospital data including names, addresses, and images
-hospital_data = [
-    {"name": "Zia Hospital", "address": "North Nazimabad, Karachi", "image_url": "https://via.placeholder.com/150"},
-    {"name": "Noor Health Care", "address": "Manghopir Sultanabad, Karachi", "image_url": "https://via.placeholder.com/150"},
-    {"name": "Al-Muslim Medical Center", "address": "Malik Chook, Lahore", "image_url": "https://via.placeholder.com/150"},
-    {"name": "Imam Health Care", "address": "Five Star Churangi, Karachi", "image_url": "https://via.placeholder.com/150"},
-    {"name": "Ahmed Ibrahim Eye Hospital", "address": "Banaras, Karachi", "image_url": "https://via.placeholder.com/150"},
-    {"name": "Al Khidmat Medical Center", "address": "Sahiwal", "image_url": "https://via.placeholder.com/150"}
-]
+elif selected_tab == "Hospital Addresses":
+    st.title("Hospital Addresses")
+    st.write("Content for the Hospital Addresses tab goes here.")
 
-# Page title and description
-st.title("Hospital Addresses")
-st.write("Explore the list of hospitals along with their addresses:")
+    # Define the hospital data including names and image URLs
+    hospital_data = [
+        {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://hotimg.com/hhh.huw4a"},
+        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://hotimg.com/hos1.huXsf"},
+        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://hotimg.com/hos2.huDhC"},
+        {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://hotimg.com/hos4.hugid"},
+        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://hotimg.com/hos5.hu2tF"},
+        {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://hotimg.com/hos6.huzjz"}
+    ]
 
-# Display hospital information
-for hospital in hospital_data:
-    st.subheader(hospital["name"])
-    st.write(f"Address: {hospital['address']}")
-    st.image(hospital['image_url'], caption=hospital['name'], width=200)
+    # Display images and hospital names
+    for hospital in hospital_data:
+        st.write(f"**{hospital['name']}**")
+        st.image(hospital['image_url'], caption=hospital['name'], width=300)
 
-# Add some colorful styling
-st.markdown(
-    """
-    <style>
-    .st-dd::shadow .st-cf{color: #FFFFFF;}
-    .st-ec .st-dg{color: #FFFFFF;}
-    .css-1vqou4q e19j4fv20{background-color: #336699;}
-    </style>
-    """, 
-    unsafe_allow_html=True
-)
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
     st.write("Please fill out the form and upload the test picture.")
