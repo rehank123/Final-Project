@@ -250,9 +250,16 @@ elif selected_tab == "Hospitals Preview":
 
     # URL of the hospital building image
     image_url = "https://media.istockphoto.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D"
+    # Display the hospital building image
+    st.image(image_url, caption="Hospital Building", use_column_width=True)
+    
+    st.title("Hospitals Preview")
+    st.write("Picture of Zia Hospital.")
+    image_url = "https://media.istockphoto.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D"
 
     # Display the hospital building image
     st.image(image_url, caption="Hospital Building", use_column_width=True)
+    
 
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
