@@ -255,7 +255,7 @@ elif selected_tab == "Upload Tests":
         # Display the uploaded image
         st.image(uploaded_file, caption="Uploaded Test Picture", use_column_width=True)
 
-        # Save the uploaded file to a designated folder
+        # Save the uploaded file path to a designated folder
         try:
             file_path = os.path.join("uploads", f"{test_name}_{patient_name}_{uploaded_file.name}")
             with open(file_path, "wb") as f:
@@ -293,16 +293,14 @@ elif selected_tab == "Tests Saved Data":
     try:
         tests_data = pd.read_csv("tests_saved_data.csv")
 
-        # Display test data along with images
+        # Display test data along with file paths
         for index, row in tests_data.iterrows():
             st.write("**Test Name:**", row["Test Name"])
             st.write("**Patient Name:**", row["Patient Name"])
             st.write("**Test Type:**", row["Test Type"])
             st.write("**Test Date:**", row["Test Date"])
             st.write("**Test Time:**", row["Test Time"])
-            file_path = row["File"]
-            with open(file_path, "rb") as f:
-                st.image(f, caption="Uploaded Test Picture", use_column_width=True)
+            st.write("**File Path:**", row["File"])
             st.write("---")
     except FileNotFoundError:
         st.write("No tests saved yet.")
