@@ -237,12 +237,13 @@ elif selected_tab == "Appointment Data":
         # Count the number of appointments per doctor
         appointment_counts = existing_data['Doctor'].value_counts()
 
-        # Plotting the bar chart
-        st.write("Number of Appointments per Doctor:")
-        st.bar_chart(appointment_counts)
+        # Plotting the bar chart in the sidebar
+        st.sidebar.title('Number of Appointments per Doctor')
+        st.sidebar.bar_chart(appointment_counts)
 
     else:
         st.write("No appointments found.")
+
 
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
