@@ -245,6 +245,9 @@ elif selected_tab == "Upload Tests":
     # Create a form for test picture upload
     test_name = st.text_input("Test Name")
     patient_name = st.text_input("Patient Name")
+    test_type = st.selectbox("Test Type", ["Blood Test", "Urine Test", "X-Ray", "MRI", "CT Scan"])
+    test_date = st.date_input("Test Date")
+    test_time = st.time_input("Test Time")
 
     uploaded_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
 
@@ -262,10 +265,10 @@ elif selected_tab == "Upload Tests":
             try:
                 existing_data = pd.read_csv("tests_saved_data.csv")
             except FileNotFoundError:
-                existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "File Path"])
+                existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "Test Type", "Test Date", "Test Time", "File Path"])
 
             # Append the new test data
-            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "File Path": [file_path]})
+            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "Test Type": [test_type], "Test Date": [test_date], "Test Time": [test_time], "File Path": [file_path]})
             existing_data = pd.concat([existing_data, new_test], ignore_index=True)
 
             # Save the updated DataFrame back to the CSV file
@@ -276,6 +279,7 @@ elif selected_tab == "Upload Tests":
             st.error(f"An error occurred while saving test data: {e}")
     else:
         st.warning("Please upload a test picture.")
+
 
 elif selected_tab == "Tests Saved Data":
     st.title("Tests Saved Data")
