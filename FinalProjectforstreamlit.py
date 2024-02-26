@@ -236,7 +236,8 @@ elif selected_tab == "Hospital Addresses":
     # Display images and hospital names
     for hospital in hospital_data:
         st.write(f"**{hospital['name']}**")
-        st.image(hospital['image_url'], caption=hospital['name'], width=300)
+        st.image(hospital['image_url'], caption=hospital['name'], use_column_width=True)
+
 
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
