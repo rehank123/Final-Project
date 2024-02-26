@@ -254,18 +254,25 @@ elif selected_tab == "Appointment Data":
 
 
 
+
 def hospital_addresses_page():
-        st.title("Hospital Addresses")
-        st.write("Content for the Hospital Addresses tab goes here.")
+    st.title("Hospital Addresses")
+    st.write("Content for the Hospital Addresses tab goes here.")
 
-        # URL of the hospital building image
-        image_url = "https://media.istockphoto.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D"
+    # List of Google image URLs for hospital buildings
+    image_urls = [
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fid%2F1312706413%2Fphoto%2Fmodern-hospital-building.jpg%3Fs%3D612x612%26w%3D0%26k%3D20%26c%3DoUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D&tbnid=ApFWotwvyklDVM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygBegQIARA1..i&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fhospital-building&docid=K8s9OO14ksVoTM&w=612&h=444&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygBegQIARA1",
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fmodern-hospital-building-11296462.jpg&tbnid=ox40pF014uwpYM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygEegQIARA-..i&imgrefurl=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fhospital-building.html&docid=OA2gbTyAtvkTGM&w=800&h=565&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygEegQIARA-",
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Ft4.ftcdn.net%2Fjpg%2F03%2F88%2F00%2F37%2F360_F_388003741_3pDGioOwlLIEr0Af2DaepDlLxc3tgqUZ.jpg&tbnid=JMe-WnoKw6EiNM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygJegQIARBN..i&imgrefurl=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dhospital%2Bbuilding&docid=SLjE9eXB-6GTLM&w=540&h=360&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygJegQIARBN",
+        # Add more URLs here as needed
+    ]
 
-        # Display the hospital building image
-        st.image(image_url, caption="Hospital Building", use_column_width=True)
+    # Display each hospital building image
+    for i, url in enumerate(image_urls, start=1):
+        st.image(url, caption=f"Hospital Building {i}", use_column_width=True)
 
 if __name__ == "__main__":
-        hospital_addresses_page()
+    hospital_addresses_page()
 
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
