@@ -255,6 +255,12 @@ elif selected_tab == "Upload Tests":
         # Display the uploaded image
         st.image(uploaded_file, caption="Uploaded Test Picture", use_column_width=True)
 
+        # Save the uploaded file to a temporary location
+        with open(os.path.join("temp", uploaded_file.name), "wb") as f:
+            f.write(uploaded_file.getbuffer())
+
+        st.success("Test picture uploaded successfully!")
+
         # Save test data
         try:
             # Load existing test data from CSV
@@ -264,7 +270,7 @@ elif selected_tab == "Upload Tests":
                 existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "Test Type", "Test Date", "Test Time", "File"])
 
             # Append the new test data
-            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "Test Type": [test_type], "Test Date": [test_date], "Test Time": [test_time], "File": [uploaded_file]})
+            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "Test Type": [test_type], "Test Date": [test_date], "Test Time": [test_time], "File": [os.path.join("temp", uploaded_file.name)]})
             existing_data = pd.concat([existing_data, new_test], ignore_index=True)
 
             # Save the updated DataFrame back to the CSV file
@@ -275,6 +281,7 @@ elif selected_tab == "Upload Tests":
             st.error(f"An error occurred while saving test data: {e}")
     else:
         st.warning("Please upload a test picture.")
+
 
 elif selected_tab == "Tests Saved Data":
     st.title("Tests Saved Data")
