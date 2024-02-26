@@ -259,7 +259,7 @@ elif selected_tab == "Hospital Addresses":
     
     # List of hospital image URLs
     hospital_image_urls = [
-        "https://media.istockphoto.com/photos/modern-hospital-building-picture-id174183974?k=20&m=174183974&s=612x612&w=0&h=Ys3T1IivmrDeObNmdaqIyLPmEro-bRtZhQh0cL4dvLE=",
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fid%2F1312706413%2Fphoto%2Fmodern-hospital-building.jpg%3Fs%3D612x612%26w%3D0%26k%3D20%26c%3DoUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D&tbnid=ApFWotwvyklDVM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygBegQIARA1..i&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fhospital-building&docid=K8s9OO14ksVoTM&w=612&h=444&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygBegQIARA1",
         "https://media.istockphoto.com/photos/hospital-building-with-blue-sky-background-picture-id687717924?k=20&m=687717924&s=612x612&w=0&h=yut9-LSkCM4x_D8r-wRrjIvEInSQu1c6-iFc9tP-KgY=",
         "https://media.istockphoto.com/photos/city-hospital-picture-id484354269?k=20&m=484354269&s=612x612&w=0&h=j2kQFzQBFV7R2dWSr4quzOqhzUcWGZiutKdtBB_b1cY=",
         "https://media.istockphoto.com/photos/modern-hospital-building-picture-id1320610947?k=20&m=1320610947&s=612x612&w=0&h=_CFRPO2K_V1LReVW9YyYrfRq7HZ2aWxRkDdqOjUblfM=",
