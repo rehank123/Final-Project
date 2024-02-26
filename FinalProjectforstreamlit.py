@@ -37,9 +37,6 @@ st.sidebar.markdown("<h1 style='text-align: center; color: red; font-family: Ari
 # Display the radio button for selecting tabs
 selected_tab = st.sidebar.radio("", tabs)
 
-
-
-
 if selected_tab == "Chatbot":
     st.title("Welcome to Healthcare Chatbot 🤖")
     st.write("Information List")
