@@ -255,9 +255,9 @@ elif selected_tab == "Upload Tests":
         # Display the uploaded image
         st.image(uploaded_file, caption="Uploaded Test Picture", use_column_width=True)
 
-        # Save the uploaded file to the same directory as the script
+        # Save the uploaded file to a designated folder
         try:
-            file_path = f"{test_name}_{patient_name}_{uploaded_file.name}"
+            file_path = os.path.join("uploads", f"{test_name}_{patient_name}_{uploaded_file.name}")
             with open(file_path, "wb") as f:
                 f.write(uploaded_file.getbuffer())
 
@@ -300,10 +300,13 @@ elif selected_tab == "Tests Saved Data":
             st.write("**Test Type:**", row["Test Type"])
             st.write("**Test Date:**", row["Test Date"])
             st.write("**Test Time:**", row["Test Time"])
-            st.image(row["File"], caption="Uploaded Test Picture", use_column_width=True)
+            file_path = row["File"]
+            with open(file_path, "rb") as f:
+                st.image(f, caption="Uploaded Test Picture", use_column_width=True)
             st.write("---")
     except FileNotFoundError:
         st.write("No tests saved yet.")
+
 
 elif selected_tab == "Contact":
     st.title("Contact")
