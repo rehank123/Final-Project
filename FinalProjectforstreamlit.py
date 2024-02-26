@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 import os
 
 upload_dir = "uploaded_tests"
@@ -205,16 +204,38 @@ elif selected_tab == "Appointment Data":
     except FileNotFoundError:
         existing_data = pd.DataFrame(columns=["Patient Name", "Doctor", "Disease", "Date", "Time", "Reason"])
 
-    # Count the number of appointments per doctor
-    appointment_counts = existing_data['Doctor'].value_counts()
+    # Filter appointments by selected doctor
+    st.sidebar.title("Filter by Doctor")
+    selected_doctor = st.sidebar.selectbox("Select Doctor", ["All"] + list(existing_data["Doctor"].unique()))
 
-    # Plotting the bar chart
-    plt.figure(figsize=(10, 6))
-    appointment_counts.plot(kind='bar')
-    plt.title('Number of Appointments per Doctor')
-    plt.xlabel('Doctor')
-    plt.ylabel('Number of Appointments')
-    st.pyplot(plt)
+    if selected_doctor != "All":
+        existing_data = existing_data[existing_data["Doctor"] == selected_doctor]
+
+    # Display data table in the main column
+    st.write("Below is the list of all saved appointments:")
+    if not existing_data.empty:
+        st.dataframe(existing_data)
+
+        # Allow users to input the index or indices of rows to delete
+        rows_to_delete_input = st.text_input("Enter index or indices of rows to delete (comma-separated):")
+
+        if st.button("Delete rows"):
+            try:
+                # Convert input string to a list of integers
+                indices_to_delete = [int(index.strip()) for index in rows_to_delete_input.split(",")]
+
+                # Remove the specified rows from the DataFrame
+                existing_data.drop(indices_to_delete, inplace=True)
+
+                # Save the updated DataFrame back to the CSV file
+                existing_data.to_csv("appointments.csv", index=False)
+
+                st.success("Selected rows deleted successfully!")
+            except Exception as e:
+                st.error(f"An error occurred while deleting rows: {e}")
+    else:
+        st.write("No appointments found.")
+
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
     st.write("Content for the Hospital Addresses tab goes here.")
@@ -233,7 +254,6 @@ elif selected_tab == "Hospital Addresses":
     for hospital in hospital_data:
         st.write(f"**{hospital['name']}**")
         st.image(hospital['image_url'], caption=hospital['name'], width=300)
-
 
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
