@@ -262,15 +262,13 @@ elif selected_tab == "Appointment Data":
 
 elif selected_tab == "Hospitals Preview":
     st.title("Hospitals Preview")
-    st.write("Upload a picture of the hospital.")
+    st.write("Picture of Zia Hospital.")
 
-    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+    # URL of the default hospital image
+    default_image_url = "https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fe%2Fef%2FHopital_Maisonneuve-Rosemont_04.jpg&tbnid=9BKqLr-rcE6Q2M&vet=12ahUKEwiF5rro4smEAxVUkScCHWSuDrEQMygSegUIARCYAQ..i&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FH%25C3%25B4pital_Maisonneuve-Rosemont&docid=eVoamH85HO4BFM&w=4000&h=3000&q=hopital&ved=2ahUKEwiF5rro4smEAxVUkScCHWSuDrEQMygSegUIARCYAQ"
 
-    if uploaded_file is not None:
-        st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
-        st.success("Image uploaded successfully!")
-    else:
-        st.info("Please upload an image.")
+    # Display the default hospital image
+    st.image(default_image_url, caption="Hospital Image", use_column_width=True)
     
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
