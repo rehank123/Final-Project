@@ -194,7 +194,6 @@ elif selected_tab == "Take Appointment":
             st.write("Reason:", reason)
         except Exception as e:
             st.error(f"An error occurred: {e}")
-
 elif selected_tab == "Appointment Data":
     st.title("Appointment Data")
 
@@ -237,17 +236,13 @@ elif selected_tab == "Appointment Data":
         # Count the number of appointments per doctor
         appointment_counts = existing_data['Doctor'].value_counts()
 
-        # Plotting the bar chart in the sidebar with colorful design
-        st.sidebar.title('Number of Appointments per Doctor')
-        color_palette = ['#FF5733', '#33FF57', '#3357FF', '#FF33EC', '#33ECFF']  # Define color palette
-        color_index = 0
-        for doctor, count in appointment_counts.items():
-            st.sidebar.subheader(doctor)
-            st.sidebar.bar_chart({doctor: count}, color=color_palette[color_index])
-            color_index = (color_index + 1) % len(color_palette)
+        # Plotting the bar chart for all doctors together
+        st.title('Number of Appointments for All Doctors')
+        st.bar_chart(appointment_counts)
 
     else:
         st.write("No appointments found.")
+
 
 
 
