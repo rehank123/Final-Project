@@ -266,11 +266,11 @@ def hospital_addresses_page():
         },
         "Noor Health Center": {
             "address": "456 Elm Street, City, Country",
-            "image_url": "https://example.com/noor_health_center.jpg"
+            "https://www.google.com/imgres?imgurl=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fmodern-style-hospital-building-straight-lines-concrete-facing-30588884.jpg&tbnid=4gIjCfyup5SbMM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygDegQIARA7..i&imgrefurl=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fbuilding-hospital.html&docid=mmg0orFBwNjeUM&w=800&h=704&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygDegQIARA7"
         },
         "Al-Muslim Medical Center": {
             "address": "789 Oak Street, City, Country",
-            "image_url": "https://example.com/al_muslim_medical_center.jpg"
+            "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dhospital%2Bbuilding&psig=AOvVaw037ZT5564Wka8HO0pdmvsH&ust=1709029273667000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCICTvKjkyIQDFQAAAAAdAAAAABAE.png"
         },
         "Sultan Hospital": {
             "address": "456 Pine Street, City, Country",
