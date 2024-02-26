@@ -22,7 +22,7 @@ tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospital Addresses",
 selected_tab = st.sidebar.radio("", tabs)
 
 if selected_tab == "Chatbot":
-    st.title("Welcome to Healthcare Chatbot")
+    st.title("Welcome to Healthcare Chatbot 🤖")
     st.write("Information List")
     st.write("""
     1. About Medicine for Disease
@@ -195,6 +195,12 @@ elif selected_tab == "Take Appointment":
         except Exception as e:
             st.error(f"An error occurred: {e}")
 
+
+
+
+
+
+
 elif selected_tab == "Appointment Data":
     st.title("Appointment Data")
 
@@ -213,30 +219,53 @@ elif selected_tab == "Appointment Data":
 
     # Display data table in the main column
     st.write("Below is the list of all saved appointments:")
-    st.dataframe(existing_data)
+    if not existing_data.empty:
+        st.dataframe(existing_data)
 
-    # Display line chart in the sidebar
-    st.sidebar.title("Appointments Over Time")
-    st.sidebar.line_chart(existing_data)
+        # Allow users to input the index or indices of rows to delete
+        rows_to_delete_input = st.text_input("Enter index or indices of rows to delete (comma-separated):")
 
-elif selected_tab == "Hospital Addresses":
-    st.title("Hospital Addresses")
-    st.write("Content for the Hospital Addresses tab goes here.")
+        if st.button("Delete rows"):
+            try:
+                # Convert input string to a list of integers
+                indices_to_delete = [int(index.strip()) for index in rows_to_delete_input.split(",")]
 
-    # Define the hospital data including names and image URLs
-    hospital_data = [
-        {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://hotimg.com/hhh.huw4a"},
-        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://hotimg.com/hos1.huXsf"},
-        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://hotimg.com/hos2.huDhC"},
-        {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://hotimg.com/hos4.hugid"},
-        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://hotimg.com/hos5.hu2tF"},
-        {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://hotimg.com/hos6.huzjz"}
-    ]
+                # Remove the specified rows from the DataFrame
+                existing_data.drop(indices_to_delete, inplace=True)
 
-    # Display images and hospital names
-    for hospital in hospital_data:
-        st.write(f"**{hospital['name']}**")
-        st.image(hospital['image_url'], caption=hospital['name'], width=300)
+                # Save the updated DataFrame back to the CSV file
+                existing_data.to_csv("appointments.csv", index=False)
+
+                st.success("Selected rows deleted successfully!")
+            except Exception as e:
+                st.error(f"An error occurred while deleting rows: {e}")
+
+        # Count the number of appointments per doctor
+        appointment_counts = existing_data['Doctor'].value_counts()
+
+        # Plotting the bar chart in the sidebar
+        st.sidebar.title('Number of Appointments per Doctor')
+        st.sidebar.bar_chart(appointment_counts)
+
+    else:
+        st.write("No appointments found.")
+
+
+
+
+
+def hospital_addresses_page():
+        st.title("Hospital Addresses")
+        st.write("Content for the Hospital Addresses tab goes here.")
+
+        # URL of the hospital building image
+        image_url = "https://media.istockphoto.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D"
+
+        # Display the hospital building image
+        st.image(image_url, caption="Hospital Building", use_column_width=True)
+
+if _name_ == "_main_":
+        hospital_addresses_page()
 
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
@@ -245,6 +274,8 @@ elif selected_tab == "Upload Tests":
     # Create a form for test picture upload
     test_name = st.text_input("Test Name")
     patient_name = st.text_input("Patient Name")
+    test_date = st.date_input("Test Date")
+    test_result = st.selectbox("Test Result", ["Positive", "Negative"])
 
     uploaded_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
 
@@ -262,10 +293,10 @@ elif selected_tab == "Upload Tests":
             try:
                 existing_data = pd.read_csv("tests_saved_data.csv")
             except FileNotFoundError:
-                existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "File Path"])
+                existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "Test Date", "Test Result", "File Path"])
 
             # Append the new test data
-            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "File Path": [file_path]})
+            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "Test Date": [test_date], "Test Result": [test_result], "File Path": [file_path]})
             existing_data = pd.concat([existing_data, new_test], ignore_index=True)
 
             # Save the updated DataFrame back to the CSV file
@@ -283,9 +314,32 @@ elif selected_tab == "Tests Saved Data":
     # Load and display saved test data
     try:
         tests_data = pd.read_csv("tests_saved_data.csv")
-        st.dataframe(tests_data)
+        if not tests_data.empty:
+            st.dataframe(tests_data)
+
+            # Allow users to input the index or indices of rows to delete
+            rows_to_delete_input = st.text_input("Enter index or indices of rows to delete (comma-separated):")
+
+            if st.button("Delete rows"):
+                try:
+                    # Convert input string to a list of integers
+                    indices_to_delete = [int(index.strip()) for index in rows_to_delete_input.split(",")]
+
+                    # Remove the specified rows from the DataFrame
+                    tests_data.drop(indices_to_delete, inplace=True)
+
+                    # Save the updated DataFrame back to the CSV file
+                    tests_data.to_csv("tests_saved_data.csv", index=False)
+
+                    st.success("Selected rows deleted successfully!")
+                except Exception as e:
+                    st.error(f"An error occurred while deleting rows: {e}")
+        else:
+            st.write("No tests saved yet.")
     except FileNotFoundError:
         st.write("No tests saved yet.")
+
+
 
 elif selected_tab == "Contact":
     st.title("Contact")
@@ -329,9 +383,9 @@ elif selected_tab == "About Us":
     st.write("""
     This is a healthcare chatbot designed to provide information about various medical conditions, recommended medicines, doctors, and hospitals.
     You can use the tabs to navigate between different sections:
-    - **Home**: Provides options to explore information about medicines, doctors, and hospitals.
-    - **About Us**: Gives a brief overview of the chatbot.
-    - **Contact**: Provides contact information.
+    - *Home*: Provides options to explore information about medicines, doctors, and hospitals.
+    - *About Us*: Gives a brief overview of the chatbot.
+    - *Contact*: Provides contact information.
     """)
 
 # HTML footer
