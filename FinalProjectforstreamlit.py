@@ -252,31 +252,28 @@ elif selected_tab == "Appointment Data":
 
 
 
-
-
-
 def hospital_addresses_page():
     st.title("Hospital Addresses")
     st.write("Content for the Hospital Addresses tab goes here.")
 
-    # List of Google image URLs for hospital buildings
-    image_urls = [
-        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fid%2F1312706413%2Fphoto%2Fmodern-hospital-building.jpg%3Fs%3D612x612%26w%3D0%26k%3D20%26c%3DoUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D&tbnid=ApFWotwvyklDVM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygBegQIARA1..i&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fhospital-building&docid=K8s9OO14ksVoTM&w=612&h=444&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygBegQIARA1",
-        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fmodern-hospital-building-11296462.jpg&tbnid=ox40pF014uwpYM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygEegQIARA-..i&imgrefurl=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fhospital-building.html&docid=OA2gbTyAtvkTGM&w=800&h=565&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygEegQIARA-",
-        "https://www.google.com/imgres?imgurl=https%3A%2F%2Ft4.ftcdn.net%2Fjpg%2F03%2F88%2F00%2F37%2F360_F_388003741_3pDGioOwlLIEr0Af2DaepDlLxc3tgqUZ.jpg&tbnid=JMe-WnoKw6EiNM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygJegQIARBN..i&imgrefurl=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dhospital%2Bbuilding&docid=SLjE9eXB-6GTLM&w=540&h=360&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygJegQIARBN",
-    ]
+    # Dictionary of hospital names and addresses
+    hospital_addresses = {
+        "Zia Care Hospital": "123 Main Street, City, Country",
+        "Noor Health Center": "456 Elm Street, City, Country",
+        "Al-Muslim Medical Center": "789 Oak Street, City, Country",
+        "Sultan Hospital": "101 Pine Street, City, Country",
+        "Shaukat Khanum": "234 Maple Street, City, Country",
+        "Imam Clinic Hospital": "567 Cedar Street, City, Country",
+        "Muslim Welfare Hospital": "890 Birch Street, City, Country",
+        "Safa Medical Center": "111 Walnut Street, City, Country",
+        "Al Khidmat Hospital": "222 Spruce Street, City, Country",
+        "Zain Hospital": "333 Sycamore Street, City, Country"
+    }
 
-    # List of hospital addresses
-    hospital_addresses = [
-        "123 Main Street, Cityville",
-        "456 Elm Street, Townsville",
-        "789 Oak Street, Villagetown",
-    ]
-
-    # Display each hospital building image and its address
-    for i, (url, address) in enumerate(zip(image_urls, hospital_addresses), start=1):
-        st.image(url, caption=f"Hospital Building {i}", use_column_width=True)
-        st.write(f"Address: {address}")
+    # Display each hospital name and address
+    for i, (hospital_name, address) in enumerate(hospital_addresses.items(), start=1):
+        st.write(f"{i}. Hospital Name: {hospital_name}")
+        st.write(f"   Address: {address}")
 
 if __name__ == "__main__":
     hospital_addresses_page()
