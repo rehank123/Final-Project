@@ -18,11 +18,11 @@ doctor_diseases = {
     "Dr. Faizan": ["Influenza (Flu)", "Cancer", "Sinusitis"]
 }
 
-tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospital Addresses", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
+tabs = "Main Menu",["Chatbot", "Take Appointment", "Appointment Data", "Hospital Addresses", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
 selected_tab = st.sidebar.radio("", tabs)
 
 if selected_tab == "Chatbot":
-    st.title("Welcome to Healthcare Chatbot")
+    st.title("Welcome to Healthcare Chatbot 🤖")
     st.write("Information List")
     st.write("""
     1. About Medicine for Disease
