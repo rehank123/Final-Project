@@ -379,14 +379,31 @@ elif selected_tab == "Contact":
 
 elif selected_tab == "About Us":
     st.title("About Us")
-    # Display information about the chatbot
-    st.write("""
-    This is a healthcare chatbot designed to provide information about various medical conditions, recommended medicines, doctors, and hospitals.
-    You can use the tabs to navigate between different sections:
-    - *Home*: Provides options to explore information about medicines, doctors, and hospitals.
-    - *About Us*: Gives a brief overview of the chatbot.
-    - *Contact*: Provides contact information.
-    """)
+    about_us_html = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Final Project Healthcare Chatbot</h1>
+        <p>
+            <strong>Objectives:</strong>
+            <ul>
+                <li><strong>Objective 1:</strong> Develop a comprehensive Python project to fulfill the final assessment requirements of Bano Qabil 2.0.</li>
+                <li><strong>Objective 2:</strong> Showcase proficiency in Python programming by implementing advanced features and functionalities.</li>
+                <li><strong>Objective 3:</strong> Demonstrate problem-solving skills by addressing challenges encountered during the development process.</li>
+                <li><strong>Objective 4:</strong> Present a practical application of acquired knowledge and concepts in a real-world scenario.</li>
+            </ul>
+        </p>
+        <!-- Include other sections of your HTML content here -->
+    </body>
+    </html>
+    """
+    st.markdown(about_us_html, unsafe_allow_html=True)
+else:
+    st.write("This section is under construction. Check back soon!")
 
 # HTML footer
 footer = """
