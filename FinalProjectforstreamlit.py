@@ -17,14 +17,15 @@ doctor_diseases = {
     "Dr. Sultan": ["Common Cold", "Allergies", "Pneumonia"],
     "Dr. Faizan": ["Influenza (Flu)", "Cancer", "Sinusitis"]
 }
-
-tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospitals Preview", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
-selected_tab = st.sidebar.radio("", tabs)
-
 # Sidebar image
 st.sidebar.image("https://banoqabil.pk/media/logo.png", width=200)
 
 # Rest of your code
+
+tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospitals Preview", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
+selected_tab = st.sidebar.radio("", tabs)
+
+
 
 
 if selected_tab == "Chatbot":
