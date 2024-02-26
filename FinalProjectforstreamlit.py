@@ -256,7 +256,7 @@ elif selected_tab == "Appointment Data":
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
 
-    # List of hospital image URLs from Google
+    # List of hospital image URLs
     hospital_image_urls = [
         "https://www.gstatic.com/webp/gallery/1.jpg",
         "https://www.gstatic.com/webp/gallery/2.jpg",
@@ -277,6 +277,7 @@ elif selected_tab == "Hospital Addresses":
 
     # Call the function to display hospital addresses
     display_hospital_addresses()
+
 
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
