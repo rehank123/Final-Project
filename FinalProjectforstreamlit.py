@@ -256,12 +256,17 @@ elif selected_tab == "Appointment Data":
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
 
-    # List of hospital image URLs from Imgur
+    # List of hospital image URLs from Google
     hospital_image_urls = [
-        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fid%2F1312706413%2Fphoto%2Fmodern-hospital-building.jpg%3Fs%3D612x612%26w%3D0%26k%3D20%26c%3DoUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D&tbnid=ApFWotwvyklDVM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygBegQIARA1..i&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fhospital-building&docid=K8s9OO14ksVoTM&w=612&h=444&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygBegQIARA1",
-        "https://i.imgur.com/DEF456.jpg",
-        "https://i.imgur.com/GHI789.jpg",
-        # Add more image URLs here
+        "https://www.gstatic.com/webp/gallery/1.jpg",
+        "https://www.gstatic.com/webp/gallery/2.jpg",
+        "https://www.gstatic.com/webp/gallery/3.jpg",
+        "https://www.gstatic.com/webp/gallery/4.jpg",
+        "https://www.gstatic.com/webp/gallery/5.jpg",
+        "https://www.gstatic.com/webp/gallery/6.jpg",
+        "https://www.gstatic.com/webp/gallery/7.jpg",
+        "https://www.gstatic.com/webp/gallery/8.jpg",
+        "https://www.gstatic.com/webp/gallery/9.jpg"
     ]
 
     # Function to display hospital addresses and images
@@ -272,6 +277,7 @@ elif selected_tab == "Hospital Addresses":
 
     # Call the function to display hospital addresses
     display_hospital_addresses()
+)
 
 
 
