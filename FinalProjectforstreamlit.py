@@ -223,20 +223,24 @@ elif selected_tab == "Appointment Data":
       st.title("Hospital Addresses")
       st.write("Content for the Hospital Addresses tab goes here.")
 
-      # Define the hospital data including names and image URLs
-      hospital_data = [
-          {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://via.placeholder.com/300"},
-          {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://via.placeholder.com/300"},
-          {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://via.placeholder.com/300"},
-          {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://via.placeholder.com/300"},
-          {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://via.placeholder.com/300"},
-          {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://via.placeholder.com/300"}
-      ]
+elif selected_tab == "Hospital Addresses":
+st.title("Hospital Addresses")
+st.write("Content for the Hospital Addresses tab goes here.")
 
-      # Display images and hospital names
-      for hospital in hospital_data:
-          st.write(f"**{hospital['name']}**")
-          st.image(hospital['image_url'], caption=hospital['name'], use_column_width=True)
+# Define the hospital data including names and image URLs
+hospital_data = [
+    {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://via.placeholder.com/300"},
+    {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://via.placeholder.com/300"},
+    {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://via.placeholder.com/300"},
+    {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://via.placeholder.com/300"},
+    {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://via.placeholder.com/300"},
+    {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://via.placeholder.com/300"}
+]
+
+# Display images and hospital names
+for hospital in hospital_data:
+    st.write(f"**{hospital['name']}**")
+    st.image(hospital['image_url'], caption=hospital['name'], use_column_width=True)
 
 
 
