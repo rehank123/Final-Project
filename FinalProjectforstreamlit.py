@@ -283,9 +283,32 @@ elif selected_tab == "Tests Saved Data":
     # Load and display saved test data
     try:
         tests_data = pd.read_csv("tests_saved_data.csv")
-        st.dataframe(tests_data)
+        if not tests_data.empty:
+            st.dataframe(tests_data)
+
+            # Allow users to input the index or indices of rows to delete
+            rows_to_delete_input = st.text_input("Enter index or indices of rows to delete (comma-separated):")
+
+            if st.button("Delete rows"):
+                try:
+                    # Convert input string to a list of integers
+                    indices_to_delete = [int(index.strip()) for index in rows_to_delete_input.split(",")]
+
+                    # Remove the specified rows from the DataFrame
+                    tests_data.drop(indices_to_delete, inplace=True)
+
+                    # Save the updated DataFrame back to the CSV file
+                    tests_data.to_csv("tests_saved_data.csv", index=False)
+
+                    st.success("Selected rows deleted successfully!")
+                except Exception as e:
+                    st.error(f"An error occurred while deleting rows: {e}")
+        else:
+            st.write("No tests saved yet.")
     except FileNotFoundError:
         st.write("No tests saved yet.")
+
+
 
 elif selected_tab == "Contact":
     st.title("Contact")
