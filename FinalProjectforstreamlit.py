@@ -264,11 +264,10 @@ elif selected_tab == "Hospitals Preview":
     st.title("Hospitals Preview")
     st.write("Picture of Zia Hospital.")
 
-    # URL of the default hospital image
-    default_image_url = "https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fe%2Fef%2FHopital_Maisonneuve-Rosemont_04.jpg&tbnid=9BKqLr-rcE6Q2M&vet=12ahUKEwiF5rro4smEAxVUkScCHWSuDrEQMygSegUIARCYAQ..i&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FH%25C3%25B4pital_Maisonneuve-Rosemont&docid=eVoamH85HO4BFM&w=4000&h=3000&q=hopital&ved=2ahUKEwiF5rro4smEAxVUkScCHWSuDrEQMygSegUIARCYAQ"
-
-    # Display the default hospital image
-    st.image(default_image_url, caption="Hospital Image", use_column_width=True)
+    # URL of the hospital building image
+    image_url = "https://media.istockphoto.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D"
+    # Display the hospital building image
+    st.image(image_url, caption="Hospital Building", use_column_width=True)
     
 elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
