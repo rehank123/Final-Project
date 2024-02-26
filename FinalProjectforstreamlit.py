@@ -256,17 +256,17 @@ elif selected_tab == "Appointment Data":
 elif selected_tab == "Hospital Addresses":
     st.title("Hospital Addresses")
 
-    # List of hospital image URLs
+    # List of hospital image URLs from Google Images
     hospital_image_urls = [
         "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fid%2F1312706413%2Fphoto%2Fmodern-hospital-building.jpg%3Fs%3D612x612%26w%3D0%26k%3D20%26c%3DoUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio%3D&tbnid=ApFWotwvyklDVM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygBegQIARA1..i&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fhospital-building&docid=K8s9OO14ksVoTM&w=612&h=444&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygBegQIARA1",
-        "https://www.gstatic.com/webp/gallery/2.jpg",
-        "https://www.gstatic.com/webp/gallery/3.jpg",
-        "https://www.gstatic.com/webp/gallery/4.jpg",
-        "https://www.gstatic.com/webp/gallery/5.jpg",
-        "https://www.gstatic.com/webp/gallery/6.jpg",
-        "https://www.gstatic.com/webp/gallery/7.jpg",
-        "https://www.gstatic.com/webp/gallery/8.jpg",
-        "https://www.gstatic.com/webp/gallery/9.jpg"
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fid%2F1326871064%2Fphoto%2Ffrontal-shot-of-modern-hospital-building-with-massive-glass-windows-picture-id1326871064%3Fs%3D612x612%26w%3D0%26h%3DB3SEBVa1w1KkFlBY33yPrUbbY-yV5nQeRM0mivzkE-k%3D%26q%3Dhospital%2520building%2520pictures%2520330by%2520430%2520pix&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygCegUIARCdAQ..i&docid=r1oVfAq0WHaLNM&w=612&h=408&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygCegUIARCdAQ",
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fid%2F1236865995%2Fphoto%2Fmodern-hospital-building-picture-id1236865995%3Fs%3D612x612%26w%3D0%26h%3DGJlG3n67K-hEzRaz8Khb4zzfwxk1Rf0brwm0UIjBJW0%3D%26q%3Dhospital%2520building%2520pictures%2520330by%2520430%2520pix&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygDegUIARCfAQ..i&docid=HCnZz3ZzE1AUnM&w=612&h=408&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygDegUIARCfAQ",
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fmodern-hospital-building-exterior-picture-id1023937406%3Fs%3D612x612&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fmodern-hospital-building-exterior&docid=rhvUkGLkiGbuOM&tbnid=mIInKTfCCO82XM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygEegUIARCjAQ..i&docid=rhvUkGLkiGbuOM&w=408&h=612&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygEegUIARCjAQ",
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fhospital-building-picture-id509056452%3Fs%3D612x612&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fhospital-building&docid=rCJVEqQ8K5nhqM&tbnid=4n2fGw7DlEKqZM&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygFegUIARCnAQ..i&docid=rCJVEqQ8K5nhqM&w=408&h=612&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygFegUIARCnAQ",
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fhospital-building-in-a-city-picture-id157482467%3Fs%3D612x612&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fhospital-building-in-a-city&docid=bLiV7JiE2O5G7M&tbnid=BWpZ2S05F2I33M&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygGegUIARCuAQ..i&docid=bLiV7JiE2O5G7M&w=612&h=408&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygGegUIARCuAQ",
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fmodern-hospital-building-picture-id1145413014%3Fs%3D612x612&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fmodern-hospital-building&docid=5jYyVmVlFBIA2M&tbnid=ktUkCtq0w7ax0M&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygHegUIARC4AQ..i&docid=5jYyVmVlFBIA2M&w=408&h=612&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygHegUIARC4AQ",
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fmodern-hospital-building-picture-id531236747%3Fs%3D612x612&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fmodern-hospital-building&docid=Jmr3xN0McMjw6M&tbnid=qN7RY2aAALWb9M&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygIegUIARC7AQ..i&docid=Jmr3xN0McMjw6M&w=612&h=408&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygIegUIARC7AQ",
+        "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Ffrontal-view-of-a-modern-hospital-building-picture-id1150914294%3Fs%3D612x612&imgrefurl=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Ffrontal-view-of-a-modern-hospital-building&docid=Bk1Ck4ZmS_wZoM&tbnid=yMfI6biD9vW9_M&vet=12ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygJegUIARC-AQ..i&docid=Bk1Ck4ZmS_wZoM&w=408&h=612&q=Hospital%20building%20pictures%20330by%20430%20pix&ved=2ahUKEwiTzbSn5MiEAxVbqycCHXw_DkUQMygJegUIARC-AQ"
     ]
 
     # Function to display hospital addresses and images
@@ -277,6 +277,7 @@ elif selected_tab == "Hospital Addresses":
 
     # Call the function to display hospital addresses
     display_hospital_addresses()
+
 
 
 elif selected_tab == "Upload Tests":
