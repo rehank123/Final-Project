@@ -270,7 +270,7 @@ def hospital_addresses_page():
         },
         "Al-Muslim Medical Center": {
             "address": "789 Oak Street, City, Country",
-            "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dhospital%2Bbuilding&psig=AOvVaw037ZT5564Wka8HO0pdmvsH&ust=1709029273667000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCICTvKjkyIQDFQAAAAAdAAAAABAE.png"
+            "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dhospital%2Bbuilding&psig=AOvVaw037ZT5564Wka8HO0pdmvsH&ust=1709029273667000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCICTvKjkyIQDFQAAAAAdAAAAABAE"
         },
         "Sultan Hospital": {
             "address": "456 Pine Street, City, Country",
