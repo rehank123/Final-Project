@@ -5,18 +5,6 @@ import os
 upload_dir = "uploaded_tests"
 os.makedirs(upload_dir, exist_ok=True)
 
-
-try:
-    existing_data = pd.read_csv("tests_saved_data.csv")
-except FileNotFoundError:
-    existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "Test Date", "Test Time", "Test Details", "File Path"])
-
-tabs = ["Chatbot", "Take Appointment", "Appointment Data", "Hospital Addresses", "Upload Tests", "Tests Saved Data", "Contact", "About Us"]
-selected_tab = st.sidebar.radio("", tabs)
-
-
-
-
 doctor_diseases = {
     "Dr. Saleem": ["Common Cold", "Influenza (Flu)", "Headache"],
     "Dr. Abdullah": ["Allergies", "Cancer", "Pneumonia"],
@@ -237,12 +225,12 @@ elif selected_tab == "Hospital Addresses":
 
     # Define the hospital data including names and image URLs
     hospital_data = [
-        {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://example.com/image1.jpg"},
-        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://example.com/image2.jpg"},
-        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://example.com/image3.jpg"},
-        {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://example.com/image4.jpg"},
-        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://example.com/image5.jpg"},
-        {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://example.com/image6.jpg"}
+        {"name": "Zia Hospital North Nazimabad Karachi", "image_url": "https://hotimg.com/hhh.huw4a"},
+        {"name": "Noor Health Care Manghopir Sultanabad Karachi", "image_url": "https://hotimg.com/hos1.huXsf"},
+        {"name": "Al-Muslim Medical Center Malik Chook Lahore", "image_url": "https://hotimg.com/hos2.huDhC"},
+        {"name": "Imam Health Care Five Star Churangi Karachi", "image_url": "https://hotimg.com/hos4.hugid"},
+        {"name": "Ahmed Ibrahim Eye Hospital Banaras Karachi", "image_url": "https://hotimg.com/hos5.hu2tF"},
+        {"name": "Al Khidmat Medical Center Sahiwal", "image_url": "https://hotimg.com/hos6.huzjz"}
     ]
 
     # Display images and hospital names
@@ -254,13 +242,10 @@ elif selected_tab == "Upload Tests":
     st.title("Upload Tests")
     st.write("Please fill out the form and upload the test picture.")
 
-    # Create a form for test details and picture upload
+    # Create a form for test picture upload
     test_name = st.text_input("Test Name")
     patient_name = st.text_input("Patient Name")
-    test_date = st.date_input("Test Date")
-    test_time = st.time_input("Test Time")
-    test_details = st.text_area("Test Details")
-    
+
     uploaded_file = st.file_uploader("Upload Test Picture", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
@@ -277,11 +262,10 @@ elif selected_tab == "Upload Tests":
             try:
                 existing_data = pd.read_csv("tests_saved_data.csv")
             except FileNotFoundError:
-                existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "Test Date", "Test Time", "Test Details", "File Path"])
+                existing_data = pd.DataFrame(columns=["Test Name", "Patient Name", "File Path"])
 
             # Append the new test data
-            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "Test Date": [test_date], 
-                                     "Test Time": [test_time], "Test Details": [test_details], "File Path": [file_path]})
+            new_test = pd.DataFrame({"Test Name": [test_name], "Patient Name": [patient_name], "File Path": [file_path]})
             existing_data = pd.concat([existing_data, new_test], ignore_index=True)
 
             # Save the updated DataFrame back to the CSV file
@@ -292,19 +276,6 @@ elif selected_tab == "Upload Tests":
             st.error(f"An error occurred while saving test data: {e}")
     else:
         st.warning("Please upload a test picture.")
-
-    # Display the uploaded test data in a table
-    st.title("Uploaded Test Data")
-    st.write("Below is the list of all uploaded test data:")
-    st.dataframe(existing_data)
-
-    # Allow users to delete specific data entries
-    if st.button("Delete Selected Data"):
-        selected_rows = st.multiselect("Select rows to delete", existing_data.index)
-        existing_data.drop(selected_rows, inplace=True)
-        existing_data.to_csv("tests_saved_data.csv", index=False)
-        st.success("Selected data deleted successfully!")
-
 
 elif selected_tab == "Tests Saved Data":
     st.title("Tests Saved Data")
