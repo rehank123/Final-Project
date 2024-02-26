@@ -380,44 +380,38 @@ elif selected_tab == "Contact Us":
     **Healthcare Chatbot Team**
     """)
 
-elif selected_tab == "Contact Us":
-    st.title("Contact Us")
+elif selected_tab == "About Us":
+    st.title("About Us")
 
     st.write("""
-    ## Get in Touch
+    ## About Healthcare Chatbot
 
-    We're here to assist you with any questions, feedback, or inquiries you may have. Feel free to reach out to us using the contact information provided below:
+    **Mission:** Our mission is to provide accessible and reliable healthcare information through innovative technology solutions.
 
-    ### Contact Information:
-    - **Email:** [contact@healthcarechatbot.com](mailto:contact@healthcarechatbot.com)
-    - **Phone:** +1 (123) 456-7890
-    - **Address:** 123 Healthcare Street, Cityville, State, Country
+    **Vision:** To empower individuals to make informed decisions about their health and well-being.
 
-    ### Social Media:
-    Connect with us on social media for the latest updates, news, and announcements:
-    - [Twitter](https://twitter.com/healthcarechatbot)
-    - [Facebook](https://www.facebook.com/healthcarechatbot)
-    - [LinkedIn](https://www.linkedin.com/company/healthcarechatbot)
+    **Values:**
+    - **Integrity:** We uphold the highest standards of integrity and ethical conduct in all our interactions.
+    - **Excellence:** We strive for excellence in everything we do, delivering quality services and solutions to our users.
+    - **Innovation:** We embrace innovation and continuously explore new technologies to enhance the user experience.
+    - **Collaboration:** We foster collaboration and partnerships to achieve shared goals and objectives.
+    - **Empathy:** We demonstrate empathy and understanding in our interactions with users, recognizing their unique needs and challenges.
 
-    ### Support Hours:
-    Our dedicated support team is available to assist you during the following hours:
-    - Monday to Friday: 9:00 AM - 6:00 PM (Local Time)
-    - Saturday: 10:00 AM - 4:00 PM (Local Time)
-    - Sunday: Closed
+    **Key Features:**
+    - **Medicine Information:** Access detailed information about medicines and their uses for various health conditions.
+    - **Doctor Directory:** Find healthcare professionals based on specialty, location, and availability.
+    - **Hospital Locator:** Discover nearby hospitals, clinics, and healthcare facilities with ease.
 
-    ### Feedback:
-    We value your feedback and suggestions. Please take a moment to complete our [feedback form](https://forms.example.com/feedback) to help us improve our services.
+    **Future Enhancements:**
+    - Integration with telemedicine platforms for virtual consultations.
+    - Implementation of advanced AI algorithms for personalized healthcare recommendations.
+    - Expansion of services to include mental health support and wellness programs.
 
-    ### Technical Support:
-    For technical assistance or issues related to the healthcare chatbot platform, please email our technical support team at [support@healthcarechatbot.com](mailto:support@healthcarechatbot.com).
+    **Contact Us:** Have questions or feedback? Get in touch with our team through the [Contact Us](#contact-us) tab.
 
-    ### Business Partnerships:
-    Interested in partnering with us? For business inquiries, collaborations, or partnerships, please contact our business development team at [partnerships@healthcarechatbot.com](mailto:partnerships@healthcarechatbot.com).
-
-    We look forward to hearing from you and assisting you with your healthcare needs!
-
-    **Healthcare Chatbot Team**
+    Thank you for choosing Healthcare Chatbot for your healthcare needs!
     """)
+
 
 
 else:
